@@ -1,13 +1,23 @@
 # -*- coding: utf-8 -*-
 
+from .base_schema import BaseSchema
+
 import csv
 import os
 
 
 class BaseData(object):
-    def __init__(self):
+    """
+    schema ref: https://json-schema.org/learn/getting-started-step-by-step
+    """
+    def __init__(self, schema_dir):
         self.header_dict = {}
         self.data_dict = {}
+
+        self.base_schema = BaseSchema(schema_dir)
+
+    def get_schema(self):
+        return self.base_schema
 
     def add_header(self, key, header):
         self.header_dict[key] = header
@@ -24,8 +34,6 @@ class BaseData(object):
     def to_csv(self, csv_dir=None, exclude_empty_data=False):
         if not os.path.exists(csv_dir):
             os.mkdir(csv_dir)
-
-        csv_dirname = os.path.splitext(os.path.basename(csv_dir))[0]
 
         for key in self.get_data_keys():
             exists_data = key in self.data_dict

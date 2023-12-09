@@ -1,0 +1,103 @@
+{
+  "objects": {
+    "orders": {
+      "fields": {
+        "row_id": {
+          "type": "string"
+        },
+        "order_priority": {
+          "type": "string"
+        },
+        "discount": {
+          "type": "float"
+        },
+        "unit_price": {
+          "type": "float"
+        },
+        "shipping_cost": {
+          "type": "float"
+        },
+        "customer_id": {
+          "type": "string"
+        },
+        "customer_name": {
+          "type": "string"
+        },
+        "ship_mode": {
+          "type": "string"
+        },
+        "customer_segment": {
+          "type": "string"
+        },
+        "product_category": {
+          "type": "string"
+        },
+        "product_sub_category": {
+          "type": "string"
+        },
+        "product_container": {
+          "type": "string"
+        },
+        "product_name": {
+          "type": "string"
+        },
+        "product_base_margin": {
+          "type": "float"
+        },
+        "country": {
+          "type": "string"
+        },
+        "region": {
+          "type": "string"
+        },
+        "state_or_province": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        },
+        "postal_code": {
+          "type": "string"
+        },
+        "order_date": {
+          "type": "date"
+        },
+        "ship_date": {
+          "type": "date"
+        },
+        "profit": {
+          "type": "float"
+        },
+        "quantity_ordered_new": {
+          "type": "integer"
+        },
+        "sales": {
+          "type": "float"
+        },
+        "order_id": {
+          "type": "string"
+        }
+      }
+    },
+    "returns": {
+      "fields": {
+        "order_id": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        }
+      }
+    },
+    "users": {
+      "fields": {
+        "region": {
+          "type": "string"
+        },
+        "manager": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -3,12 +3,13 @@
 from data.base_data import BaseData
 from . import excel_utils as utils
 
+import os
 import xlrd
 
 
 class ExcelData(BaseData):
     def __init__(self, filename):
-        super().__init__()
+        super().__init__(os.path.split(filename)[0])
         self.workbook = xlrd.open_workbook(filename)
 
     def read(self):

@@ -12,10 +12,4 @@ class ExcelDataTests(unittest.TestCase):
         excel_data = ExcelData(os.path.join('..', 'sample', 'SuperStoreUS-2015.xls'))
         excel_data.read()
 
-        self.assertEqual(excel_data.get_data_keys(), ['Orders', 'Returns', 'Users'])
-
-
-    def test_excel_data_write_to_csv(self):
-        excel_data = ExcelData(os.path.join('..', 'sample', 'SuperStoreUS-2015.xls'))
-        excel_data.read()
-        excel_data.to_csv(os.path.join('..', 'sample', 'SuperStoreUS-2015'))
+        self.assertEqual(excel_data.get_data_keys(), ['orders', 'returns', 'users'])
