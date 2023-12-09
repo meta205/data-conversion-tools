@@ -1,8 +1,8 @@
 data-conversion-tools
 =====================
 
-::
-    pip freeze > requirements.txt
+.. code::
+  pip freeze > requirements.txt
 
-::
-    pip install -r requirements.txt
+.. code::
+  pip install -r requirements.txt
