@@ -4,6 +4,7 @@ from data.excel.excel_data import ExcelData
 
 import click
 
+
 @click.group()
 def data():
     pass
