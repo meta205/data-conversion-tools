@@ -26,3 +26,7 @@ data-conversion-tools
    1951  25914           High      Tammy Buckley     Express Air 2015-02-08                   5.0
 
    [1952 rows x 6 columns]
+
+.. code-block:: shell-session
+
+   $ python main.py newfile --path ./sample/SuperStoreUS-2015.xls

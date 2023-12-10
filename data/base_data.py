@@ -15,32 +15,37 @@ class BaseData(object):
 
         self.base_schema = BaseSchema(schema_dir)
 
-    def set_columns(self, key, columns):
-        self.columns_dict[key] = columns
-
-    def add_data(self, key, values):
-        if key not in self.data_dict:
-            self.data_dict[key] = [values]
-        else:
-            self.data_dict[key] += [values]
-
-    def get_columns(self, key):
-        if key in self.columns_dict:
-            return self.columns_dict[key]
+    def get_columns(self, data_key):
+        if data_key in self.columns_dict:
+            return self.columns_dict[data_key]
         return None
 
     def get_column_info(self, object_name, column_name):
         return self.base_schema.get_column_info(object_name, column_name)
 
+    def set_columns(self, data_key, columns):
+        self.columns_dict[data_key] = columns
+
     def get_data_keys(self):
-        return list(self.columns_dict.keys())
+        return sorted(list(self.columns_dict.keys()))
+
+    def get_data(self, data_key):
+        if data_key in self.data_dict:
+            return self.data_dict[data_key]
+        return []
+
+    def add_data(self, data_key, row_data):
+        if data_key not in self.data_dict:
+            self.data_dict[data_key] = [row_data]
+        else:
+            self.data_dict[data_key] += [row_data]
 
     def select(self, query):
         final_df = None
 
-        queries = [q.strip() for q in query.split('|')]
-        for q in queries:
-            data_key, columns = query_utils.get_query_info(q)
+        new_queries = [q.strip() for q in query.split('|')]
+        for new_query in new_queries:
+            data_key, columns = query_utils.get_query_info(new_query)
             if data_key is None:
                 continue
 
