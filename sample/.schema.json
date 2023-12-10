@@ -1,103 +1,132 @@
 {
   "objects": {
     "orders": {
-      "fields": {
-        "row_id": {
+      "columns": [
+        {
+          "name": "row_id",
           "type": "string"
         },
-        "order_priority": {
+        {
+          "name": "order_priority",
           "type": "string"
         },
-        "discount": {
+        {
+          "name": "discount",
           "type": "float"
         },
-        "unit_price": {
+        {
+          "name": "unit_price",
           "type": "float"
         },
-        "shipping_cost": {
+        {
+          "name": "shipping_cost",
           "type": "float"
         },
-        "customer_id": {
+        {
+          "name": "customer_id",
           "type": "string"
         },
-        "customer_name": {
+        {
+          "name": "customer_name",
           "type": "string"
         },
-        "ship_mode": {
+        {
+          "name": "ship_mode",
           "type": "string"
         },
-        "customer_segment": {
+        {
+          "name": "customer_segment",
           "type": "string"
         },
-        "product_category": {
+        {
+          "name": "product_category",
           "type": "string"
         },
-        "product_sub_category": {
+        {
+          "name": "product_sub_category",
           "type": "string"
         },
-        "product_container": {
+        {
+          "name": "product_container",
           "type": "string"
         },
-        "product_name": {
+        {
+          "name": "product_name",
           "type": "string"
         },
-        "product_base_margin": {
+        {
+          "name": "product_base_margin",
           "type": "float"
         },
-        "country": {
+        {
+          "name": "country",
           "type": "string"
         },
-        "region": {
+        {
+          "name": "region",
           "type": "string"
         },
-        "state_or_province": {
+        {
+          "name": "state_or_province",
           "type": "string"
         },
-        "city": {
+        {
+          "name": "city",
           "type": "string"
         },
-        "postal_code": {
+        {
+          "name": "postal_code",
           "type": "string"
         },
-        "order_date": {
+        {
+          "name": "order_date",
           "type": "date"
         },
-        "ship_date": {
+        {
+          "name": "ship_date",
           "type": "date"
         },
-        "profit": {
+        {
+          "name": "profit",
           "type": "float"
         },
-        "quantity_ordered_new": {
+        {
+          "name": "quantity_ordered_new",
           "type": "integer"
         },
-        "sales": {
+        {
+          "name": "sales",
           "type": "float"
         },
-        "order_id": {
+        {
+          "name": "order_id",
           "type": "string"
         }
-      }
+      ]
     },
     "returns": {
-      "fields": {
-        "order_id": {
+      "columns": [
+        {
+          "name": "order_id",
           "type": "string"
         },
-        "status": {
+        {
+          "name": "status",
           "type": "string"
         }
-      }
+      ]
     },
     "users": {
-      "fields": {
-        "region": {
+      "columns": [
+        {
+          "name": "region",
           "type": "string"
         },
-        "manager": {
+        {
+          "name": "manager",
           "type": "string"
         }
-      }
+      ]
     }
   }
 }

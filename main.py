@@ -1,13 +1,31 @@
 # -*- coding: utf-8 -*-
 
-import argparse
+from data.excel.excel_data import ExcelData
 
-def main():
-    parser = argparse.ArgumentParser()
-    parser.add_argument('-p', '--path', type=str, help='target file path')
+import click
 
-    args = parser.parse_args()
+@click.group()
+def data():
+    pass
 
+
+@data.command()
+@click.argument('query')
+@click.option('--path')
+@click.option('--source', default='excel', type=click.Choice(['excel', 'json'], case_sensitive=False))
+def select(query, source, path):
+    if source == 'excel':
+        excel_data = ExcelData(path)
+        excel_data.read()
+        excel_data.select(query)
+
+
+@click.group()
+def conversion():
+    pass
+
+
+cli = click.CommandCollection(sources=[data, conversion])
 
 if __name__ == '__main__':
-    main()
+    cli()

@@ -1,26 +1,22 @@
 # -*- coding: utf-8 -*-
 
 from .base_schema import BaseSchema
+from data.util import query_utils
 
 import csv
 import os
+import pandas as pd
 
 
 class BaseData(object):
-    """
-    schema ref: https://json-schema.org/learn/getting-started-step-by-step
-    """
     def __init__(self, schema_dir):
-        self.header_dict = {}
+        self.columns_dict = {}
         self.data_dict = {}
 
         self.base_schema = BaseSchema(schema_dir)
 
-    def get_schema(self):
-        return self.base_schema
-
-    def add_header(self, key, header):
-        self.header_dict[key] = header
+    def set_columns(self, key, columns):
+        self.columns_dict[key] = columns
 
     def add_data(self, key, values):
         if key not in self.data_dict:
@@ -28,8 +24,52 @@ class BaseData(object):
         else:
             self.data_dict[key] += [values]
 
+    def get_columns(self, key):
+        if key in self.columns_dict:
+            return self.columns_dict[key]
+        return None
+
+    def get_column_info(self, object_name, column_name):
+        return self.base_schema.get_column_info(object_name, column_name)
+
     def get_data_keys(self):
-        return list(self.header_dict.keys())
+        return list(self.columns_dict.keys())
+
+    def select(self, query):
+        final_df = None
+
+        queries = [q.strip() for q in query.split('|')]
+        for q in queries:
+            data_key, columns = query_utils.get_query_info(q)
+            if data_key is None:
+                continue
+
+            if data_key not in self.columns_dict:
+                continue
+
+            all_columns = self.columns_dict[data_key]
+            if len(columns) == 0:
+                columns = all_columns
+
+            column_indexes = [all_columns.index(c) for c in columns]
+            column_data_dict = {}
+
+            data = self.data_dict[data_key]
+            for row in data:
+                for column_index in column_indexes:
+                    if column_index < 0:
+                        continue
+
+                    column = all_columns[column_index]
+                    if column not in column_data_dict:
+                        column_data_dict[column] = [row[column_index]]
+                    else:
+                        column_data_dict[column] += [row[column_index]]
+
+            final_df = pd.DataFrame(column_data_dict)
+
+        print(final_df)
+        return final_df
 
     def to_csv(self, csv_dir=None, exclude_empty_data=False):
         if not os.path.exists(csv_dir):
@@ -43,7 +83,7 @@ class BaseData(object):
             csv_file = open(os.path.join(csv_dir, '%s.csv' % key), 'w', newline='')
 
             writer = csv.writer(csv_file)
-            writer.writerow(self.header_dict[key])
+            writer.writerow(self.columns_dict[key])
 
             if not exists_data:
                 csv_file.close()
