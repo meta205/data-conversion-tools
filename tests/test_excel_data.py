@@ -12,13 +12,13 @@ class ExcelDataTests(unittest.TestCase):
     Excel data tests.
     """
     def test_excel_data_read(self):
-        excel_data = ExcelData(os.path.join('../..', 'sample', 'SuperStoreUS-2015.xls'))
+        excel_data = ExcelData(os.path.join('..', 'sample', 'SuperStoreUS-2015.xls'))
         excel_data.read()
 
         self.assertEqual(excel_data.get_data_keys(), ['orders', 'returns', 'users'])
 
     def test_excel_data_select(self):
-        excel_data = ExcelData(os.path.join('../..', 'sample', 'SuperStoreUS-2015.xls'))
+        excel_data = ExcelData(os.path.join('..', 'sample', 'SuperStoreUS-2015.xls'))
         excel_data.read()
 
         df = excel_data.select('orders[row_id, order_priority, customer_name, ship_mode, product_base_margin, order_date, quantity_ordered_new]')

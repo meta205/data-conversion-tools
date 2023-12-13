@@ -11,7 +11,7 @@ class FileUtilsTests(unittest.TestCase):
     File utils tests.
     """
     def test_new_filename(self):
-        filename = os.path.join('../..', 'sample', 'SuperStoreUS-2015.xls')
+        filename = os.path.join('..', 'sample', 'SuperStoreUS-2015.xls')
         new_filename = file_utils.new_filename(filename)
 
-        self.assertEqual(new_filename, '../../sample/SuperStoreUS-2015-new.xls')
+        self.assertEqual(new_filename, '../sample/SuperStoreUS-2015-new.xls')
