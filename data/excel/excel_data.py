@@ -6,7 +6,7 @@ from . import excel_utils
 
 import os
 import xlrd
-import xlwt
+import xlsxwriter
 
 
 class ExcelData(BaseData):
@@ -41,41 +41,52 @@ class ExcelData(BaseData):
                     self.add_data(sheet.name, new_values)
 
     def write(self):
-        workbook = xlwt.Workbook(encoding='utf-8')
+        filename = file_utils.new_filename(self.filename)
+        workbook = xlsxwriter.Workbook(filename)
 
-        style1 = xlwt.easyxf('font: bold True;'
-                             'pattern: pattern solid, fore_colour gray25;'
-                             'align: wrap on, vert centre, horiz left;'
-                             'borders: top_color gray40, bottom_color gray40,'
-                             'right_color gray40, left_color gray40,'
-                             'left thin, right thin, top thin, bottom thin;')
+        cell_format1 = workbook.add_format({
+            'bold': True,
+            'font_color': '#FFFFFF',
+            'bg_color': '#404040',
+            'top': 1,
+            'bottom': 1,
+            'left': 1,
+            'right': 1,
+            'top_color': '#666666',
+            'bottom_color': '#666666',
+            'left_color': '#666666',
+            'right_color': '#666666'
+        })
 
-        style2 = xlwt.easyxf('font: bold False;'
-                             'pattern: pattern solid, fore_colour white;'
-                             'align: wrap on, vert centre, horiz left;'
-                             'borders: top_color gray40, bottom_color gray40,'
-                             'right_color gray40, left_color gray40,'
-                             'left thin, right thin, top thin, bottom thin;')
+        cell_format2 = workbook.add_format({
+            'bold': False,
+            'font_color': '#000000',
+            'bg_color': '#FFFFFF',
+            'top': 1,
+            'bottom': 1,
+            'left': 1,
+            'right': 1,
+            'top_color': '#666666',
+            'bottom_color': '#666666',
+            'left_color': '#666666',
+            'right_color': '#666666'
+        })
 
         for data_key in self.get_data_keys():
-            sheet = workbook.add_sheet(data_key, cell_overwrite_ok=True)
-            sheet.show_grid = False
-            sheet.set_panes_frozen(True)
-            sheet.set_horz_split_pos(1)
+            worksheet = workbook.add_worksheet(data_key)
+            worksheet.freeze_panes(1, 0)
+            worksheet.hide_gridlines(2)
 
             row_idx = 0
             for col_idx, value in enumerate(self.get_columns(data_key)):
-                sheet.write(row_idx, col_idx, value, style1)
-                sheet.row(row_idx).height = 400
-                sheet.col(col_idx).width = 0# excel_utils.fit_width(value, True)
+                worksheet.write(row_idx, col_idx, value, cell_format1)
 
             data = self.get_data(data_key)
             for row_data in data:
                 row_idx += 1
                 for col_idx, value in enumerate(row_data):
-                    sheet.write(row_idx, col_idx, value, style2)
-                    sheet.row(row_idx).height = 400
-                    sheet.col(col_idx).width = 0#excel_utils.fit_width(value)
+                    worksheet.write(row_idx, col_idx, value, cell_format2)
 
-        filename = file_utils.new_filename(self.filename)
-        workbook.save(filename)
+            worksheet.autofit()
+
+        workbook.close()
