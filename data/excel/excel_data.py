@@ -41,7 +41,7 @@ class ExcelData(BaseData):
                     self.add_data(sheet.name, new_values)
 
     def write(self):
-        workbook = xlwt.Workbook()
+        workbook = xlwt.Workbook(encoding='utf-8')
 
         style1 = xlwt.easyxf('font: bold True;'
                              'pattern: pattern solid, fore_colour gray25;'
@@ -58,7 +58,7 @@ class ExcelData(BaseData):
                              'left thin, right thin, top thin, bottom thin;')
 
         for data_key in self.get_data_keys():
-            sheet = workbook.add_sheet(data_key)
+            sheet = workbook.add_sheet(data_key, cell_overwrite_ok=True)
             sheet.show_grid = False
             sheet.set_panes_frozen(True)
             sheet.set_horz_split_pos(1)
@@ -66,16 +66,16 @@ class ExcelData(BaseData):
             row_idx = 0
             for col_idx, value in enumerate(self.get_columns(data_key)):
                 sheet.write(row_idx, col_idx, value, style1)
-                sheet.row(row_idx).height_mismatch = True
                 sheet.row(row_idx).height = 400
+                sheet.col(col_idx).width = 0# excel_utils.fit_width(value, True)
 
             data = self.get_data(data_key)
             for row_data in data:
                 row_idx += 1
                 for col_idx, value in enumerate(row_data):
                     sheet.write(row_idx, col_idx, value, style2)
-                    sheet.row(row_idx).height_mismatch = True
                     sheet.row(row_idx).height = 400
+                    sheet.col(col_idx).width = 0#excel_utils.fit_width(value)
 
         filename = file_utils.new_filename(self.filename)
         workbook.save(filename)
