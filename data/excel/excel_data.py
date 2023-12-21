@@ -44,7 +44,7 @@ class ExcelData(BaseData):
         filename = file_utils.new_filename(self.filename)
         workbook = xlsxwriter.Workbook(filename)
 
-        cell_format1 = workbook.add_format({
+        format_header = workbook.add_format({
             'bold': True,
             'font_color': '#FFFFFF',
             'bg_color': '#404040',
@@ -58,7 +58,7 @@ class ExcelData(BaseData):
             'right_color': '#666666'
         })
 
-        cell_format2 = workbook.add_format({
+        format_default = workbook.add_format({
             'bold': False,
             'font_color': '#000000',
             'bg_color': '#FFFFFF',
@@ -69,7 +69,54 @@ class ExcelData(BaseData):
             'top_color': '#666666',
             'bottom_color': '#666666',
             'left_color': '#666666',
-            'right_color': '#666666'
+            'right_color': '#666666',
+            'align': 'left'
+        })
+
+        format_date = workbook.add_format({
+            'bold': False,
+            'font_color': '#000000',
+            'bg_color': '#FFFFFF',
+            'top': 1,
+            'bottom': 1,
+            'left': 1,
+            'right': 1,
+            'top_color': '#666666',
+            'bottom_color': '#666666',
+            'left_color': '#666666',
+            'right_color': '#666666',
+            'num_format': 'yyyy-mm-dd',
+            'align': 'center'
+        })
+
+        format_float = workbook.add_format({
+            'bold': False,
+            'font_color': '#000000',
+            'bg_color': '#FFFFFF',
+            'top': 1,
+            'bottom': 1,
+            'left': 1,
+            'right': 1,
+            'top_color': '#666666',
+            'bottom_color': '#666666',
+            'left_color': '#666666',
+            'right_color': '#666666',
+            'align': 'right'
+        })
+
+        format_integer = workbook.add_format({
+            'bold': False,
+            'font_color': '#000000',
+            'bg_color': '#FFFFFF',
+            'top': 1,
+            'bottom': 1,
+            'left': 1,
+            'right': 1,
+            'top_color': '#666666',
+            'bottom_color': '#666666',
+            'left_color': '#666666',
+            'right_color': '#666666',
+            'align': 'right'
         })
 
         for data_key in self.get_data_keys():
@@ -77,15 +124,29 @@ class ExcelData(BaseData):
             worksheet.freeze_panes(1, 0)
             worksheet.hide_gridlines(2)
 
+            column_names = []
+
             row_idx = 0
             for col_idx, value in enumerate(self.get_columns(data_key)):
-                worksheet.write(row_idx, col_idx, value, cell_format1)
+                column_names += [value]
+                worksheet.write(row_idx, col_idx, value, format_header)
 
             data = self.get_data(data_key)
             for row_data in data:
                 row_idx += 1
                 for col_idx, value in enumerate(row_data):
-                    worksheet.write(row_idx, col_idx, value, cell_format2)
+                    cell_format = format_default
+                    if col_idx < len(column_names):
+                        column_name = column_names[col_idx]
+                        column_info = self.get_column_info(data_key, column_name)
+                        if column_info['type'] == 'date':
+                            cell_format = format_date
+                        elif column_info['type'] == 'float':
+                            cell_format = format_float
+                        elif column_info['type'] == 'integer':
+                            cell_format = format_integer
+
+                    worksheet.write(row_idx, col_idx, value, cell_format)
 
             worksheet.autofit()
 
