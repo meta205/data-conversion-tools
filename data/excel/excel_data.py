@@ -4,6 +4,7 @@ from data.base_data import BaseData
 from data.util import file_utils
 from . import excel_utils
 
+import copy
 import os
 import xlrd
 import xlsxwriter
@@ -55,10 +56,11 @@ class ExcelData(BaseData):
             'top_color': '#666666',
             'bottom_color': '#666666',
             'left_color': '#666666',
-            'right_color': '#666666'
+            'right_color': '#666666',
+            'align': 'left'
         })
 
-        format_default = workbook.add_format({
+        default_dict = {
             'bold': False,
             'font_color': '#000000',
             'bg_color': '#FFFFFF',
@@ -71,53 +73,22 @@ class ExcelData(BaseData):
             'left_color': '#666666',
             'right_color': '#666666',
             'align': 'left'
-        })
+        }
 
-        format_date = workbook.add_format({
-            'bold': False,
-            'font_color': '#000000',
-            'bg_color': '#FFFFFF',
-            'top': 1,
-            'bottom': 1,
-            'left': 1,
-            'right': 1,
-            'top_color': '#666666',
-            'bottom_color': '#666666',
-            'left_color': '#666666',
-            'right_color': '#666666',
-            'num_format': 'yyyy-mm-dd',
-            'align': 'center'
-        })
+        date_dict = copy.deepcopy(default_dict)
+        date_dict['num_format'] = 'yyyy-mm-dd'
+        date_dict['align'] = 'center'
 
-        format_float = workbook.add_format({
-            'bold': False,
-            'font_color': '#000000',
-            'bg_color': '#FFFFFF',
-            'top': 1,
-            'bottom': 1,
-            'left': 1,
-            'right': 1,
-            'top_color': '#666666',
-            'bottom_color': '#666666',
-            'left_color': '#666666',
-            'right_color': '#666666',
-            'align': 'right'
-        })
+        float_dict = copy.deepcopy(default_dict)
+        float_dict['align'] = 'right'
 
-        format_integer = workbook.add_format({
-            'bold': False,
-            'font_color': '#000000',
-            'bg_color': '#FFFFFF',
-            'top': 1,
-            'bottom': 1,
-            'left': 1,
-            'right': 1,
-            'top_color': '#666666',
-            'bottom_color': '#666666',
-            'left_color': '#666666',
-            'right_color': '#666666',
-            'align': 'right'
-        })
+        integer_dict = copy.deepcopy(default_dict)
+        integer_dict['align'] = 'right'
+
+        format_default = workbook.add_format(default_dict)
+        format_date = workbook.add_format(date_dict)
+        format_float = workbook.add_format(float_dict)
+        format_integer = workbook.add_format(integer_dict)
 
         for data_key in self.get_data_keys():
             worksheet = workbook.add_worksheet(data_key)
