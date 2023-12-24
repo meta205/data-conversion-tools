@@ -23,7 +23,7 @@ class ExcelData(BaseData):
             for row_idx in range(sheet.nrows):
                 if row_idx == 0:
                     columns = sheet.row_values(row_idx)
-                    self.set_columns(sheet.name, columns)
+                    self.set_column_index(sheet.name, columns)
                 else:
                     old_values = sheet.row_values(row_idx)
                     new_values = []

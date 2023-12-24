@@ -10,6 +10,7 @@ import pandas as pd
 
 class BaseData(object):
     def __init__(self, schema_dir):
+        self.columns_index_dict = {}
         self.columns_dict = {}
         self.data_dict = {}
 
@@ -23,8 +24,10 @@ class BaseData(object):
     def get_column_info(self, object_name, column_name):
         return self.base_schema.get_column_info(object_name, column_name)
 
-    def set_columns(self, data_key, columns):
-        self.columns_dict[data_key] = columns
+    def set_column_index(self, data_key, columns):
+        schema_columns = self.base_schema.get_columns(data_key)
+        self.columns_index_dict[data_key] = [columns.index(c) if c in columns else -1 for c in schema_columns]
+        self.columns_dict[data_key] = schema_columns
 
     def get_data_keys(self):
         return sorted(list(self.columns_dict.keys()))
@@ -35,10 +38,22 @@ class BaseData(object):
         return []
 
     def add_data(self, data_key, row_data):
+        new_row_data = row_data
+        if data_key in self.columns_index_dict:
+            columns = self.columns_dict[data_key]
+            column_indexes = self.columns_index_dict[data_key]
+
+            new_row_data = []
+            for idx, column_index in enumerate(column_indexes):
+                if column_index < 0:
+                    new_row_data += [self.base_schema.get_default_value(data_key, columns[idx])]
+                else:
+                    new_row_data += [row_data[column_index]]
+
         if data_key not in self.data_dict:
-            self.data_dict[data_key] = [row_data]
+            self.data_dict[data_key] = [new_row_data]
         else:
-            self.data_dict[data_key] += [row_data]
+            self.data_dict[data_key] += [new_row_data]
 
     def select(self, query):
         final_df = None
