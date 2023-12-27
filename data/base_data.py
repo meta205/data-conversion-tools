@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from .base_schema import BaseSchema
+from data.util import data_utils
 from data.util import query_utils
 
 import csv
@@ -26,6 +27,11 @@ class BaseData(object):
 
     def set_column_index(self, data_key, columns):
         schema_columns = self.base_schema.get_columns(data_key)
+        if len(schema_columns) == 0:
+            self.columns_index_dict[data_key] = list(range(len(columns)))
+            self.columns_dict[data_key] = columns
+            return
+
         self.columns_index_dict[data_key] = [columns.index(c) if c in columns else -1 for c in schema_columns]
         self.columns_dict[data_key] = schema_columns
 
@@ -113,3 +119,30 @@ class BaseData(object):
                 writer.writerow(values)
 
             csv_file.close()
+
+
+    def to_sql(self, sql_dir=None):
+        if not os.path.exists(sql_dir):
+            os.mkdir(sql_dir)
+
+        for key in self.get_data_keys():
+            if key not in self.data_dict:
+                continue
+
+            columns = self.get_columns(key)
+            if columns is None:
+                continue
+
+            data = self.data_dict[key]
+            if len(data) == 0:
+                continue
+
+            sql_file = open(os.path.join(sql_dir, '%s.sql' % key), 'w', newline='')
+
+            for row in data:
+                new_columns = ', '.join(columns)
+                new_values = ', '.join([data_utils.to_string(columns[idx], col) for idx, col in enumerate(row)])
+
+                sql_file.write(f'INSERT INTO {key.upper()} ({new_columns}) VALUES ({new_values});\n')
+
+            sql_file.close()

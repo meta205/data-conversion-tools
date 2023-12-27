@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 
+from data.util import data_utils
+
 import datetime
 import xlrd
 

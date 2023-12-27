@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from data.base_data import BaseData
+from data.util import data_utils
 from data.util import file_utils
 from . import excel_utils
 
@@ -34,7 +35,9 @@ class ExcelData(BaseData):
 
                         if columns is not None:
                             column_info = self.get_column_info(sheet.name, columns[col_idx])
-                            if column_info is not None:
+                            if column_info is None:
+                                cell_type = data_utils.get_data_type(columns[col_idx], old_values[col_idx])
+                            else:
                                 cell_type = excel_utils.to_cell_type(column_info['type'])
 
                         new_values += [excel_utils.to_value(sheet, cell_type, old_values[col_idx])]
@@ -91,6 +94,10 @@ class ExcelData(BaseData):
         format_integer = workbook.add_format(integer_dict)
 
         for data_key in self.get_data_keys():
+            data = self.get_data(data_key)
+            if len(data) == 0:
+                continue
+
             worksheet = workbook.add_worksheet(data_key)
             worksheet.freeze_panes(1, 0)
             worksheet.hide_gridlines(2)
@@ -102,7 +109,6 @@ class ExcelData(BaseData):
                 column_names += [value]
                 worksheet.write(row_idx, col_idx, value, format_header)
 
-            data = self.get_data(data_key)
             for row_data in data:
                 row_idx += 1
                 for col_idx, value in enumerate(row_data):
@@ -110,11 +116,18 @@ class ExcelData(BaseData):
                     if col_idx < len(column_names):
                         column_name = column_names[col_idx]
                         column_info = self.get_column_info(data_key, column_name)
-                        if column_info['type'] == 'date':
+
+                        column_type = 'string'
+                        if column_info is None:
+                            column_type = data_utils.get_data_type(column_name, value)
+                        else:
+                            column_type = column_info['type']
+
+                        if column_type == 'date' or column_type == 'timestamp':
                             cell_format = format_date
-                        elif column_info['type'] == 'float':
+                        elif column_type == 'float':
                             cell_format = format_float
-                        elif column_info['type'] == 'integer':
+                        elif column_type == 'integer':
                             cell_format = format_integer
 
                     worksheet.write(row_idx, col_idx, value, cell_format)

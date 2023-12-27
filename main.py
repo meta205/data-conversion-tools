@@ -36,6 +36,17 @@ def newfile(source, path):
         excel_data.write()
 
 
+@conversion.command()
+@click.option('--sql_dir')
+@click.option('--path')
+@click.option('--source', default='excel', type=click.Choice(['excel', 'json'], case_sensitive=False))
+def tosql(source, path, sql_dir):
+    if source == 'excel':
+        excel_data = ExcelData(path)
+        excel_data.read()
+        excel_data.to_sql(sql_dir)
+
+
 cli = click.CommandCollection(sources=[data, conversion])
 
 if __name__ == '__main__':
