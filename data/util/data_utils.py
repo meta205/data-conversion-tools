@@ -55,6 +55,18 @@ def get_data_type(column, value):
     if column_name.endswith('YN'):
         return 'boolean'
 
+    if column_name.endswith('TM') or column_name.endswith('SEQ') or column_name.endswith('CNT'):
+        return 'integer'
+
+    if column_name.endswith('PRIORITY') or column_name.endswith('PERIOD'):
+        return 'integer'
+
+    if column_name.endswith('EFFICIENCY') or column_name.endswith('QTY'):
+        return 'number'
+
+    if column_name.endswith('MIN') or column_name.endswith('MAX') or column_name.endswith('MULTIPLR'):
+        return 'number'
+
     str_value = str(value)
     if is_integer(str_value):
         return 'integer'
@@ -71,15 +83,15 @@ def get_data_type(column, value):
 def to_string(column, value):
     data_type = get_data_type(column, value)
     if data_type == 'integer' or data_type == 'number':
+        if len(str(value)) == 0:
+            return '0' if data_type == 'integer' else '0.0'
+
         return str(value)
 
     if data_type == 'date' or data_type == 'timestamp':
-        new_value = str(value)
-        if is_number(new_value):
+        if is_number(str(value)):
             tz = timezone(timedelta(hours=9))
             new_value = (float(value) - 25569) * 86400.0
             return '\'%s\'' % str(datetime.fromtimestamp(new_value, timezone.utc).strftime('%Y-%m-%d %H:%M:%S'))
-
-        return new_value
 
     return '\'%s\'' % value
