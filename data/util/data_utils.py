@@ -94,4 +94,7 @@ def to_string(column, value):
             new_value = (float(value) - 25569) * 86400.0
             return '\'%s\'' % str(datetime.fromtimestamp(new_value, timezone.utc).strftime('%Y-%m-%d %H:%M:%S'))
 
+        if len(str(value)) == 0:
+            return 'NULL'
+
     return '\'%s\'' % value
