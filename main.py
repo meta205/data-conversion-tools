@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from data.excel.excel_data import ExcelData
+from data.util import file_utils
 
 import click
 
@@ -31,9 +32,16 @@ def conversion():
 @click.option('--source', default='excel', type=click.Choice(['excel', 'json'], case_sensitive=False))
 def newfile(source, path):
     if source == 'excel':
-        excel_data = ExcelData(path)
-        excel_data.read()
-        excel_data.write()
+        if file_utils.is_dir(path):
+            file_paths = file_utils.find_files(path, None, 'xls')
+            for file_path in file_paths:
+                excel_data = ExcelData(file_path)
+                excel_data.read()
+                excel_data.write()
+        else:
+            excel_data = ExcelData(path)
+            excel_data.read()
+            excel_data.write()
 
 
 @conversion.command()
