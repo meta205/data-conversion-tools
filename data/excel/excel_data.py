@@ -40,7 +40,7 @@ class ExcelData(BaseData):
             for row_idx in range(sheet.nrows):
                 if row_idx == 0:
                     columns = sheet.row_values(row_idx)
-                    columns = [schema.get_replace_column_name(object_name, c) for c in columns]
+                    columns = [schema.get_replace_column_name(sheet.name, c) for c in columns]
                     self.set_column_index(object_name, columns)
                 else:
                     old_values = sheet.row_values(row_idx)
