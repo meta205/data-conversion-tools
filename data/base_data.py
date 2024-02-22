@@ -17,6 +17,9 @@ class BaseData(object):
 
         self.base_schema = BaseSchema(schema_dir)
 
+    def get_schema(self):
+        return self.base_schema
+
     def get_columns(self, data_key):
         if data_key in self.columns_dict:
             return self.columns_dict[data_key]
@@ -119,7 +122,6 @@ class BaseData(object):
                 writer.writerow(values)
 
             csv_file.close()
-
 
     def to_sql(self, sql_dir=None):
         if not os.path.exists(sql_dir):

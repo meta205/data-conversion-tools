@@ -1,0 +1,6178 @@
+{
+  "replace-names": {
+    "TB_FP_ITEM.SOL": "TB_FP_ITEM.NPI",
+    "TB_FP_SALES_ORDER": "TB_FP_DEMAND",
+    "TB_FP_SALES_ORDER.SO_CD": "TB_FP_DEMAND.DMND_CD",
+    "TB_FP_SALES_ORDER.SO_GRP_CD": "TB_FP_DEMAND.DMND_GRP_CD",
+    "TB_FP_SALES_ORDER_ALT_RESRC_POLICY": "TB_FP_DMND_ALT_RESRC_POLICY",
+    "TB_FP_SALES_ORDER_ALT_RESRC_POLICY.SO_CD": "TB_FP_DMND_ALT_RESRC_POLICY.DMND_CD",
+    "TB_FP_SALES_ORDER_BATCH_GRP": "TB_FP_DMND_BATCH_GRP",
+    "TB_FP_SALES_ORDER_BATCH_GRP.SO_CD": "TB_FP_DMND_BATCH_GRP.DMND_CD",
+    "TB_FP_SALES_ORDER_BOM_ROUTING": "TB_FP_DMND_BOM_ROUTING",
+    "TB_FP_SALES_ORDER_BOM_ROUTING.SO_CD": "TB_FP_DMND_BOM_ROUTING.DMND_CD",
+    "TB_FP_SALES_ORDER_BOR": "TB_FP_DMND_BOR",
+    "TB_FP_SALES_ORDER_BOR.SO_CD": "TB_FP_DMND_BOR.DMND_CD",
+    "TB_FP_SALES_ORDER_BOR_EFFICIENCY": "TB_FP_DMND_BOR_EFFICIENCY",
+    "TB_FP_SALES_ORDER_BOR_EFFICIENCY.SO_CD": "TB_FP_DMND_BOR_EFFICIENCY.DMND_CD",
+    "TB_FP_SALES_ORDER_BOR_PRIORITY": "TB_FP_DMND_BOR_PRIORITY",
+    "TB_FP_SALES_ORDER_BOR_PRIORITY.SO_CD": "TB_FP_DMND_BOR_PRIORITY.DMND_CD",
+    "TB_FP_SALES_ORDER_INTER_BOR_TIME": "TB_FP_DMND_INTER_BOR_TIME",
+    "TB_FP_SALES_ORDER_INTER_BOR_TIME.SO_CD": "TB_FP_DMND_INTER_BOR_TIME.DMND_CD",
+    "TB_FP_SALES_ORDER_INV_USAGE_RULE": "TB_FP_DMND_INV_USAGE_RULE",
+    "TB_FP_SALES_ORDER_INV_USAGE_RULE.SO_CD": "TB_FP_DMND_INV_USAGE_RULE.DMND_CD",
+    "TB_FP_SALES_ORDER_ORDER_CONNECTION": "TB_FP_DMND_ORDER_CONNECTION",
+    "TB_FP_SALES_ORDER_ORDER_CONNECTION.SO_CD": "TB_FP_DMND_ORDER_CONNECTION.DMND_CD",
+    "TB_FP_SALES_ORDER_PRODTN_RULE": "TB_FP_DMND_PRODTN_RULE",
+    "TB_FP_SALES_ORDER_PRODTN_RULE.SO_CD": "TB_FP_DMND_PRODTN_RULE.DMND_CD",
+    "TB_FP_SALES_ORDER_RESRC_ASSIGN": "TB_FP_DMND_RESRC_ASSIGN",
+    "TB_FP_SALES_ORDER_RESRC_ASSIGN.SO_CD": "TB_FP_DMND_RESRC_ASSIGN.DMND_CD",
+    "TB_FP_SALES_ORDER_ROUTE_ASSIGN": "TB_FP_DMND_ROUTE_ASSIGN",
+    "TB_FP_SALES_ORDER_ROUTE_ASSIGN.SO_CD": "TB_FP_DMND_ROUTE_ASSIGN.DMND_CD",
+    "TB_FP_SALES_ORDER_ROUTE_GRP": "TB_FP_DMND_ROUTE_GRP",
+    "TB_FP_SALES_ORDER_ROUTE_GRP.SO_CD": "TB_FP_DMND_ROUTE_GRP.DMND_CD",
+    "TB_FP_SALES_ORDER_ROUTE_PST": "TB_FP_DMND_ROUTE_PST",
+    "TB_FP_SALES_ORDER_ROUTE_PST.SO_CD": "TB_FP_DMND_ROUTE_PST.DMND_CD",
+    "TB_FP_SALES_ORDER_STOCK_POLICY": "TB_FP_DMND_STOCK_POLICY",
+    "TB_FP_SALES_ORDER_STOCK_POLICY.SO_CD": "TB_FP_DMND_STOCK_POLICY.DMND_CD",
+    "TB_FP_SALES_ORDER_TAT": "TB_FP_DMND_TAT",
+    "TB_FP_SALES_ORDER_TAT.SO_CD": "TB_FP_DMND_TAT.DMND_CD",
+    "TB_FP_SALES_ORDER_TERMINAL_INV": "TB_FP_DMND_TERMINAL_INV",
+    "TB_FP_SALES_ORDER_TERMINAL_INV.SO_CD": "TB_FP_DMND_TERMINAL_INV.DMND_CD"
+  },
+  "objects": {
+    "TB_FP_CORPORATION": {
+      "category": "Organization",
+      "description": "Define the first step information to construct the company structure",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "CORPORATION_CD",
+          "type": "string"
+        },
+        {
+          "name": "CORPORATION_NM",
+          "type": "string"
+        },
+        {
+          "name": "DESC_TXT",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_SITE": {
+      "category": "Organization",
+      "description": "Define the two-level information for constructing the company structure",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "SITE_CD",
+          "type": "string"
+        },
+        {
+          "name": "SITE_NM",
+          "type": "string"
+        },
+        {
+          "name": "CORPORATION_CD",
+          "type": "string"
+        },
+        {
+          "name": "DESC_TXT",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_PLANT": {
+      "category": "Organization",
+      "description": "Define the three-step information for constructing the company structure",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "PLANT_CD",
+          "type": "string"
+        },
+        {
+          "name": "PLANT_NM",
+          "type": "string"
+        },
+        {
+          "name": "SITE_CD",
+          "type": "string"
+        },
+        {
+          "name": "DESC_TXT",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_STAGE": {
+      "category": "Organization",
+      "description": "Define the four steps information for constructing the company structure",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "STAGE_CD",
+          "type": "string"
+        },
+        {
+          "name": "STAGE_NM",
+          "type": "string"
+        },
+        {
+          "name": "PLANT_CD",
+          "type": "string"
+        },
+        {
+          "name": "DESC_TXT",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_CUSTOMER": {
+      "category": "Order",
+      "description": "Define customer information",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "CUSTOMER_CD",
+          "type": "string"
+        },
+        {
+          "name": "CUSTOMER_NM",
+          "type": "string"
+        },
+        {
+          "name": "CATEGORY",
+          "type": "string"
+        },
+        {
+          "name": "PRIORITY",
+          "type": "integer"
+        },
+        {
+          "name": "DESC_TXT",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_PERIOD": {
+      "category": "Calendar",
+      "description": "Define period information",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "PERIOD_CD",
+          "type": "string"
+        },
+        {
+          "name": "START_TS",
+          "type": "timestamp"
+        },
+        {
+          "name": "END_TS",
+          "type": "timestamp"
+        },
+        {
+          "name": "CYCLE_TP_CD",
+          "type": "string"
+        },
+        {
+          "name": "DESC_TXT",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_CALENDAR_MST": {
+      "category": "Calendar",
+      "description": "Defines the calendar to be applied to the resource",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "CALENDAR_CD",
+          "type": "string"
+        },
+        {
+          "name": "CALENDAR_NM",
+          "type": "string"
+        },
+        {
+          "name": "DESC_TXT",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_CALENDAR_DTL": {
+      "category": "Calendar",
+      "description": "Define non-working/working hours information",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "CALENDAR_CD",
+          "type": "string"
+        },
+        {
+          "name": "PERIOD_CD",
+          "type": "string"
+        },
+        {
+          "name": "CALENDAR_TP_CD",
+          "type": "string",
+          "default": "D"
+        },
+        {
+          "name": "PRIORITY",
+          "type": "integer",
+          "default": 1
+        },
+        {
+          "name": "START_DT",
+          "type": "date"
+        },
+        {
+          "name": "END_DT",
+          "type": "date"
+        },
+        {
+          "name": "DISPLAY_COLOR",
+          "type": "string"
+        },
+        {
+          "name": "DESC_TXT",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_ROUTE_GRP": {
+      "category": "BOM",
+      "description": "Define Route Group information",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "ROUTE_GRP_CD",
+          "type": "string"
+        },
+        {
+          "name": "ROUTE_GRP_NM",
+          "type": "string"
+        },
+        {
+          "name": "DESC_TXT",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_ROUTE": {
+      "category": "BOM",
+      "description": "Define the information of the route",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "ROUTE_CD",
+          "type": "string"
+        },
+        {
+          "name": "ROUTE_NM",
+          "type": "string"
+        },
+        {
+          "name": "ROUTE_GRP_CD",
+          "type": "string"
+        },
+        {
+          "name": "STAGE_CD",
+          "type": "string"
+        },
+        {
+          "name": "CANDIDATE_PERIOD_CNT",
+          "type": "integer",
+          "default": 1
+        },
+        {
+          "name": "DIVIDE_TP_CD",
+          "type": "string",
+          "default": "Y"
+        },
+        {
+          "name": "BATCH_ROUTE_YN",
+          "type": "boolean",
+          "default": false
+        },
+        {
+          "name": "LAZY_JC_TM_YN",
+          "type": "boolean",
+          "default": false
+        },
+        {
+          "name": "LOT_SIZE_MIN",
+          "type": "float"
+        },
+        {
+          "name": "LOT_SIZE_MAX",
+          "type": "float"
+        },
+        {
+          "name": "LOT_SIZE_MULTIPLR",
+          "type": "float"
+        },
+        {
+          "name": "DESC_TXT",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_RESOURCE": {
+      "category": "BOR",
+      "description": "Defines the basic information of a resource that describes facilities, manpower, etc",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "RESOURCE_CD",
+          "type": "string"
+        },
+        {
+          "name": "RESOURCE_NM",
+          "type": "string"
+        },
+        {
+          "name": "STAGE_CD",
+          "type": "string"
+        },
+        {
+          "name": "CALENDAR_CD",
+          "type": "string"
+        },
+        {
+          "name": "DISPLAY_COLOR",
+          "type": "string",
+          "default": "1"
+        },
+        {
+          "name": "DISPLAY_SEQ",
+          "type": "integer",
+          "default": 1
+        },
+        {
+          "name": "LOAD_YN",
+          "type": "boolean",
+          "default": true
+        },
+        {
+          "name": "TOOL_RESOURCE_YN",
+          "type": "boolean",
+          "default": false
+        },
+        {
+          "name": "TOOL_CNT",
+          "type": "integer",
+          "default": 1
+        },
+        {
+          "name": "FIFO_TP_CD",
+          "type": "string"
+        },
+        {
+          "name": "JC_TM",
+          "type": "float",
+          "default": 0
+        },
+        {
+          "name": "ROUTE_JC_TM",
+          "type": "float",
+          "default": 0
+        },
+        {
+          "name": "ROUTE_GRP_JC_TM",
+          "type": "float",
+          "default": 0
+        },
+        {
+          "name": "JC_DIVIDE_TP_CD",
+          "type": "string",
+          "default": "Y"
+        },
+        {
+          "name": "TIME_UOM",
+          "type": "string"
+        },
+        {
+          "name": "VIRTUAL_RESOURCE_CNT",
+          "type": "integer",
+          "default": 1
+        },
+        {
+          "name": "BATCH_RESOURCE_YN",
+          "type": "boolean",
+          "default": false
+        },
+        {
+          "name": "PLAN_LVL_TP_CD",
+          "type": "string",
+          "default": "A"
+        },
+        {
+          "name": "DESC_TXT",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_PRODTN_LIMIT": {
+      "category": "BOM",
+      "description": "Maximum yield defines the maximum yield information per group",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "PRODTN_LIMIT_CD",
+          "type": "string"
+        },
+        {
+          "name": "PERIOD_CD",
+          "type": "string"
+        },
+        {
+          "name": "LIMIT_TP_CD",
+          "type": "string",
+          "default": "Q"
+        },
+        {
+          "name": "LIMIT_VAL",
+          "type": "float"
+        },
+        {
+          "name": "RESOURCE_CD",
+          "type": "string"
+        },
+        {
+          "name": "PRIORITY",
+          "type": "integer"
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_ITEM_GRP": {
+      "category": "BOM",
+      "description": "Define item group information",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "ITEM_GRP_CD",
+          "type": "string"
+        },
+        {
+          "name": "ITEM_GRP_NM",
+          "type": "string"
+        },
+        {
+          "name": "PRODTN_LIMIT_CD",
+          "type": "string"
+        },
+        {
+          "name": "DESC_TXT",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_ITEM_PARENT_GRP": {
+      "category": "BOM",
+      "description": "Define item parent group information",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "ITEM_PARENT_GRP_CD",
+          "type": "string"
+        },
+        {
+          "name": "ITEM_PARENT_GRP_NM",
+          "type": "string"
+        },
+        {
+          "name": "DESC_TXT",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_ITEM": {
+      "category": "BOM",
+      "description": "It defines standard information for all items such as raw materials (subsidiary materials), semi-finished products (intermediate goods), and finished products",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "ITEM_CD",
+          "type": "string"
+        },
+        {
+          "name": "ITEM_NM",
+          "type": "string"
+        },
+        {
+          "name": "ITEM_PARENT_GRP_CD",
+          "type": "string"
+        },
+        {
+          "name": "ITEM_GRP_CD",
+          "type": "string"
+        },
+        {
+          "name": "ITEM_CLASS_CD",
+          "type": "string",
+          "default": "M"
+        },
+        {
+          "name": "ITEM_UOM",
+          "type": "string"
+        },
+        {
+          "name": "PRIORITY",
+          "type": "integer",
+          "default": 1
+        },
+        {
+          "name": "WO_SIZE_MIN",
+          "type": "float",
+          "default": 1
+        },
+        {
+          "name": "WO_SIZE_MAX",
+          "type": "float",
+          "default": 1
+        },
+        {
+          "name": "WO_SIZE_MULTIPLR",
+          "type": "float",
+          "default": 0
+        },
+        {
+          "name": "BASE_LT",
+          "type": "integer",
+          "default": 1
+        },
+        {
+          "name": "NPI",
+          "type": "date"
+        },
+        {
+          "name": "EOL",
+          "type": "date"
+        },
+        {
+          "name": "PRODTN_LIMIT_CD",
+          "type": "string"
+        },
+        {
+          "name": "DISPLAY_COLOR",
+          "type": "string",
+          "default": "1"
+        },
+        {
+          "name": "DISPLAY_SEQ",
+          "type": "integer",
+          "default": 2147483647
+        },
+        {
+          "name": "DESC_TXT",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_INVENTORY": {
+      "category": "BOM",
+      "description": "Define inventory information",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "INVENTORY_CD",
+          "type": "string"
+        },
+        {
+          "name": "INVENTORY_NM",
+          "type": "string"
+        },
+        {
+          "name": "INVENTORY_GRP_CD",
+          "type": "string"
+        },
+        {
+          "name": "STAGE_CD",
+          "type": "string"
+        },
+        {
+          "name": "ITEM_CD",
+          "type": "string"
+        },
+        {
+          "name": "ITEM_TP_CD",
+          "type": "string",
+          "default": "M"
+        },
+        {
+          "name": "INV_KEEPING_TM",
+          "type": "float"
+        },
+        {
+          "name": "INV_FENCE_TM",
+          "type": "float"
+        },
+        {
+          "name": "TIME_UOM",
+          "type": "string"
+        },
+        {
+          "name": "STOCK_SPLIT_COMBINATION",
+          "type": "string"
+        },
+        {
+          "name": "ALT_ROUTE_POLICY",
+          "type": "string"
+        },
+        {
+          "name": "STOCK_SELECT_TP_CD",
+          "type": "string",
+          "default": "SC"
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_RESRC_VIRTL_CNT": {
+      "category": "BOR",
+      "description": "Define resource capacity by time period",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "RESOURCE_CD",
+          "type": "string"
+        },
+        {
+          "name": "PERIOD_CD",
+          "type": "string"
+        },
+        {
+          "name": "VIRTUAL_RESOURCE_CNT",
+          "type": "integer",
+          "default": 1
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_RESRC_SELECT_RULE": {
+      "category": "BOR",
+      "description": "Defines the criteria for selecting a job from a resource",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "RESOURCE_CD",
+          "type": "string"
+        },
+        {
+          "name": "SELECT_RULE_CD",
+          "type": "string"
+        },
+        {
+          "name": "PRIORITY",
+          "type": "integer"
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_BATCH_RESRC": {
+      "category": "BOR",
+      "description": "Defines batch information of Batch Resource",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "RESOURCE_CD",
+          "type": "string"
+        },
+        {
+          "name": "DELAY_TM",
+          "type": "float"
+        },
+        {
+          "name": "TIME_UOM",
+          "type": "string"
+        },
+        {
+          "name": "DELAY_TP_CD",
+          "type": "string",
+          "default": "S"
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_BATCH_RESRC_INV": {
+      "category": "BOR",
+      "description": "It defines batch resources and batch production information for production products",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "INVENTORY_CD",
+          "type": "string"
+        },
+        {
+          "name": "RESOURCE_CD",
+          "type": "string"
+        },
+        {
+          "name": "ROUTE_CD",
+          "type": "string",
+          "default": "ALL"
+        },
+        {
+          "name": "BATCH_SIZE",
+          "type": "integer"
+        },
+        {
+          "name": "BATCH_CD",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_TOOL_SUPPLY": {
+      "category": "BOR",
+      "description": "Define the supply/discard quantity of the tool resource based on the initial quantity",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "TOOL_RESOURCE_CD",
+          "type": "string"
+        },
+        {
+          "name": "SUPPLY_TS",
+          "type": "timestamp"
+        },
+        {
+          "name": "SUPPLY_CNT",
+          "type": "integer"
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_BOR": {
+      "category": "BOR",
+      "description": "Defines resource information available in the process",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "ROUTE_CD",
+          "type": "string"
+        },
+        {
+          "name": "RESOURCE_CD",
+          "type": "string"
+        },
+        {
+          "name": "ALT_RESOURCE_PRIORITY",
+          "type": "integer",
+          "default": 1
+        },
+        {
+          "name": "EFFICIENCY",
+          "type": "float",
+          "default": 1
+        },
+        {
+          "name": "QUEUE_TM",
+          "type": "float",
+          "default": 0
+        },
+        {
+          "name": "SETUP_TM",
+          "type": "float",
+          "default": 0
+        },
+        {
+          "name": "PROCESS_TM",
+          "type": "float",
+          "default": 0
+        },
+        {
+          "name": "WAIT_TM",
+          "type": "float",
+          "default": 0
+        },
+        {
+          "name": "MOVE_TM",
+          "type": "float",
+          "default": 0
+        },
+        {
+          "name": "TRANSFER_BATCH_TM",
+          "type": "float",
+          "default": 0
+        },
+        {
+          "name": "STD_PROCESS_TM",
+          "type": "float",
+          "default": 0
+        },
+        {
+          "name": "TIME_UOM",
+          "type": "string"
+        },
+        {
+          "name": "PROCESS_TM_TP_CD",
+          "type": "string",
+          "default": "N"
+        },
+        {
+          "name": "LOT_SIZE_MIN",
+          "type": "float",
+          "default": 0
+        },
+        {
+          "name": "LOT_SIZE_MAX",
+          "type": "float",
+          "default": 0
+        },
+        {
+          "name": "LOT_SIZE_MULTIPLR",
+          "type": "float",
+          "default": 0
+        },
+        {
+          "name": "DIVIDE_TP_CD",
+          "type": "string"
+        },
+        {
+          "name": "DESC_TXT",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_BOR_AVAIL_TIME": {
+      "category": "BOR",
+      "description": "Defines the time available to start/end work in Route and Resource",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "ROUTE_CD",
+          "type": "string"
+        },
+        {
+          "name": "RESOURCE_CD",
+          "type": "string"
+        },
+        {
+          "name": "PERIOD_CD",
+          "type": "string"
+        },
+        {
+          "name": "AVAIL_TP_CD",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_BOR_CALENDAR": {
+      "category": "BOR",
+      "description": "Defines the available/unavailable time of the resource in the route",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "ROUTE_CD",
+          "type": "string"
+        },
+        {
+          "name": "RESOURCE_CD",
+          "type": "string"
+        },
+        {
+          "name": "PERIOD_CD",
+          "type": "string"
+        },
+        {
+          "name": "AVAIL_YN",
+          "type": "boolean",
+          "default": true
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_BOR_SET_MST": {
+      "category": "BOR",
+      "description": "Define a resource set information, including bor information",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "BOR_SET_CD",
+          "type": "string"
+        },
+        {
+          "name": "DESC_TXT",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_BOR_SET_DTL": {
+      "category": "BOR",
+      "description": "Define resource set information in detail, including bor information",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "BOR_SET_CD",
+          "type": "string"
+        },
+        {
+          "name": "ROUTE_CD",
+          "type": "string"
+        },
+        {
+          "name": "RESOURCE_CD",
+          "type": "string"
+        },
+        {
+          "name": "RESOURCE_TP_CD",
+          "type": "string",
+          "default": "M"
+        },
+        {
+          "name": "DESC_TXT",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_BOR_SET_TOOL": {
+      "category": "BOR",
+      "description": "Defines the relationship between a bor set and a tool resource",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "BOR_SET_CD",
+          "type": "string"
+        },
+        {
+          "name": "TOOL_RESOURCE_CD",
+          "type": "string"
+        },
+        {
+          "name": "USABLE_CNT",
+          "type": "integer"
+        },
+        {
+          "name": "DESC_TXT",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_BOR_TIME_CONSTRAINT": {
+      "category": "BOR",
+      "description": "Defines the start time constraint of the bill of resources",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "ROUTE_CD",
+          "type": "string"
+        },
+        {
+          "name": "RESOURCE_CD",
+          "type": "string"
+        },
+        {
+          "name": "CONSTRAINT_TM",
+          "type": "time"
+        },
+        {
+          "name": "CONSTRAINT_TM_TP_CD",
+          "type": "string"
+        },
+        {
+          "name": "CALENDAR_WORK_YN",
+          "type": "boolean",
+          "default": false
+        },
+        {
+          "name": "DESC_TXT",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_PRODTN_SEQ_MAP": {
+      "category": "BOM",
+      "description": "Define product production order rules by resource",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "RESOURCE_CD",
+          "type": "string"
+        },
+        {
+          "name": "PREV_ITEM_CD",
+          "type": "string"
+        },
+        {
+          "name": "NEXT_ITEM_CD",
+          "type": "string"
+        },
+        {
+          "name": "LV_VAL",
+          "type": "integer"
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_BYPRODUCT": {
+      "category": "BOM",
+      "description": "Defines the by-products generated in the route",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "ROUTE_CD",
+          "type": "string"
+        },
+        {
+          "name": "INVENTORY_CD",
+          "type": "string"
+        },
+        {
+          "name": "GRADE",
+          "type": "string"
+        },
+        {
+          "name": "OUTPUT_VAL",
+          "type": "float"
+        },
+        {
+          "name": "OUTPUT_VAL_TP_CD",
+          "type": "string",
+          "default": "R"
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_BOM_ROUTING": {
+      "category": "BOM",
+      "description": "Defines the correlation between item and route",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "ROUTE_CD",
+          "type": "string"
+        },
+        {
+          "name": "INVENTORY_CD",
+          "type": "string"
+        },
+        {
+          "name": "BOM_TP_CD",
+          "type": "string",
+          "default": "C"
+        },
+        {
+          "name": "BOM_RATE",
+          "type": "float",
+          "default": 1
+        },
+        {
+          "name": "PRIORITY",
+          "type": "integer"
+        },
+        {
+          "name": "INPUT_TP_CD",
+          "type": "string",
+          "default": "R"
+        },
+        {
+          "name": "ALT_VAL",
+          "type": "float",
+          "default": 0
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_ALT_MAT_GRP": {
+      "category": "BOM",
+      "description": "Define raw material group information for alternative material types",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "INVENTORY_CD ",
+          "type": "string"
+        },
+        {
+          "name": "ROUTE_CD",
+          "type": "string"
+        },
+        {
+          "name": "MAT_INVENTORY_GRP_CD",
+          "type": "string"
+        },
+        {
+          "name": "INPUT_INVENTORY_GRP_CD",
+          "type": "string"
+        },
+        {
+          "name": "INPUT_RATE",
+          "type": "float",
+          "default": 1
+        },
+        {
+          "name": "INPUT_PRIORITY",
+          "type": "integer",
+          "default": 1
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_STORAGE": {
+      "category": "BOM",
+      "description": "Defines the maximum storage capacity",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "STORAGE_CD ",
+          "type": "string"
+        },
+        {
+          "name": "STORAGE_NM",
+          "type": "string"
+        },
+        {
+          "name": "MAX_CAPACITY",
+          "type": "float"
+        },
+        {
+          "name": "DESC_TXT",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_STORAGE_INV_ASSIGN": {
+      "category": "BOM",
+      "description": "Defines what can go into a repository and the priority repositories from which it is selected",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "STORAGE_CD ",
+          "type": "string"
+        },
+        {
+          "name": "INVENTORY_CD",
+          "type": "string"
+        },
+        {
+          "name": "PRIORITY",
+          "type": "integer"
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_STORAGE_MIXABLE_ITEM": {
+      "category": "BOM",
+      "description": "Defines whether to store mixed items in a specific storage",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "STORAGE_CD ",
+          "type": "string"
+        },
+        {
+          "name": "INVENTORY_CD",
+          "type": "string"
+        },
+        {
+          "name": "MIXABLE_INVENTORY_CD",
+          "type": "string"
+        },
+        {
+          "name": "MIXABLE_YN",
+          "type": "boolean",
+          "default": false
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_BUNDLE": {
+      "category": "BOR",
+      "description": "Defines bundle information for route synchronous production",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "BUNDLE_CD ",
+          "type": "string"
+        },
+        {
+          "name": "BUNDLE_NM",
+          "type": "string"
+        },
+        {
+          "name": "DESC_TXT",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_BUNDLE_BOR": {
+      "category": "BOR",
+      "description": "Defines resource bundle information",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "BUNDLE_CD ",
+          "type": "string"
+        },
+        {
+          "name": "ROUTE_CD",
+          "type": "string"
+        },
+        {
+          "name": "RESOURCE_CD",
+          "type": "string"
+        },
+        {
+          "name": "CUTOFF_YN",
+          "type": "boolean",
+          "default": false
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_BUNDLE_BOR_SET": {
+      "category": "BOR",
+      "description": "The synchronized production of each bundle is defined in bor set units",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "BUNDLE_CD ",
+          "type": "string"
+        },
+        {
+          "name": "BOR_SET_CD",
+          "type": "string"
+        },
+        {
+          "name": "CUTOFF_YN",
+          "type": "boolean",
+          "default": false
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_JC_TIME_GRP": {
+      "category": "BOR",
+      "description": "Defines job change times that occur when a resource's jobs change (route group)",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "RESOURCE_CD ",
+          "type": "string"
+        },
+        {
+          "name": "PREV_ROUTE_GRP_CD",
+          "type": "string"
+        },
+        {
+          "name": "NEXT_ROUTE_GRP_CD",
+          "type": "string"
+        },
+        {
+          "name": "PREV_JC_TM",
+          "type": "float",
+          "default": 0
+        },
+        {
+          "name": "NEXT_JC_TM",
+          "type": "float",
+          "default": 0
+        },
+        {
+          "name": "TIME_UOM",
+          "type": "string"
+        },
+        {
+          "name": "JC_DIVIDE_TP_CD",
+          "type": "string",
+          "default": "Y"
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_JC_TIME": {
+      "category": "BOR",
+      "description": "Defines job change times that occur when a resource's jobs change (route)",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "RESOURCE_CD ",
+          "type": "string"
+        },
+        {
+          "name": "PREV_ROUTE_CD",
+          "type": "string"
+        },
+        {
+          "name": "NEXT_ROUTE_CD",
+          "type": "string"
+        },
+        {
+          "name": "PREV_JC_TM",
+          "type": "float",
+          "default": 0
+        },
+        {
+          "name": "NEXT_JC_TM",
+          "type": "float",
+          "default": 0
+        },
+        {
+          "name": "TIME_UOM",
+          "type": "string"
+        },
+        {
+          "name": "JC_DIVIDE_TP_CD",
+          "type": "string",
+          "default": "Y"
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_MOVABLE_ROUTE": {
+      "category": "BOM",
+      "description": "Defines the information of movable routes",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "PREV_ROUTE_CD",
+          "type": "string"
+        },
+        {
+          "name": "NEXT_ROUTE_CD",
+          "type": "string"
+        },
+        {
+          "name": "REVERSE_YN",
+          "type": "boolean",
+          "default": true
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_CONTAINER": {
+      "category": "BOR",
+      "description": "Defines the process that will be used continuously by returning from the container usage startup process",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "CONTAINER_CD",
+          "type": "string"
+        },
+        {
+          "name": "CONTAINER_NM",
+          "type": "string"
+        },
+        {
+          "name": "INIT_CNT",
+          "type": "integer"
+        },
+        {
+          "name": "DESC_TXT",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_ROUTE_CONTAINER_USE": {
+      "category": "BOR",
+      "description": "Defines fair container usage information",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "CONTAINER_CD",
+          "type": "string"
+        },
+        {
+          "name": "PREV_ROUTE_CD",
+          "type": "string"
+        },
+        {
+          "name": "NEXT_ROUTE_CD",
+          "type": "string"
+        },
+        {
+          "name": "USE_VAL",
+          "type": "float"
+        },
+        {
+          "name": "USE_VAL_TP_CD",
+          "type": "string",
+          "default": "A"
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_ROUTE_SYNC": {
+      "category": "BOM",
+      "description": "Define route synchronization information",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "PREV_INVENTORY_CD",
+          "type": "string"
+        },
+        {
+          "name": "PREV_ROUTE_CD",
+          "type": "string"
+        },
+        {
+          "name": "NEXT_INVENTORY_CD",
+          "type": "string"
+        },
+        {
+          "name": "NEXT_ROUTE_CD",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_ROUTE_TIME_CONSTS": {
+      "category": "BOM",
+      "description": "Define the time constraint information of the route",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "ROUTE_CD",
+          "type": "string"
+        },
+        {
+          "name": "CONSTS_TM",
+          "type": "time"
+        },
+        {
+          "name": "CONSTS_TM_TP_CD",
+          "type": "string",
+          "default": "P"
+        },
+        {
+          "name": "CALENDAR_WORK_YN",
+          "type": "boolean",
+          "default": false
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_TIME_WINDOW": {
+      "category": "BOM",
+      "description": "Defines time constraint information between routes",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "PREV_ROUTE_CD",
+          "type": "string"
+        },
+        {
+          "name": "NEXT_ROUTE_CD",
+          "type": "time"
+        },
+        {
+          "name": "NECK_ROUTE_CD",
+          "type": "string"
+        },
+        {
+          "name": "CONSTRAINT_TM",
+          "type": "float"
+        },
+        {
+          "name": "TIME_UOM",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_ORDER_TYPE": {
+      "category": "BOM",
+      "description": "Defines the type of order",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "ORDER_TP_CD",
+          "type": "string"
+        },
+        {
+          "name": "ORDER_EFFICIENCY",
+          "type": "float"
+        },
+        {
+          "name": "ORDER_PST",
+          "type": "timestamp"
+        },
+        {
+          "name": "TO_STOCK_YN",
+          "type": "boolean"
+        },
+        {
+          "name": "CANC_ON_LATE_YN",
+          "type": "boolean"
+        },
+        {
+          "name": "CANC_ON_SHTG_YN",
+          "type": "boolean"
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_DEMAND": {
+      "category": "ORDER",
+      "description": "Define factory demand information",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "DMND_CD",
+          "type": "string"
+        },
+        {
+          "name": "CUSTOMER_CD",
+          "type": "string"
+        },
+        {
+          "name": "INVENTORY_CD",
+          "type": "string"
+        },
+        {
+          "name": "GRP_PRIORITY",
+          "type": "integer",
+          "default": 1
+        },
+        {
+          "name": "DMND_GRP_CD",
+          "type": "string"
+        },
+        {
+          "name": "REQUEST_QTY",
+          "type": "float",
+          "default": 0
+        },
+        {
+          "name": "DUE_DT",
+          "type": "timestamp"
+        },
+        {
+          "name": "DUE_DT_FENCE",
+          "type": "timestamp"
+        },
+        {
+          "name": "PST",
+          "type": "timestamp"
+        },
+        {
+          "name": "PRIORITY",
+          "type": "integer",
+          "default": 1
+        },
+        {
+          "name": "EFFICIENCY",
+          "type": "float",
+          "default": 1
+        },
+        {
+          "name": "DISPLAY_COLOR",
+          "type": "string",
+          "default": "1"
+        },
+        {
+          "name": "ACTIVE_YN",
+          "type": "boolean",
+          "default": true
+        },
+        {
+          "name": "DELIVERY_POLICY",
+          "type": "string"
+        },
+        {
+          "name": "ORDER_STRATEGY_TP_CD",
+          "type": "string"
+        },
+        {
+          "name": "NECK_POLICY",
+          "type": "string"
+        },
+        {
+          "name": "NECK_CNT",
+          "type": "integer",
+          "default": -1
+        },
+        {
+          "name": "NECK_PERIOD",
+          "type": "integer"
+        },
+        {
+          "name": "TIME_UOM",
+          "type": "string"
+        },
+        {
+          "name": "GRADE",
+          "type": "string"
+        },
+        {
+          "name": "ORDER_TP_CD",
+          "type": "string"
+        },
+        {
+          "name": "CANC_ON_LATE_YN",
+          "type": "boolean"
+        },
+        {
+          "name": "CANC_ON_SHTG_YN",
+          "type": "boolean",
+          "default": true
+        },
+        {
+          "name": "ALLOW_NEW_WO_YN",
+          "type": "boolean",
+          "default": true
+        },
+        {
+          "name": "DESC_TXT",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_DMND_ALT_RESRC_POLICY": {
+      "category": "ORDER",
+      "description": "Specify the criteria for selecting alternative resources for each demand",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "DMND_CD",
+          "type": "string"
+        },
+        {
+          "name": "ROUTE_CD",
+          "type": "string"
+        },
+        {
+          "name": "ALT_RESOURCE_POLICY",
+          "type": "string"
+        },
+        {
+          "name": "FORWARD_YN",
+          "type": "boolean",
+          "default": true
+        },
+        {
+          "name": "ASCENDING_YN",
+          "type": "boolean",
+          "default": true
+        },
+        {
+          "name": "PRIORITY",
+          "type": "integer"
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_DMND_BATCH_GRP": {
+      "category": "ORDER",
+      "description": "Specify batch group by sales order",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "DMND_CD",
+          "type": "string"
+        },
+        {
+          "name": "ROUTE_CD",
+          "type": "string"
+        },
+        {
+          "name": "BATCH_GRP_CD",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_DMND_BOM_ROUTING": {
+      "category": "ORDER",
+      "description": "Defines the correlation between item and route by sales order",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "DMND_CD",
+          "type": "string"
+        },
+        {
+          "name": "OPERATION_TP_CD",
+          "type": "string"
+        },
+        {
+          "name": "ROUTE_CD",
+          "type": "string"
+        },
+        {
+          "name": "INVENTORY_CD",
+          "type": "string"
+        },
+        {
+          "name": "BOM_TP_CD",
+          "type": "string",
+          "default": "C"
+        },
+        {
+          "name": "BOM_RATE",
+          "type": "float",
+          "default": 1
+        },
+        {
+          "name": "PRIORITY",
+          "type": "integer",
+          "default": 1
+        },
+        {
+          "name": "INPUT_TP_CD",
+          "type": "string",
+          "default": "R"
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_DMND_BOR": {
+      "category": "ORDER",
+      "description": "Defines resource information that can be used in the route for each sales order",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "DMND_CD",
+          "type": "string"
+        },
+        {
+          "name": "ROUTE_CD",
+          "type": "string"
+        },
+        {
+          "name": "RESOURCE_CD",
+          "type": "string"
+        },
+        {
+          "name": "PRIORITY",
+          "type": "integer",
+          "default": 1
+        },
+        {
+          "name": "EFFICIENCY",
+          "type": "float",
+          "default": 1
+        },
+        {
+          "name": "QUEUE_TM",
+          "type": "float",
+          "default": 0
+        },
+        {
+          "name": "SETUP_TM",
+          "type": "float",
+          "default": 0
+        },
+        {
+          "name": "PROCESS_TM",
+          "type": "float",
+          "default": 0
+        },
+        {
+          "name": "WAIT_TM",
+          "type": "float",
+          "default": 0
+        },
+        {
+          "name": "MOVE_TM",
+          "type": "float",
+          "default": 0
+        },
+        {
+          "name": "TRANSFER_BATCH_TM",
+          "type": "float",
+          "default": 0
+        },
+        {
+          "name": "STD_PROCESS_TM",
+          "type": "float",
+          "default": 0
+        },
+        {
+          "name": "TIME_UOM",
+          "type": "string"
+        },
+        {
+          "name": "PROCESS_TM_TP_CD",
+          "type": "string",
+          "default": "N"
+        },
+        {
+          "name": "LOT_SIZE_MIN",
+          "type": "float",
+          "default": 0
+        },
+        {
+          "name": "LOT_SIZE_MAX",
+          "type": "float",
+          "default": 0
+        },
+        {
+          "name": "LOT_SIZE_MULTIPLR",
+          "type": "float",
+          "default": 0
+        },
+        {
+          "name": "DIVIDE_TP_CD",
+          "type": "string"
+        },
+        {
+          "name": "DESC_TXT",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_DMND_BOR_EFFICIENCY": {
+      "category": "ORDER",
+      "description": "Specifies the bor efficiency per sales order",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "DMND_CD",
+          "type": "string"
+        },
+        {
+          "name": "ROUTE_CD",
+          "type": "string"
+        },
+        {
+          "name": "RESOURCE_CD",
+          "type": "string"
+        },
+        {
+          "name": "PERIOD_CD",
+          "type": "string"
+        },
+        {
+          "name": "EFFICIENCY",
+          "type": "float"
+        },
+        {
+          "name": "PROCESS_TM_TP_CD",
+          "type": "string",
+          "default": "S"
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_DMND_BOR_PRIORITY": {
+      "category": "ORDER",
+      "description": "Defines the priority of resources by time by sales order",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "DMND_CD",
+          "type": "string"
+        },
+        {
+          "name": "ROUTE_CD",
+          "type": "string"
+        },
+        {
+          "name": "RESOURCE_CD",
+          "type": "string"
+        },
+        {
+          "name": "PERIOD_CD",
+          "type": "string"
+        },
+        {
+          "name": "PRIORITY",
+          "type": "integer"
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_DMND_INTER_BOR_TIME": {
+      "category": "ORDER",
+      "description": "Designate queue, setup, wait, and move times between bors for each sales order",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "DMND_CD",
+          "type": "string"
+        },
+        {
+          "name": "PREV_ROUTE_CD",
+          "type": "string"
+        },
+        {
+          "name": "PREV_RESOURCE_CD",
+          "type": "string"
+        },
+        {
+          "name": "NEXT_ROUTE_CD",
+          "type": "string"
+        },
+        {
+          "name": "NEXT_RESOURCE_CD",
+          "type": "string"
+        },
+        {
+          "name": "QUEUE_TM",
+          "type": "float"
+        },
+        {
+          "name": "SETUP_TM",
+          "type": "float"
+        },
+        {
+          "name": "WAIT_TM",
+          "type": "float"
+        },
+        {
+          "name": "MOVE_TM",
+          "type": "float"
+        },
+        {
+          "name": "TIME_UOM",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_DMND_INV_USAGE_RULE": {
+      "category": "ORDER",
+      "description": "Specify policies regarding product production and product inventory usage by sales order",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "DMND_CD",
+          "type": "string"
+        },
+        {
+          "name": "INVENTORY_CD",
+          "type": "string"
+        },
+        {
+          "name": "RULE_CD",
+          "type": "string"
+        },
+        {
+          "name": "FORWARD_YN",
+          "type": "boolean",
+          "default": true
+        },
+        {
+          "name": "ASCENDING_YN",
+          "type": "boolean",
+          "default": true
+        },
+        {
+          "name": "PRIORITY",
+          "type": "integer",
+          "default": 1
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_DMND_ORDER_CONNECTION": {
+      "category": "ORDER",
+      "description": "Specify the connection information for inventory production orders and sales orders",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "DMND_CD",
+          "type": "string"
+        },
+        {
+          "name": "WO_CD",
+          "type": "string"
+        },
+        {
+          "name": "ACTIVE_YN",
+          "type": "boolean",
+          "default": true
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_DMND_PRODTN_RULE": {
+      "category": "ORDER",
+      "description": "Designate production policies such as alternative process and alternative resource selection for each sales order",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "DMND_CD",
+          "type": "string"
+        },
+        {
+          "name": "INVENTORY_CD",
+          "type": "string"
+        },
+        {
+          "name": "RULE_CD",
+          "type": "string"
+        },
+        {
+          "name": "FORWARD_YN",
+          "type": "boolean",
+          "default": true
+        },
+        {
+          "name": "ASCENDING_YN",
+          "type": "boolean",
+          "default": true
+        },
+        {
+          "name": "PRIORITY",
+          "type": "integer",
+          "default": 1
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_DMND_RESRC_ASSIGN": {
+      "category": "ORDER",
+      "description": "Assign available/unavailable resources for each sales order",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "DMND_CD",
+          "type": "string"
+        },
+        {
+          "name": "ROUTE_CD",
+          "type": "string"
+        },
+        {
+          "name": "RESOURCE_CD",
+          "type": "string"
+        },
+        {
+          "name": "ASSIGN_YN",
+          "type": "boolean",
+          "default": true
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_DMND_ROUTE_ASSIGN": {
+      "category": "ORDER",
+      "description": "Specifies which routes can or cannot be produced by sales order",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "DMND_CD",
+          "type": "string"
+        },
+        {
+          "name": "ROUTE_CD",
+          "type": "string"
+        },
+        {
+          "name": "ASSIGN_YN",
+          "type": "boolean",
+          "default": true
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_DMND_ROUTE_GRP": {
+      "category": "ORDER",
+      "description": "Prioritize each route by sales order",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "DMND_CD",
+          "type": "string"
+        },
+        {
+          "name": "ROUTE_CD",
+          "type": "string"
+        },
+        {
+          "name": "GRP_PRIORITY",
+          "type": "integer",
+          "default": 1
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_DMND_ROUTE_PST": {
+      "category": "ORDER",
+      "description": "Specifies when a specific process can start for each sales order",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "DMND_CD",
+          "type": "string"
+        },
+        {
+          "name": "ROUTE_CD",
+          "type": "string"
+        },
+        {
+          "name": "PST",
+          "type": "timestamp"
+        },
+        {
+          "name": "PET",
+          "type": "timestamp"
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_DMND_STOCK_POLICY": {
+      "category": "ORDER",
+      "description": "Specify stock usage policy per sales order",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "INVENTORY_CD",
+          "type": "string"
+        },
+        {
+          "name": "DMND_CD",
+          "type": "string"
+        },
+        {
+          "name": "POLICY_TP_CD",
+          "type": "string"
+        },
+        {
+          "name": "POLICY",
+          "type": "string"
+        },
+        {
+          "name": "PRIORITY",
+          "type": "integer",
+          "default": 1
+        },
+        {
+          "name": "ASCENDING_YN",
+          "type": "boolean",
+          "default": true
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_DMND_TAT": {
+      "category": "ORDER",
+      "description": "Specifies manufacturing lead time by sales order",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "DMND_CD",
+          "type": "string"
+        },
+        {
+          "name": "PREV_ROUTE_CD",
+          "type": "string"
+        },
+        {
+          "name": "NEXT_ROUTE_CD",
+          "type": "string"
+        },
+        {
+          "name": "TAT",
+          "type": "float",
+          "default": 0
+        },
+        {
+          "name": "TIME_UOM",
+          "type": "string"
+        },
+        {
+          "name": "TOLERANCE_POLICY",
+          "type": "string",
+          "default": "MINUTES"
+        },
+        {
+          "name": "TOLERANCE_LOWER",
+          "type": "float",
+          "default": 0
+        },
+        {
+          "name": "TOLERANCE_UPPER",
+          "type": "float",
+          "default": 0
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_DMND_TERMINAL_INV": {
+      "category": "ORDER",
+      "description": "Specifies end-of-plan items by sales order",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "DMND_CD",
+          "type": "string"
+        },
+        {
+          "name": "INVENTORY_CD",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_WORK_ORDER": {
+      "category": "ORDER",
+      "description": "Define work order information",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "WO_CD",
+          "type": "string"
+        },
+        {
+          "name": "DMND_CD",
+          "type": "string"
+        },
+        {
+          "name": "INVENTORY_CD",
+          "type": "string"
+        },
+        {
+          "name": "GRP_PRIORITY",
+          "type": "integer",
+          "default": 1
+        },
+        {
+          "name": "REQUEST_QTY",
+          "type": "float",
+          "default": 0
+        },
+        {
+          "name": "DUE_DT",
+          "type": "timestamp"
+        },
+        {
+          "name": "DUE_DT_FENCE",
+          "type": "timestamp"
+        },
+        {
+          "name": "PST",
+          "type": "timestamp"
+        },
+        {
+          "name": "PRIORITY",
+          "type": "integer",
+          "default": 1
+        },
+        {
+          "name": "EFFICIENCY",
+          "type": "float",
+          "default": 1
+        },
+        {
+          "name": "DISPLAY_COLOR",
+          "type": "string",
+          "default": "1"
+        },
+        {
+          "name": "ACTIVE_YN",
+          "type": "boolean",
+          "default": true
+        },
+        {
+          "name": "TO_STOCK_YN",
+          "type": "boolean"
+        },
+        {
+          "name": "DELIVERY_POLICY",
+          "type": "string"
+        },
+        {
+          "name": "ORDER_STRATEGY_TP_CD",
+          "type": "string"
+        },
+        {
+          "name": "NECK_POLICY",
+          "type": "string"
+        },
+        {
+          "name": "NECK_CNT",
+          "type": "integer",
+          "default": -1
+        },
+        {
+          "name": "NECK_PERIOD",
+          "type": "integer"
+        },
+        {
+          "name": "TIME_UOM",
+          "type": "string"
+        },
+        {
+          "name": "GRADE",
+          "type": "string"
+        },
+        {
+          "name": "ORDER_TP_CD",
+          "type": "string"
+        },
+        {
+          "name": "CANC_ON_LATE_YN",
+          "type": "boolean"
+        },
+        {
+          "name": "CANC_ON_SHTG_YN",
+          "type": "boolean",
+          "default": true
+        },
+        {
+          "name": "DESC_TXT",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_STOCK": {
+      "category": "EXECUTION",
+      "description": "Define stock information",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "STOCK_CD",
+          "type": "string"
+        },
+        {
+          "name": "INVENTORY_CD",
+          "type": "string"
+        },
+        {
+          "name": "RECEIPT_TS",
+          "type": "timestamp"
+        },
+        {
+          "name": "USABLE_TS",
+          "type": "timestamp"
+        },
+        {
+          "name": "EXPIRE_TS",
+          "type": "timestamp"
+        },
+        {
+          "name": "QTY",
+          "type": "float",
+          "default": 0
+        },
+        {
+          "name": "PRIORITY",
+          "type": "integer",
+          "default": 1
+        },
+        {
+          "name": "PROJECTION_INVENTORY_CD",
+          "type": "string"
+        },
+        {
+          "name": "PROJECTION_WO_CD",
+          "type": "string"
+        },
+        {
+          "name": "PROJECTION_WO_DUE_DT",
+          "type": "timestamp"
+        },
+        {
+          "name": "INFINITE_TP_CD",
+          "type": "string"
+        },
+        {
+          "name": "GRADE",
+          "type": "string"
+        },
+        {
+          "name": "ACTIVE_YN",
+          "type": "boolean",
+          "default": true
+        },
+        {
+          "name": "DESC_TXT",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_DMND_STOCK_ASSIGN": {
+      "category": "ORDER",
+      "description": "Assign stock to the sales order",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "DMND_CD",
+          "type": "string"
+        },
+        {
+          "name": "STOCK_CD",
+          "type": "string"
+        },
+        {
+          "name": "ASSIGN_YN",
+          "type": "boolean",
+          "default": true
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_WO_ALT_RESRC_POLICY": {
+      "category": "ORDER",
+      "description": "Specifies criteria for selecting a replacement resource for each work order",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "WO_CD",
+          "type": "string"
+        },
+        {
+          "name": "ROUTE_CD",
+          "type": "string"
+        },
+        {
+          "name": "ALT_RESOURCE_POLICY",
+          "type": "string"
+        },
+        {
+          "name": "FORWARD_YN",
+          "type": "boolean",
+          "default": true
+        },
+        {
+          "name": "ASCENDING_YN",
+          "type": "boolean",
+          "default": true
+        },
+        {
+          "name": "PRIORITY",
+          "type": "integer",
+          "default": 1
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_WO_BATCH_GRP": {
+      "category": "ORDER",
+      "description": "Specify a batch group for each work order",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "WO_CD",
+          "type": "string"
+        },
+        {
+          "name": "ROUTE_CD",
+          "type": "string"
+        },
+        {
+          "name": "BATCH_GRP_CD",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_WO_BOM_ROUTING": {
+      "category": "ORDER",
+      "description": "Define the correlation between items and routes for each work order",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "WO_CD",
+          "type": "string"
+        },
+        {
+          "name": "OPERATION_TP_CD",
+          "type": "string"
+        },
+        {
+          "name": "ROUTE_CD",
+          "type": "string"
+        },
+        {
+          "name": "INVENTORY_CD",
+          "type": "string"
+        },
+        {
+          "name": "BOM_TP_CD",
+          "type": "string"
+        },
+        {
+          "name": "BOM_RATE",
+          "type": "float"
+        },
+        {
+          "name": "PRIORITY",
+          "type": "integer"
+        },
+        {
+          "name": "INPUT_TP_CD",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_WO_BOR": {
+      "category": "ORDER",
+      "description": "Defines resource information that can be used in the route for each work order",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "WO_CD",
+          "type": "string"
+        },
+        {
+          "name": "ROUTE_CD",
+          "type": "string"
+        },
+        {
+          "name": "RESOURCE_CD",
+          "type": "string"
+        },
+        {
+          "name": "PRIORITY",
+          "type": "integer",
+          "default": 1
+        },
+        {
+          "name": "EFFICIENCY",
+          "type": "float",
+          "default": 1
+        },
+        {
+          "name": "QUEUE_TM",
+          "type": "float",
+          "default": 0
+        },
+        {
+          "name": "SETUP_TM",
+          "type": "float",
+          "default": 0
+        },
+        {
+          "name": "PROCESS_TM",
+          "type": "float",
+          "default": 0
+        },
+        {
+          "name": "WAIT_TM",
+          "type": "float",
+          "default": 0
+        },
+        {
+          "name": "MOVE_TM",
+          "type": "float",
+          "default": 0
+        },
+        {
+          "name": "TRANSFER_BATCH_TM",
+          "type": "float",
+          "default": 0
+        },
+        {
+          "name": "STD_PROCESS_TM",
+          "type": "float",
+          "default": 0
+        },
+        {
+          "name": "TIME_UOM",
+          "type": "string"
+        },
+        {
+          "name": "PROCESS_TM_TP_CD",
+          "type": "string",
+          "default": "N"
+        },
+        {
+          "name": "LOT_SIZE_MIN",
+          "type": "float",
+          "default": 0
+        },
+        {
+          "name": "LOT_SIZE_MAX",
+          "type": "float",
+          "default": 0
+        },
+        {
+          "name": "LOT_SIZE_MULTIPLR",
+          "type": "float",
+          "default": 0
+        },
+        {
+          "name": "DIVIDE_TP_CD",
+          "type": "string"
+        },
+        {
+          "name": "DESC_TXT",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_WO_BOR_EFFICIENCY": {
+      "category": "ORDER",
+      "description": "Specifies the bor efficiency per work order",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "WO_CD",
+          "type": "string"
+        },
+        {
+          "name": "ROUTE_CD",
+          "type": "string"
+        },
+        {
+          "name": "RESOURCE_CD",
+          "type": "string"
+        },
+        {
+          "name": "PERIOD_CD",
+          "type": "string"
+        },
+        {
+          "name": "EFFICIENCY",
+          "type": "float"
+        },
+        {
+          "name": "PROCESS_TM_TP_CD",
+          "type": "string",
+          "default": "S"
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_WO_BOR_PRIORITY": {
+      "category": "ORDER",
+      "description": "Defines the priority of resources by time by work order",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "WO_CD",
+          "type": "string"
+        },
+        {
+          "name": "ROUTE_CD",
+          "type": "string"
+        },
+        {
+          "name": "RESOURCE_CD",
+          "type": "string"
+        },
+        {
+          "name": "PERIOD_CD",
+          "type": "string"
+        },
+        {
+          "name": "PRIORITY",
+          "type": "integer"
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_WO_INTER_BOR_TIME": {
+      "category": "ORDER",
+      "description": "Designate queue, setup, wait, and move times between bors for each work order",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "WO_CD",
+          "type": "string"
+        },
+        {
+          "name": "PREV_ROUTE_CD",
+          "type": "string"
+        },
+        {
+          "name": "PREV_RESOURCE_CD",
+          "type": "string"
+        },
+        {
+          "name": "NEXT_ROUTE_CD",
+          "type": "string"
+        },
+        {
+          "name": "NEXT_RESOURCE_CD",
+          "type": "string"
+        },
+        {
+          "name": "QUEUE_TM",
+          "type": "float"
+        },
+        {
+          "name": "SETUP_TM",
+          "type": "float"
+        },
+        {
+          "name": "WAIT_TM",
+          "type": "float"
+        },
+        {
+          "name": "MOVE_TM",
+          "type": "float"
+        },
+        {
+          "name": "TIME_UOM",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_WO_INV_USAGE_RULE": {
+      "category": "ORDER",
+      "description": "Specify policies regarding product production and product inventory usage by work order",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "WO_CD",
+          "type": "string"
+        },
+        {
+          "name": "INVENTORY_CD",
+          "type": "string"
+        },
+        {
+          "name": "RULE_CD",
+          "type": "string"
+        },
+        {
+          "name": "FORWARD_YN",
+          "type": "boolean",
+          "default": true
+        },
+        {
+          "name": "ASCENDING_YN",
+          "type": "boolean",
+          "default": true
+        },
+        {
+          "name": "PRIORITY",
+          "type": "integer",
+          "default": 1
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_WO_ORDER_CONNECTION": {
+      "category": "ORDER",
+      "description": "Specifies inventory production order and work order connection information",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "PREV_WO_CD",
+          "type": "string"
+        },
+        {
+          "name": "NEXT_WO_CD",
+          "type": "string"
+        },
+        {
+          "name": "ACTIVE_YN",
+          "type": "boolean",
+          "default": true
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_WO_PRODTN_RULE": {
+      "category": "ORDER",
+      "description": "Designate production policies such as alternative process and alternative resource selection for each work order",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "WO_CD",
+          "type": "string"
+        },
+        {
+          "name": "INVENTORY_CD",
+          "type": "string"
+        },
+        {
+          "name": "RULE_CD",
+          "type": "string"
+        },
+        {
+          "name": "FORWARD_YN",
+          "type": "boolean",
+          "default": true
+        },
+        {
+          "name": "ASCENDING_YN",
+          "type": "boolean",
+          "default": true
+        },
+        {
+          "name": "PRIORITY",
+          "type": "integer",
+          "default": 1
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_WO_RESRC_ASSIGN": {
+      "category": "ORDER",
+      "description": "Assign available/unavailable resources for each work order",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "WO_CD",
+          "type": "string"
+        },
+        {
+          "name": "ROUTE_CD",
+          "type": "string"
+        },
+        {
+          "name": "RESOURCE_CD",
+          "type": "string"
+        },
+        {
+          "name": "ASSIGN_YN",
+          "type": "boolean",
+          "default": true
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_WO_ROUTE_ASSIGN": {
+      "category": "ORDER",
+      "description": "Specifies which routes can or cannot be produced by work order",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "WO_CD",
+          "type": "string"
+        },
+        {
+          "name": "ROUTE_CD",
+          "type": "string"
+        },
+        {
+          "name": "ASSIGN_YN",
+          "type": "boolean",
+          "default": true
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_WO_ROUTE_GRP": {
+      "category": "ORDER",
+      "description": "Prioritize each route by work order",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "WO_CD",
+          "type": "string"
+        },
+        {
+          "name": "ROUTE_CD",
+          "type": "string"
+        },
+        {
+          "name": "GRP_PRIORITY",
+          "type": "integer",
+          "default": 1
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_WO_ROUTE_PST": {
+      "category": "ORDER",
+      "description": "Specifies when a specific process can start for each work order",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "WO_CD",
+          "type": "string"
+        },
+        {
+          "name": "ROUTE_CD",
+          "type": "string"
+        },
+        {
+          "name": "PST",
+          "type": "timestamp"
+        },
+        {
+          "name": "PET",
+          "type": "timestamp"
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_WO_STOCK_ASSIGN": {
+      "category": "ORDER",
+      "description": "Specify connection information for work order and stock",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "WO_CD",
+          "type": "string"
+        },
+        {
+          "name": "STOCK_CD",
+          "type": "string"
+        },
+        {
+          "name": "ASSIGN_YN",
+          "type": "boolean",
+          "default": true
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_WO_STOCK_POLICY": {
+      "category": "ORDER",
+      "description": "Specify stock usage policy per work order",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "INVENTORY_CD",
+          "type": "string"
+        },
+        {
+          "name": "WO_CD",
+          "type": "string"
+        },
+        {
+          "name": "POLICY_TP_CD",
+          "type": "string"
+        },
+        {
+          "name": "POLICY",
+          "type": "string"
+        },
+        {
+          "name": "PRIORITY",
+          "type": "integer",
+          "default": 1
+        },
+        {
+          "name": "ASCENDING_YN",
+          "type": "boolean",
+          "default": true
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_WO_TAT": {
+      "category": "ORDER",
+      "description": "Specifies manufacturing lead time by work order",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "WO_CD",
+          "type": "string"
+        },
+        {
+          "name": "PREV_ROUTE_CD",
+          "type": "string"
+        },
+        {
+          "name": "NEXT_ROUTE_CD",
+          "type": "string"
+        },
+        {
+          "name": "TAT",
+          "type": "float",
+          "default": 0
+        },
+        {
+          "name": "TIME_UOM",
+          "type": "string"
+        },
+        {
+          "name": "TOLERANCE_POLICY",
+          "type": "string",
+          "default": "MINUTES"
+        },
+        {
+          "name": "TOLERANCE_LOWER",
+          "type": "float",
+          "default": 0
+        },
+        {
+          "name": "TOLERANCE_UPPER",
+          "type": "float",
+          "default": 0
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_WO_TERMINAL_INV": {
+      "category": "ORDER",
+      "description": "Specifies end-of-plan items by work order",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "WO_CD",
+          "type": "string"
+        },
+        {
+          "name": "INVENTORY_CD",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_WIP": {
+      "category": "EXECUTION",
+      "description": "Defines work in progress information",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "WIP_ID",
+          "type": "string"
+        },
+        {
+          "name": "WO_CD",
+          "type": "string"
+        },
+        {
+          "name": "ROUTE_CD",
+          "type": "string"
+        },
+        {
+          "name": "WO_CD",
+          "type": "string"
+        },
+        {
+          "name": "START_TS",
+          "type": "timestamp"
+        },
+        {
+          "name": "END_TS",
+          "type": "timestamp"
+        },
+        {
+          "name": "RELEASE_TS",
+          "type": "timestamp"
+        },
+        {
+          "name": "WIP_QTY",
+          "type": "default",
+          "default": 0
+        },
+        {
+          "name": "REMAIN_QTY",
+          "type": "default",
+          "default": 0
+        },
+        {
+          "name": "TO_STOCK_YN",
+          "type": "boolean",
+          "default": false
+        },
+        {
+          "name": "PROJECTION_INVENTORY_CD",
+          "type": "string"
+        },
+        {
+          "name": "PROJECTION_WO_CD",
+          "type": "string"
+        },
+        {
+          "name": "PROJECTION_WO_DUE_DT",
+          "type": "timestamp"
+        },
+        {
+          "name": "GRADE",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_WIP_BATCH": {
+      "category": "EXECUTION",
+      "description": "Defines the deployment information of work in progress",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "WIP_ID",
+          "type": "string"
+        },
+        {
+          "name": "BATCH_GRP_CD",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_WIP_CONTAINER": {
+      "category": "EXECUTION",
+      "description": "",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "WIP_ID",
+          "type": "string"
+        },
+        {
+          "name": "CONTAINER_CD",
+          "type": "string"
+        },
+        {
+          "name": "QTY",
+          "type": "float"
+        },
+        {
+          "name": "PREV_ROUTE_CD",
+          "type": "string"
+        },
+        {
+          "name": "NEXT_ROUTE_CD",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_WIP_INV": {
+      "category": "EXECUTION",
+      "description": "Define material usage information for work in progress",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "INVENTORY_CD",
+          "type": "string"
+        },
+        {
+          "name": "QTY",
+          "type": "float"
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_WIP_RELATION": {
+      "category": "EXECUTION",
+      "description": "Defines relationship information between work in progress",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "PREV_WIP_ID",
+          "type": "string"
+        },
+        {
+          "name": "NEXT_WIP_ID",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_WIP_RESRC": {
+      "category": "EXECUTION",
+      "description": "Set up the resources your wip is working on",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "WIP_ID",
+          "type": "string"
+        },
+        {
+          "name": "RESOURCE_CD",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_CFM_ACTIVITY": {
+      "category": "EXECUTION",
+      "description": "Define confirmed plan information",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "ACTIVITY_ID",
+          "type": "integer"
+        },
+        {
+          "name": "WO_CD",
+          "type": "string"
+        },
+        {
+          "name": "ROUTE_CD",
+          "type": "string"
+        },
+        {
+          "name": "QTY",
+          "type": "float"
+        },
+        {
+          "name": "START_TS",
+          "type": "timestamp"
+        },
+        {
+          "name": "END_TS",
+          "type": "timestamp"
+        },
+        {
+          "name": "STOCK_USING_TP_CD",
+          "type": "string",
+          "default": "N"
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_CFM_RESRC": {
+      "category": "EXECUTION",
+      "description": "Define a plan for the resources you are working with",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "ACTIVITY_ID",
+          "type": "integer"
+        },
+        {
+          "name": "RESOURCE_CD",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_CFM_STOCK_ASSIGN": {
+      "category": "EXECUTION",
+      "description": "Set the inventory information that will be used first in the confirmed plan",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "ACTIVITY_ID",
+          "type": "integer"
+        },
+        {
+          "name": "STOCK_CD",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_CODE_GRP": {
+      "category": "MASTER",
+      "description": "Define a dedicated common code group",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "CODE_GRP_CD",
+          "type": "string"
+        },
+        {
+          "name": "DESC_TXT",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_CODE": {
+      "category": "MASTER",
+      "description": "Define a dedicated common code",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "CODE_GRP_CD",
+          "type": "string"
+        },
+        {
+          "name": "CODE_CD",
+          "type": "string"
+        },
+        {
+          "name": "CODE_SEQ",
+          "type": "integer",
+          "default": 1
+        },
+        {
+          "name": "DESC_TXT",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_PLAN_STEP": {
+      "category": "MASTER",
+      "description": "Define planning steps",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "STEP_CD",
+          "type": "string"
+        },
+        {
+          "name": "STEP_NM",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_PLAN_STEP_SEQ": {
+      "category": "MASTER",
+      "description": "Defines the sequence of planning steps",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "STEP_CD",
+          "type": "string"
+        },
+        {
+          "name": "STEP_SEQ",
+          "type": "integer",
+          "default": 1
+        },
+        {
+          "name": "DESC_TXT",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_PLAN_POLICY": {
+      "category": "MASTER",
+      "description": "Define planning policies",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "POLICY_CD",
+          "type": "string"
+        },
+        {
+          "name": "POLICY_NM",
+          "type": "string"
+        },
+        {
+          "name": "REQUIRED_YN",
+          "type": "boolean",
+          "default": false
+        },
+        {
+          "name": "DEFAULT_YN",
+          "type": "boolean",
+          "default": false
+        },
+        {
+          "name": "SCRIPT_NM",
+          "type": "string",
+          "default": "base_obp_plan"
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_PLAN_POLICY_DTL": {
+      "category": "MASTER",
+      "description": "Define settings based on planning policy",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "POLICY_CD",
+          "type": "string"
+        },
+        {
+          "name": "CATEGORY_CD",
+          "type": "string"
+        },
+        {
+          "name": "ITEM_SEQ",
+          "type": "integer",
+          "default": 1
+        },
+        {
+          "name": "ITEM_VAL",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_SETTING": {
+      "category": "MASTER",
+      "description": "Defines global settings information",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "SETTING_CD",
+          "type": "string"
+        },
+        {
+          "name": "SETTING_VAL",
+          "type": "string"
+        },
+        {
+          "name": "DESC_TXT",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_SIMUL_OPTION": {
+      "category": "MASTER",
+      "description": "",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "VERSION_CD",
+          "type": "string"
+        },
+        {
+          "name": "CATEGORY_CD",
+          "type": "string"
+        },
+        {
+          "name": "OPTN_VAL",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_MAIN_VERSION": {
+      "category": "MASTER",
+      "description": "",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "MAIN_VERSION_CD",
+          "type": "string"
+        },
+        {
+          "name": "DESC_TXT",
+          "type": "string"
+        },
+        {
+          "name": "VERSION_SEQ",
+          "type": "integer",
+          "default": 1
+        },
+        {
+          "name": "PLAN_DT",
+          "type": "date"
+        },
+        {
+          "name": "START_TS",
+          "type": "timestamp"
+        },
+        {
+          "name": "FREEZE_TS",
+          "type": "timestamp"
+        },
+        {
+          "name": "END_TS",
+          "type": "timestamp"
+        },
+        {
+          "name": "STEP_CD",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_PLAN_VERSION": {
+      "category": "MASTER",
+      "description": "",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "VERSION_CD",
+          "type": "string"
+        },
+        {
+          "name": "DESC_TXT",
+          "type": "string"
+        },
+        {
+          "name": "VERSION_SEQ",
+          "type": "integer",
+          "default": 1
+        },
+        {
+          "name": "PLAN_DT",
+          "type": "date"
+        },
+        {
+          "name": "START_TS",
+          "type": "timestamp"
+        },
+        {
+          "name": "FREEZE_TS",
+          "type": "timestamp"
+        },
+        {
+          "name": "END_TS",
+          "type": "timestamp"
+        },
+        {
+          "name": "POLICY_CD",
+          "type": "string"
+        },
+        {
+          "name": "STEP_CD",
+          "type": "string"
+        },
+        {
+          "name": "STEP_SEQ",
+          "type": "integer",
+          "default": 1
+        },
+        {
+          "name": "CONFIRM_YN",
+          "type": "boolean",
+          "default": false
+        },
+        {
+          "name": "CONFIRMED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CONFIRMED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "MAIN_VERSION_CD",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_VERSION_PLANT": {
+      "category": "MASTER",
+      "description": "",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "VERSION_CD",
+          "type": "string"
+        },
+        {
+          "name": "PLANT_CD",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_PLAN_STATUS": {
+      "category": "MASTER",
+      "description": "",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "VERSION_CD",
+          "type": "string"
+        },
+        {
+          "name": "START_TS",
+          "type": "timestamp"
+        },
+        {
+          "name": "END_TS",
+          "type": "timestamp"
+        },
+        {
+          "name": "STATUS_TP_CD",
+          "type": "string"
+        },
+        {
+          "name": "STATUS_LOG",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_PLAN_HISTORY": {
+      "category": "MASTER",
+      "description": "",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "DEFAULT"
+        },
+        {
+          "name": "MAIN_VERSION_CD",
+          "type": "string"
+        },
+        {
+          "name": "VERSION_CD",
+          "type": "string"
+        },
+        {
+          "name": "STEP_CD",
+          "type": "string"
+        },
+        {
+          "name": "STEP_SEQ",
+          "type": "integer",
+          "default": 1
+        },
+        {
+          "name": "DESC_TXT",
+          "type": "string"
+        },
+        {
+          "name": "START_TS",
+          "type": "timestamp"
+        },
+        {
+          "name": "END_TS",
+          "type": "timestamp"
+        },
+        {
+          "name": "STATUS_TP_CD",
+          "type": "string"
+        },
+        {
+          "name": "STATUS_LOG",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "RESULT_ACTIVITY": {
+      "category": "RESULT",
+      "description": "",
+      "columns": [
+        {
+          "name": "WO_CD",
+          "type": "string"
+        },
+        {
+          "name": "ITEM_CD",
+          "type": "string"
+        },
+        {
+          "name": "ROUTE_CD",
+          "type": "string"
+        },
+        {
+          "name": "RESOURCE_CD",
+          "type": "string"
+        },
+        {
+          "name": "QTY",
+          "type": "float"
+        },
+        {
+          "name": "START_TS",
+          "type": "timestamp"
+        },
+        {
+          "name": "END_TS",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "RESULT_STOCK_USAGE": {
+      "category": "RESULT",
+      "description": "",
+      "columns": [
+        {
+          "name": "WO_CD",
+          "type": "string"
+        },
+        {
+          "name": "ROUTE_CD",
+          "type": "string"
+        },
+        {
+          "name": "ITEM_CD",
+          "type": "string"
+        },
+        {
+          "name": "STOCK_CD",
+          "type": "string"
+        },
+        {
+          "name": "STOCK_WO_CD",
+          "type": "string"
+        },
+        {
+          "name": "USED_QTY",
+          "type": "float"
+        },
+        {
+          "name": "USED_TS",
+          "type": "timestamp"
+        }
+      ]
+    }
+  }
+}
