@@ -51,7 +51,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "CORPORATION_CD",
@@ -94,7 +94,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "SITE_CD",
@@ -141,7 +141,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "PLANT_CD",
@@ -188,7 +188,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "STAGE_CD",
@@ -235,7 +235,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "CUSTOMER_CD",
@@ -286,7 +286,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "PERIOD_CD",
@@ -337,7 +337,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "CALENDAR_CD",
@@ -380,7 +380,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "CALENDAR_CD",
@@ -445,7 +445,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "ROUTE_GRP_CD",
@@ -488,7 +488,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "ROUTE_CD",
@@ -571,7 +571,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "RESOURCE_CD",
@@ -690,7 +690,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "PRODTN_LIMIT_CD",
@@ -746,7 +746,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "ITEM_GRP_CD",
@@ -793,7 +793,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "ITEM_PARENT_GRP_CD",
@@ -836,7 +836,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "ITEM_CD",
@@ -943,7 +943,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "INVENTORY_CD",
@@ -1024,7 +1024,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "RESOURCE_CD",
@@ -1068,7 +1068,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "RESOURCE_CD",
@@ -1111,7 +1111,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "RESOURCE_CD",
@@ -1159,7 +1159,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "INVENTORY_CD",
@@ -1211,7 +1211,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "TOOL_RESOURCE_CD",
@@ -1254,7 +1254,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "ROUTE_CD",
@@ -1370,7 +1370,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "ROUTE_CD",
@@ -1417,7 +1417,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "ROUTE_CD",
@@ -1465,7 +1465,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "BOR_SET_CD",
@@ -1504,7 +1504,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "BOR_SET_CD",
@@ -1556,7 +1556,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "BOR_SET_CD",
@@ -1603,7 +1603,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "ROUTE_CD",
@@ -1659,7 +1659,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "RESOURCE_CD",
@@ -1706,7 +1706,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "ROUTE_CD",
@@ -1758,7 +1758,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "ROUTE_CD",
@@ -1821,7 +1821,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "INVENTORY_CD ",
@@ -1878,7 +1878,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "STORAGE_CD ",
@@ -1925,7 +1925,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "STORAGE_CD ",
@@ -1968,7 +1968,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "STORAGE_CD ",
@@ -2016,7 +2016,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "BUNDLE_CD ",
@@ -2059,7 +2059,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "BUNDLE_CD ",
@@ -2107,7 +2107,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "BUNDLE_CD ",
@@ -2151,7 +2151,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "RESOURCE_CD ",
@@ -2213,7 +2213,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "RESOURCE_CD ",
@@ -2275,7 +2275,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "PREV_ROUTE_CD",
@@ -2319,7 +2319,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "CONTAINER_CD",
@@ -2366,7 +2366,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "CONTAINER_CD",
@@ -2418,7 +2418,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "PREV_INVENTORY_CD",
@@ -2465,7 +2465,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "ROUTE_CD",
@@ -2514,7 +2514,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "PREV_ROUTE_CD",
@@ -2565,7 +2565,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "ORDER_TP_CD",
@@ -2620,7 +2620,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "DMND_CD",
@@ -2760,7 +2760,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "DMND_CD",
@@ -2817,7 +2817,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "DMND_CD",
@@ -2860,7 +2860,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "DMND_CD",
@@ -2927,7 +2927,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "DMND_CD",
@@ -3047,7 +3047,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "DMND_CD",
@@ -3103,7 +3103,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "DMND_CD",
@@ -3154,7 +3154,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "DMND_CD",
@@ -3225,7 +3225,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "DMND_CD",
@@ -3283,7 +3283,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "DMND_CD",
@@ -3327,7 +3327,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "DMND_CD",
@@ -3385,7 +3385,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "DMND_CD",
@@ -3433,7 +3433,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "DMND_CD",
@@ -3477,7 +3477,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "DMND_CD",
@@ -3521,7 +3521,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "DMND_CD",
@@ -3568,7 +3568,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "INVENTORY_CD",
@@ -3625,7 +3625,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "DMND_CD",
@@ -3692,7 +3692,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "DMND_CD",
@@ -3731,7 +3731,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "WO_CD",
@@ -3866,7 +3866,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "STOCK_CD",
@@ -3956,7 +3956,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "DMND_CD",
@@ -4000,7 +4000,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "WO_CD",
@@ -4058,7 +4058,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "WO_CD",
@@ -4101,7 +4101,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "WO_CD",
@@ -4164,7 +4164,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "WO_CD",
@@ -4284,7 +4284,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "WO_CD",
@@ -4340,7 +4340,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "WO_CD",
@@ -4391,7 +4391,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "WO_CD",
@@ -4462,7 +4462,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "WO_CD",
@@ -4520,7 +4520,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "PREV_WO_CD",
@@ -4564,7 +4564,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "WO_CD",
@@ -4622,7 +4622,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "WO_CD",
@@ -4670,7 +4670,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "WO_CD",
@@ -4714,7 +4714,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "WO_CD",
@@ -4758,7 +4758,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "WO_CD",
@@ -4805,7 +4805,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "WO_CD",
@@ -4849,7 +4849,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "INVENTORY_CD",
@@ -4906,7 +4906,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "WO_CD",
@@ -4973,7 +4973,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "WO_CD",
@@ -5012,7 +5012,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "WIP_ID",
@@ -5102,7 +5102,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "WIP_ID",
@@ -5141,7 +5141,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "WIP_ID",
@@ -5192,7 +5192,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "INVENTORY_CD",
@@ -5231,7 +5231,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "PREV_WIP_ID",
@@ -5270,7 +5270,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "WIP_ID",
@@ -5309,7 +5309,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "ACTIVITY_ID",
@@ -5369,7 +5369,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "ACTIVITY_ID",
@@ -5408,7 +5408,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "ACTIVITY_ID",
@@ -5447,7 +5447,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "CODE_GRP_CD",
@@ -5486,7 +5486,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "CODE_GRP_CD",
@@ -5534,7 +5534,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "STEP_CD",
@@ -5573,7 +5573,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "STEP_CD",
@@ -5617,7 +5617,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "POLICY_CD",
@@ -5671,7 +5671,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "POLICY_CD",
@@ -5719,7 +5719,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "SETTING_CD",
@@ -5762,7 +5762,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "VERSION_CD",
@@ -5805,7 +5805,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "MAIN_VERSION_CD",
@@ -5869,7 +5869,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "VERSION_CD",
@@ -5959,7 +5959,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "VERSION_CD",
@@ -5998,7 +5998,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "VERSION_CD",
@@ -6049,7 +6049,7 @@
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "DEFAULT"
+          "default": "default"
         },
         {
           "name": "MAIN_VERSION_CD",
