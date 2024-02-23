@@ -113,12 +113,13 @@ class ExcelData(BaseData):
         object_names = self.get_schema().get_object_names()
         for object_name in object_names:
             data = self.get_data(object_name)
-            if len(data) == 0:
-                continue
 
             worksheet = workbook.add_worksheet(object_name)
             worksheet.freeze_panes(1, 0)
             worksheet.hide_gridlines(2)
+
+            if len(data) == 0:
+                worksheet.hide()
 
             column_names = []
 
