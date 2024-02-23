@@ -37,13 +37,21 @@ def newfile(source, path, dest):
             file_paths = file_utils.find_files(path, None, 'xls')
             for file_path in file_paths:
                 print(file_path)
+
                 excel_data = ExcelData(file_path)
-                excel_data.set_dest(dest)
+                if dest is not None:
+                    file_utils.make_dirs(dest)
+                    excel_data.set_dest(dest)
+
                 excel_data.read()
                 excel_data.write()
         else:
             excel_data = ExcelData(path)
-            excel_data.set_dest(dest)
+
+            if dest is not None:
+                file_utils.make_dirs(dest)
+                excel_data.set_dest(dest)
+
             excel_data.read()
             excel_data.write()
 
