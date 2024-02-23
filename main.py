@@ -29,17 +29,20 @@ def conversion():
 
 @conversion.command()
 @click.option('--path')
+@click.option('--dest')
 @click.option('--source', default='excel', type=click.Choice(['excel', 'json'], case_sensitive=False))
-def newfile(source, path):
+def newfile(source, path, dest):
     if source == 'excel':
         if file_utils.is_dir(path):
             file_paths = file_utils.find_files(path, None, 'xls')
             for file_path in file_paths:
                 excel_data = ExcelData(file_path)
+                excel_data.set_dest(dest)
                 excel_data.read()
                 excel_data.write()
         else:
             excel_data = ExcelData(path)
+            excel_data.set_dest(dest)
             excel_data.read()
             excel_data.write()
 
