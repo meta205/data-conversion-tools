@@ -36,6 +36,7 @@ def newfile(source, path, dest):
         if file_utils.is_dir(path):
             file_paths = file_utils.find_files(path, None, 'xls')
             for file_path in file_paths:
+                print(file_path)
                 excel_data = ExcelData(file_path)
                 excel_data.set_dest(dest)
                 excel_data.read()
