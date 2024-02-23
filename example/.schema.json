@@ -5199,6 +5199,10 @@
           "default": "default"
         },
         {
+          "name": "WIP_ID",
+          "type": "integer"
+        },
+        {
           "name": "INVENTORY_CD",
           "type": "string"
         },
