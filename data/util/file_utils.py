@@ -15,8 +15,23 @@ def new_filename(file_path, suffix_name='-new'):
     return new_name
 
 
+def exists(path):
+    return os.path.exists(path)
+
+
 def is_dir(path):
     return os.path.isdir(path)
+
+
+def make_dirs(path):
+    if exists(path):
+        return
+
+    try:
+        os.makedirs(path)
+    except OSError:
+        if not is_dir(path):
+            raise
 
 
 def find_files(dirname, postfix=None, ext=None):
