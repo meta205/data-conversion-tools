@@ -130,8 +130,12 @@ class ExcelData(BaseData):
 
             column_names = []
 
+            columns = self.get_columns(object_name)
+            if columns is None:
+                continue
+
             row_idx = 0
-            for col_idx, value in enumerate(self.get_columns(object_name)):
+            for col_idx, value in enumerate(columns):
                 column_names += [value]
                 worksheet.write(row_idx, col_idx, value, format_header)
 
