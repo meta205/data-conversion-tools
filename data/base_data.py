@@ -15,7 +15,15 @@ class BaseData(object):
         self.columns_dict = {}
         self.data_dict = {}
 
+        self.dest = None
+
         self.base_schema = BaseSchema(schema_dir)
+
+    def get_dest(self):
+        return self.dest
+
+    def set_dest(self, dest):
+        self.dest = dest
 
     def get_schema(self):
         return self.base_schema
