@@ -6106,6 +6106,53 @@
         }
       ]
     },
+    "TB_FP_MODEL_PROPERTY": {
+      "category": "MASTER",
+      "description": "",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "default"
+        },
+        {
+          "name": "MODEL_TP_CD",
+          "type": "string"
+        },
+        {
+          "name": "MODEL_CD",
+          "type": "string"
+        },
+        {
+          "name": "PROPERTY_NM",
+          "type": "string"
+        },
+        {
+          "name": "PROPERTY_VAL",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
     "RESULT_ACTIVITY": {
       "category": "RESULT",
       "description": "",
