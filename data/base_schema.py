@@ -95,11 +95,25 @@ class BaseSchema(object):
             return ''
 
         column_type = column_info['type']
+
+        default_value = None
+        if 'default' in column_info:
+            default_value = column_info['default']
+
         if column_type == 'boolean':
+            if default_value is not None and default_value == 'true':
+                return 'TRUE'
             return 'FALSE'
         elif column_type == 'float':
+            if default_value is not None and len(str(default_value)) > 0:
+                return float(str(default_value))
             return '0.0'
         elif column_type == 'integer':
+            if default_value is not None and len(str(default_value)) > 0:
+                return int(str(default_value))
             return '0'
+
+        if default_value is not None and len(str(default_value)) > 0:
+            return str(default_value)
 
         return ''
