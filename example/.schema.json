@@ -1824,7 +1824,7 @@
           "default": "default"
         },
         {
-          "name": "INVENTORY_CD ",
+          "name": "INVENTORY_CD",
           "type": "string"
         },
         {
@@ -1881,7 +1881,7 @@
           "default": "default"
         },
         {
-          "name": "STORAGE_CD ",
+          "name": "STORAGE_CD",
           "type": "string"
         },
         {
@@ -1928,7 +1928,7 @@
           "default": "default"
         },
         {
-          "name": "STORAGE_CD ",
+          "name": "STORAGE_CD",
           "type": "string"
         },
         {
@@ -1971,7 +1971,7 @@
           "default": "default"
         },
         {
-          "name": "STORAGE_CD ",
+          "name": "STORAGE_CD",
           "type": "string"
         },
         {
@@ -2019,7 +2019,7 @@
           "default": "default"
         },
         {
-          "name": "BUNDLE_CD ",
+          "name": "BUNDLE_CD",
           "type": "string"
         },
         {
@@ -2062,7 +2062,7 @@
           "default": "default"
         },
         {
-          "name": "BUNDLE_CD ",
+          "name": "BUNDLE_CD",
           "type": "string"
         },
         {
@@ -2110,7 +2110,7 @@
           "default": "default"
         },
         {
-          "name": "BUNDLE_CD ",
+          "name": "BUNDLE_CD",
           "type": "string"
         },
         {
@@ -2154,7 +2154,7 @@
           "default": "default"
         },
         {
-          "name": "RESOURCE_CD ",
+          "name": "RESOURCE_CD",
           "type": "string"
         },
         {
@@ -2216,7 +2216,7 @@
           "default": "default"
         },
         {
-          "name": "RESOURCE_CD ",
+          "name": "RESOURCE_CD",
           "type": "string"
         },
         {
