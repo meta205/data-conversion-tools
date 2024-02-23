@@ -62,7 +62,14 @@ class ExcelData(BaseData):
                     self.add_data(object_name, new_values)
 
     def write(self):
-        filename = file_utils.new_filename(self.filename)
+        filename = None
+
+        dest = self.get_dest()
+        if dest is not None:
+            filename = os.path.join(dest, os.path.split(self.filename)[-1])
+        else:
+            filename = file_utils.new_filename(self.filename)
+
         workbook = xlsxwriter.Workbook(filename)
 
         format_header = workbook.add_format({
