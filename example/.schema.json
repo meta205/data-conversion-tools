@@ -2592,6 +2592,10 @@
           "type": "boolean"
         },
         {
+          "name": "ORDER_STRATEGY_TP_CD",
+          "type": "string"
+        },
+        {
           "name": "CREATED_BY",
           "type": "string"
         },
