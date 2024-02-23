@@ -2592,6 +2592,10 @@
           "type": "boolean"
         },
         {
+          "name": "ORDER_STRATEGY_TP_CD",
+          "type": "string"
+        },
+        {
           "name": "CREATED_BY",
           "type": "string"
         },
@@ -5195,6 +5199,10 @@
           "default": "default"
         },
         {
+          "name": "WIP_ID",
+          "type": "string"
+        },
+        {
           "name": "INVENTORY_CD",
           "type": "string"
         },
@@ -5586,6 +5594,14 @@
         },
         {
           "name": "DESC_TXT",
+          "type": "string"
+        },
+        {
+          "name": "EXEC_TP_CD",
+          "type": "string"
+        },
+        {
+          "name": "EXEC_TARGET",
           "type": "string"
         },
         {
