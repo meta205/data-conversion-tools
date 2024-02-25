@@ -6,6 +6,7 @@ from data.util import file_utils
 from . import excel_utils
 
 import copy
+import openpyxl
 import os
 import xlrd
 import xlsxwriter
@@ -15,13 +16,20 @@ class ExcelData(BaseData):
     def __init__(self, filename):
         super().__init__(os.path.split(filename)[0])
         self.filename = filename
-        self.workbook = xlrd.open_workbook(filename)
 
     def read(self):
+        if self.filename.endswith('.xls'):
+            self.read_xls()
+        else:
+            self.read_xlsx()
+
+    def read_xls(self):
         schema = self.get_schema()
 
+        workbook = xlrd.open_workbook(self.filename)
+
         sheet_dict = {}
-        for sheet in self.workbook.sheets():
+        for sheet in workbook.sheets():
             object_name = schema.get_replace_object_name(sheet.name)
             if schema.is_valid() and not schema.has_object(object_name):
                 continue
@@ -61,16 +69,21 @@ class ExcelData(BaseData):
 
                     self.add_data(object_name, new_values)
 
+    def read_xlsx(self):
+        """TODO: Working..."""
+        workbook = openpyxl.load_workbook(self.filename)
+        seet_names = workbook.get_sheet_names()
+        for seet_name in seet_names:
+            print(seet_name)
+
     def write(self):
-        filename = None
+        workbook = None
 
         dest = self.get_dest()
         if dest is not None:
-            filename = os.path.join(dest, os.path.split(self.filename)[-1])
+            workbook = xlsxwriter.Workbook(os.path.join(dest, os.path.split(self.filename)[-1]))
         else:
-            filename = file_utils.new_filename(self.filename)
-
-        workbook = xlsxwriter.Workbook(filename)
+            workbook = xlsxwriter.Workbook(file_utils.new_filename(self.filename))
 
         format_header = workbook.add_format({
             'bold': True,

@@ -30,6 +30,3 @@ data-conversion-tools
 .. code-block:: shell-session
 
    $ python main.py newfile --path ./sample/SuperStoreUS-2015.xls
-
-
-https://stackoverflow.com/questions/34643620/how-can-i-split-my-click-commands-each-with-a-set-of-sub-commands-into-multipl
