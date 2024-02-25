@@ -18,6 +18,7 @@ XL_CELL_BLANK = xlrd.XL_CELL_BLANK
 XL_CELL_INTEGER = 7
 XL_CELL_FLOAT = 8
 XL_CELL_TIMESTAMP = 9
+XL_CELL_TIME = 10
 
 
 def to_cell_type(type):
@@ -27,6 +28,8 @@ def to_cell_type(type):
         return XL_CELL_NUMBER
     elif type == 'date':
         return XL_CELL_DATE
+    elif type == 'time':
+        return XL_CELL_TIME
     elif type == 'boolean':
         return XL_CELL_BOOLEAN
     elif type == 'integer':
@@ -42,6 +45,8 @@ def to_cell_type(type):
 def to_value(sheet, cell_type, value):
     if cell_type == XL_CELL_DATE:
         return to_date(sheet, value)
+    if cell_type == XL_CELL_TIME:
+        return to_time(sheet, value)
     elif cell_type == XL_CELL_TIMESTAMP:
         return to_timestamp(sheet, value)
     elif cell_type == XL_CELL_TEXT:
@@ -50,6 +55,14 @@ def to_value(sheet, cell_type, value):
         return str(value)
 
     return value
+
+
+def to_time(sheet, value):
+    try:
+        args = xlrd.xldate_as_tuple(value, sheet.book.datemode)
+        return datetime.datetime(args[0], args[1], args[2], args[3], args[4], args[5])
+    except:
+        return value
 
 
 def to_date(sheet, value):
