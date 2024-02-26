@@ -77,13 +77,17 @@ class ExcelData(BaseData):
             print(seet_name)
 
     def write(self):
+        new_filename = self.filename
+        if new_filename.endswith('.xls'):
+            new_filename = new_filename.replace('.xls', '.xls')
+
         workbook = None
 
         dest = self.get_dest()
         if dest is not None:
-            workbook = xlsxwriter.Workbook(os.path.join(dest, os.path.split(self.filename)[-1]))
+            workbook = xlsxwriter.Workbook(os.path.join(dest, os.path.split(new_filename)[-1]))
         else:
-            workbook = xlsxwriter.Workbook(file_utils.new_filename(self.filename))
+            workbook = xlsxwriter.Workbook(file_utils.new_filename(new_filename))
 
         format_header = workbook.add_format({
             'bold': True,
