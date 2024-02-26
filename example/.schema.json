@@ -2531,7 +2531,7 @@
         },
         {
           "name": "CONSTRAINT_TM",
-          "type": "time"
+          "type": "float"
         },
         {
           "name": "TIME_UOM",
