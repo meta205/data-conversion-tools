@@ -34,7 +34,10 @@ def conversion():
 def newfile(source, path, dest):
     if source == 'excel':
         if file_utils.is_dir(path):
-            file_paths = file_utils.find_files(path, None, 'xls')
+            xls_paths = file_utils.find_files(path, None, 'xls')
+            xlsx_paths = file_utils.find_files(path, None, 'xlsx')
+
+            file_paths = xls_paths + xlsx_paths
             for file_path in file_paths:
                 print(file_path)
 
