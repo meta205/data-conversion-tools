@@ -60,7 +60,7 @@ def to_value(sheet, cell_type, value):
 def to_time(sheet, value):
     try:
         args = xlrd.xldate_as_tuple(value, sheet.book.datemode)
-        return datetime.datetime(args[0], args[1], args[2], args[3], args[4], args[5])
+        return datetime.time(args[3], args[4], args[5])
     except:
         return value
 
