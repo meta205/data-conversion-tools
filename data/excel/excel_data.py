@@ -40,6 +40,8 @@ class ExcelData(BaseData):
 
         for object_name in object_names:
             if object_name not in sheet_dict:
+                columns = schema.get_columns(object_name)
+                self.set_column_index(object_name, columns)
                 continue
 
             columns = None
