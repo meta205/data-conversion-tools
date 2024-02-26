@@ -2555,8 +2555,177 @@
         }
       ]
     },
+    "TB_FP_BOD": {
+      "category": "BOD",
+      "description": "Defines information for logistics movement planning",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "default"
+        },
+        {
+          "name": "BOD_CD",
+          "type": "string"
+        },
+        {
+          "name": "FROM_ROUTE_CD",
+          "type": "string"
+        },
+        {
+          "name": "TO_ROUTE_CD",
+          "type": "string"
+        },
+        {
+          "name": "TRANSFER_TP_CD",
+          "type": "string"
+        },
+        {
+          "name": "TRANSFER_TM",
+          "type": "float"
+        },
+        {
+          "name": "DELIVERY_TP_CD",
+          "type": "string"
+        },
+        {
+          "name": "TRANSFER_LOT_SIZE",
+          "type": "float"
+        },
+        {
+          "name": "SUPPLY_TP_CD",
+          "type": "string"
+        },
+        {
+          "name": "PREV_BUFFER_TM",
+          "type": "float"
+        },
+        {
+          "name": "NEXT_BUFFER_TM",
+          "type": "float"
+        },
+        {
+          "name": "TIME_UOM",
+          "type": "string"
+        },
+        {
+          "name": "APPLY_START_TS",
+          "type": "timestamp"
+        },
+        {
+          "name": "APPLY_END_TS",
+          "type": "timestamp"
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_BOD_CALENDAR": {
+      "category": "BOD",
+      "description": "Define a holiday schedule for bod",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "default"
+        },
+        {
+          "name": "BOD_CD",
+          "type": "string"
+        },
+        {
+          "name": "PERIOD_CD",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_DELIVERY_PATTERN": {
+      "category": "BOD",
+      "description": "Defines a shipping pattern for bod",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "default"
+        },
+        {
+          "name": "BOD_CD",
+          "type": "string"
+        },
+        {
+          "name": "DELIVERY_START_TM",
+          "type": "time"
+        },
+        {
+          "name": "APPLY_START_TS",
+          "type": "timestamp"
+        },
+        {
+          "name": "APPLY_END_TS",
+          "type": "timestamp"
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp"
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
     "TB_FP_ORDER_TYPE": {
-      "category": "BOM",
+      "category": "ORDER",
       "description": "Defines the type of order",
       "columns": [
         {
