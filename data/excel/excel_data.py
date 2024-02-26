@@ -79,7 +79,7 @@ class ExcelData(BaseData):
     def write(self):
         new_filename = self.filename
         if new_filename.endswith('.xls'):
-            new_filename = new_filename.replace('.xls', '.xls')
+            new_filename = new_filename.replace('.xls', '.xlsx')
 
         workbook = None
 
