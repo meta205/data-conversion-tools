@@ -41,7 +41,7 @@ class ExcelData(BaseData):
         for object_name in object_names:
             if object_name not in sheet_dict:
                 columns = schema.get_columns(object_name)
-                self.set_column_index(object_name, columns)
+                self.set_columns(object_name, columns)
                 continue
 
             columns = None
@@ -51,7 +51,7 @@ class ExcelData(BaseData):
                 if row_idx == 0:
                     columns = sheet.row_values(row_idx)
                     columns = [schema.get_replace_column_name(sheet.name, c) for c in columns]
-                    self.set_column_index(object_name, columns)
+                    self.set_columns(object_name, columns)
                 else:
                     old_values = sheet.row_values(row_idx)
                     new_values = []
@@ -63,7 +63,8 @@ class ExcelData(BaseData):
                         if columns is not None:
                             column_info = self.get_column_info(object_name, columns[col_idx])
                             if column_info is None:
-                                cell_type = data_utils.get_data_type(columns[col_idx], old_values[col_idx])
+                                data_type = data_utils.get_data_type(columns[col_idx], old_values[col_idx])
+                                cell_type = excel_utils.to_cell_type(data_type)
                             else:
                                 cell_type = excel_utils.to_cell_type(column_info['type'])
 
@@ -72,11 +73,54 @@ class ExcelData(BaseData):
                     self.add_data(object_name, new_values)
 
     def read_xlsx(self):
-        """TODO: Working..."""
+        schema = self.get_schema()
+
         workbook = openpyxl.load_workbook(self.filename)
-        seet_names = workbook.get_sheet_names()
-        for seet_name in seet_names:
-            print(seet_name)
+
+        sheet_dict = {}
+
+        sheet_names = workbook.get_sheet_names()
+        for sheet_name in sheet_names:
+            sheet = workbook.get_sheet_by_name(sheet_name)
+            object_name = schema.get_replace_object_name(sheet_name)
+            if schema.is_valid() and not schema.has_object(object_name):
+                continue
+
+            sheet_dict[object_name] = (sheet_name, sheet)
+
+        object_names = schema.get_object_names()
+
+        for object_name in object_names:
+            if object_name not in sheet_dict:
+                columns = schema.get_columns(object_name)
+                self.set_columns(object_name, columns)
+                continue
+
+            columns = None
+
+            sheet_name, sheet = sheet_dict[object_name]
+            for i, row in enumerate(sheet):
+                if i == 0:
+                    columns = [col.value for col in row]
+                    columns = [schema.get_replace_column_name(sheet_name, c) for c in columns]
+                    self.set_columns(object_name, columns)
+                else:
+                    old_values = [col.value for col in row]
+                    new_values = []
+                    for col_idx in range(len(old_values)):
+                        cell_type = None
+
+                        if columns is not None:
+                            column_info = self.get_column_info(object_name, columns[col_idx])
+                            if column_info is None:
+                                data_type = data_utils.get_data_type(columns[col_idx], old_values[col_idx])
+                                cell_type = excel_utils.to_cell_type(data_type)
+                            else:
+                                cell_type = excel_utils.to_cell_type(column_info['type'])
+
+                        new_values += [excel_utils.to_value(sheet, cell_type, old_values[col_idx])]
+
+                    self.add_data(object_name, new_values)
 
     def write(self):
         new_filename = self.filename

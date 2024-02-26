@@ -52,6 +52,8 @@ def to_value(sheet, cell_type, value):
     elif cell_type == XL_CELL_TEXT:
         if isinstance(value, float):
             return str(int(value))
+        if value is None:
+            return ''
         return str(value)
 
     return value

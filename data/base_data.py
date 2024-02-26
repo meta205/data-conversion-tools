@@ -36,7 +36,7 @@ class BaseData(object):
     def get_column_info(self, object_name, column_name):
         return self.base_schema.get_column_info(object_name, column_name)
 
-    def set_column_index(self, data_key, columns):
+    def set_columns(self, data_key, columns):
         schema_columns = self.base_schema.get_columns(data_key)
         if len(schema_columns) == 0:
             self.columns_index_dict[data_key] = list(range(len(columns)))
