@@ -108,7 +108,8 @@
   "columns": {
     "ID": {
       "type": "string",
-      "length": 32
+      "length": 32,
+      "variable": false
     },
     "PLAN_SCOPE": {
       "type": "string",
@@ -128,9 +129,103 @@
       "precision": 20,
       "scale": 0
     },
+    "EFFICIENCY": {
+      "type": "number",
+      "precision": 20,
+      "scale": 5
+    },
     "CATEGORY": {
       "type": "string",
       "length": 100
+    },
+    "DISPLAY_COLOR": {
+      "type": "string",
+      "length": 10
+    },
+    "TIME_UOM": {
+      "type": "string",
+      "length": 20
+    },
+    "UOM": {
+      "type": "string",
+      "length": 100
+    },
+    "NPI": {
+      "type": "date"
+    },
+    "EOL": {
+      "type": "date"
+    },
+    "STOCK_SPLIT_COMBINATION": {
+      "type": "string",
+      "length": 100
+    },
+    "GRADE": {
+      "type": "string",
+      "length": 100
+    },
+    "PST": {
+      "type": "datetime"
+    },
+    "PET": {
+      "type": "datetime"
+    },
+    "DUE_DT": {
+      "type": "datetime"
+    },
+    "DUE_DT_FENCE": {
+      "type": "datetime"
+    },
+    "MAX_CAPACITY": {
+      "type": "number",
+      "precision": 20,
+      "scale": 5
+    },
+    "TAT": {
+      "type": "number",
+      "precision": 20,
+      "scale": 5
+    },
+    "POLICY": {
+      "type": "string",
+      "length": 100
+    },
+    "ITEM_VAL": {
+      "type": "string",
+      "length": 100
+    },
+    "SETTING_VAL": {
+      "type": "string",
+      "length": 100
+    },
+    "OPTN_VAL": {
+      "type": "string",
+      "length": 250
+    },
+    "PROPERTY_VAL": {
+      "type": "string",
+      "length": 250
+    },
+    "ATTR_": {
+      "matcher": "prefix",
+      "type": "string",
+      "length": 100
+    },
+    "_ID": {
+      "matcher": "suffix",
+      "type": "integer",
+      "precision": 20,
+      "scale": 0
+    },
+    "_TP_CD": {
+      "matcher": "suffix",
+      "type": "string",
+      "length": 30
+    },
+    "_CLASS_CD": {
+      "matcher": "suffix",
+      "type": "string",
+      "length": 30
     },
     "_CD": {
       "matcher": "suffix",
@@ -142,11 +237,122 @@
       "type": "string",
       "length": 250
     },
+    "_POLICY": {
+      "matcher": "suffix",
+      "type": "string",
+      "length": 100
+    },
+    "_LOG": {
+      "matcher": "suffix",
+      "type": "string",
+      "length": 2000
+    },
+    "_TARGET": {
+      "matcher": "suffix",
+      "type": "string",
+      "length": 100
+    },
     "_QTY": {
       "matcher": "suffix",
       "type": "number",
       "precision": 20,
       "scale": 5
+    },
+    "_CNT": {
+      "matcher": "suffix",
+      "type": "integer",
+      "precision": 20,
+      "scale": 0
+    },
+    "_SEQ": {
+      "matcher": "suffix",
+      "type": "integer",
+      "precision": 20,
+      "scale": 0
+    },
+    "_SIZE": {
+      "matcher": "suffix",
+      "type": "integer",
+      "precision": 20,
+      "scale": 0
+    },
+    "_LT": {
+      "matcher": "suffix",
+      "type": "integer",
+      "precision": 20,
+      "scale": 0
+    },
+    "_PERIOD": {
+      "matcher": "suffix",
+      "type": "integer",
+      "precision": 20,
+      "scale": 0
+    },
+    "_PRIORITY": {
+      "matcher": "suffix",
+      "type": "integer",
+      "precision": 20,
+      "scale": 0
+    },
+    "_EFFICIENCY": {
+      "matcher": "suffix",
+      "type": "number",
+      "precision": 20,
+      "scale": 5
+    },
+    "_VAL": {
+      "matcher": "suffix",
+      "type": "number",
+      "precision": 20,
+      "scale": 5
+    },
+    "_RATE": {
+      "matcher": "suffix",
+      "type": "number",
+      "precision": 20,
+      "scale": 5
+    },
+    "_TIME": {
+      "matcher": "suffix",
+      "type": "number",
+      "precision": 20,
+      "scale": 5
+    },
+    "_MIN": {
+      "matcher": "suffix",
+      "type": "number",
+      "precision": 20,
+      "scale": 5
+    },
+    "_MAX": {
+      "matcher": "suffix",
+      "type": "number",
+      "precision": 20,
+      "scale": 5
+    },
+    "_LOWER": {
+      "matcher": "suffix",
+      "type": "number",
+      "precision": 20,
+      "scale": 5
+    },
+    "_UPPER": {
+      "matcher": "suffix",
+      "type": "number",
+      "precision": 20,
+      "scale": 5
+    },
+    "_YN": {
+      "matcher": "suffix",
+      "type": "boolean"
+    },
+    "_PST": {
+      "matcher": "suffix",
+      "type": "datetime"
+    },
+    "_DUE_DT": {
+      "matcher": "suffix",
+      "type": "datetime"
     },
     "_BY": {
       "matcher": "suffix",
@@ -177,16 +383,19 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "CORPORATION_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "CORPORATION_NM",
@@ -202,7 +411,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -220,16 +430,19 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "SITE_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "SITE_NM",
@@ -237,7 +450,8 @@
         },
         {
           "name": "CORPORATION_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "DESC_TXT",
@@ -249,7 +463,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -267,16 +482,19 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "PLANT_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLANT_NM",
@@ -284,7 +502,8 @@
         },
         {
           "name": "SITE_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "DESC_TXT",
@@ -296,7 +515,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -314,16 +534,19 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "STAGE_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "STAGE_NM",
@@ -331,7 +554,8 @@
         },
         {
           "name": "PLANT_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "DESC_TXT",
@@ -343,7 +567,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -361,16 +586,19 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "CUSTOMER_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "CUSTOMER_NM",
@@ -394,7 +622,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -412,16 +641,19 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "PERIOD_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "START_TS",
@@ -445,7 +677,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -463,16 +696,19 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "CALENDAR_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "CALENDAR_NM",
@@ -488,7 +724,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -506,30 +743,36 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "CALENDAR_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PERIOD_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "CALENDAR_TP_CD",
           "type": "string",
-          "default": "D"
+          "default": "D",
+          "nullable": false
         },
         {
           "name": "PRIORITY",
           "type": "integer",
-          "default": 1
+          "default": 1,
+          "nullable": false
         },
         {
           "name": "START_DT",
@@ -553,7 +796,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -571,16 +815,19 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "ROUTE_GRP_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "ROUTE_GRP_NM",
@@ -596,7 +843,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -614,16 +862,19 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "ROUTE_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "ROUTE_NM",
@@ -635,7 +886,8 @@
         },
         {
           "name": "STAGE_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "CANDIDATE_PERIOD_CNT",
@@ -645,17 +897,20 @@
         {
           "name": "DIVIDE_TP_CD",
           "type": "string",
-          "default": "Y"
+          "default": "Y",
+          "nullable": false
         },
         {
           "name": "BATCH_ROUTE_YN",
           "type": "boolean",
-          "default": false
+          "default": false,
+          "nullable": false
         },
         {
           "name": "LAZY_JC_TM_YN",
           "type": "boolean",
-          "default": false
+          "default": false,
+          "nullable": false
         },
         {
           "name": "LOT_SIZE_MIN",
@@ -679,7 +934,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -697,16 +953,19 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "RESOURCE_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "RESOURCE_NM",
@@ -714,7 +973,8 @@
         },
         {
           "name": "STAGE_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "CALENDAR_CD",
@@ -723,7 +983,8 @@
         {
           "name": "DISPLAY_COLOR",
           "type": "string",
-          "default": "1"
+          "default": "1",
+          "nullable": false
         },
         {
           "name": "DISPLAY_SEQ",
@@ -733,7 +994,8 @@
         {
           "name": "LOAD_YN",
           "type": "boolean",
-          "default": true
+          "default": true,
+          "nullable": false
         },
         {
           "name": "TOOL_RESOURCE_YN",
@@ -767,7 +1029,8 @@
         {
           "name": "JC_DIVIDE_TP_CD",
           "type": "string",
-          "default": "Y"
+          "default": "Y",
+          "nullable": false
         },
         {
           "name": "TIME_UOM",
@@ -781,12 +1044,14 @@
         {
           "name": "BATCH_RESOURCE_YN",
           "type": "boolean",
-          "default": false
+          "default": false,
+          "nullable": false
         },
         {
           "name": "PLAN_LVL_TP_CD",
           "type": "string",
-          "default": "A"
+          "default": "A",
+          "nullable": false
         },
         {
           "name": "DESC_TXT",
@@ -798,7 +1063,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -816,33 +1082,40 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "PRODTN_LIMIT_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PERIOD_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "LIMIT_TP_CD",
           "type": "string",
-          "default": "Q"
+          "default": "Q",
+          "nullable": false
         },
         {
           "name": "LIMIT_VAL",
-          "type": "number"
+          "type": "number",
+          "nullable": false
         },
         {
           "name": "RESOURCE_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PRIORITY",
@@ -854,7 +1127,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -872,16 +1146,19 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "ITEM_GRP_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "ITEM_GRP_NM",
@@ -901,7 +1178,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -919,16 +1197,19 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "ITEM_PARENT_GRP_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "ITEM_PARENT_GRP_NM",
@@ -944,7 +1225,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -962,16 +1244,19 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "ITEM_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "ITEM_NM",
@@ -988,7 +1273,8 @@
         {
           "name": "ITEM_CLASS_CD",
           "type": "string",
-          "default": "M"
+          "default": "M",
+          "nullable": false
         },
         {
           "name": "ITEM_UOM",
@@ -1002,17 +1288,20 @@
         {
           "name": "WO_SIZE_MIN",
           "type": "number",
-          "default": 1
+          "default": 1,
+          "nullable": false
         },
         {
           "name": "WO_SIZE_MAX",
           "type": "number",
-          "default": 1
+          "default": 1,
+          "nullable": false
         },
         {
           "name": "WO_SIZE_MULTIPLR",
           "type": "number",
-          "default": 0
+          "default": 0,
+          "nullable": false
         },
         {
           "name": "BASE_LT",
@@ -1039,7 +1328,8 @@
         {
           "name": "DISPLAY_SEQ",
           "type": "integer",
-          "default": 2147483647
+          "default": 2147483647,
+          "nullable": false
         },
         {
           "name": "DESC_TXT",
@@ -1051,7 +1341,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -1069,16 +1360,19 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "INVENTORY_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "INVENTORY_NM",
@@ -1090,16 +1384,19 @@
         },
         {
           "name": "STAGE_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "ITEM_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "ITEM_TP_CD",
           "type": "string",
-          "default": "M"
+          "default": "M",
+          "nullable": false
         },
         {
           "name": "INV_KEEPING_TM",
@@ -1124,7 +1421,8 @@
         {
           "name": "STOCK_SELECT_TP_CD",
           "type": "string",
-          "default": "SC"
+          "default": "SC",
+          "nullable": false
         },
         {
           "name": "CREATED_BY",
@@ -1132,7 +1430,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -1150,20 +1449,24 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "RESOURCE_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PERIOD_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "VIRTUAL_RESOURCE_CNT",
@@ -1176,7 +1479,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -1194,20 +1498,24 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "RESOURCE_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "SELECT_RULE_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PRIORITY",
@@ -1219,7 +1527,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -1237,20 +1546,24 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "RESOURCE_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "DELAY_TM",
-          "type": "number"
+          "type": "number",
+          "nullable": false
         },
         {
           "name": "TIME_UOM",
@@ -1259,7 +1572,8 @@
         {
           "name": "DELAY_TP_CD",
           "type": "string",
-          "default": "S"
+          "default": "S",
+          "nullable": false
         },
         {
           "name": "CREATED_BY",
@@ -1267,7 +1581,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -1285,33 +1600,40 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "INVENTORY_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "RESOURCE_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "ROUTE_CD",
           "type": "string",
-          "default": "ALL"
+          "default": "ALL",
+          "nullable": false
         },
         {
           "name": "BATCH_SIZE",
-          "type": "integer"
+          "type": "integer",
+          "nullable": false
         },
         {
           "name": "BATCH_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "CREATED_BY",
@@ -1319,7 +1641,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -1337,20 +1660,24 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "TOOL_RESOURCE_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "SUPPLY_TS",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "SUPPLY_CNT",
@@ -1362,7 +1689,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -1380,20 +1708,24 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "ROUTE_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "RESOURCE_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "ALT_RESOURCE_PRIORITY",
@@ -1478,7 +1810,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -1496,28 +1829,34 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "ROUTE_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "RESOURCE_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PERIOD_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "AVAIL_TP_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "CREATED_BY",
@@ -1525,7 +1864,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -1543,29 +1883,35 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "ROUTE_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "RESOURCE_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PERIOD_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "AVAIL_YN",
           "type": "boolean",
-          "default": true
+          "default": true,
+          "nullable": false
         },
         {
           "name": "CREATED_BY",
@@ -1573,7 +1919,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -1591,16 +1938,19 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "BOR_SET_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "DESC_TXT",
@@ -1612,7 +1962,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -1630,24 +1981,29 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "BOR_SET_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "ROUTE_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "RESOURCE_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "RESOURCE_TP_CD",
@@ -1664,7 +2020,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -1682,24 +2039,29 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "BOR_SET_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "TOOL_RESOURCE_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "USABLE_CNT",
-          "type": "integer"
+          "type": "integer",
+          "nullable": false
         },
         {
           "name": "DESC_TXT",
@@ -1711,7 +2073,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -1729,33 +2092,40 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "ROUTE_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "RESOURCE_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "CONSTRAINT_TM",
-          "type": "time"
+          "type": "time",
+          "nullable": false
         },
         {
           "name": "CONSTRAINT_TM_TP_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "CALENDAR_WORK_YN",
           "type": "boolean",
-          "default": false
+          "default": false,
+          "nullable": false
         },
         {
           "name": "DESC_TXT",
@@ -1767,7 +2137,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -1785,28 +2156,34 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "RESOURCE_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PREV_ITEM_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "NEXT_ITEM_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "LV_VAL",
-          "type": "integer"
+          "type": "integer",
+          "nullable": false
         },
         {
           "name": "CREATED_BY",
@@ -1814,7 +2191,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -1832,24 +2210,29 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "ROUTE_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "INVENTORY_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "GRADE",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "OUTPUT_VAL",
@@ -1866,7 +2249,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -1884,30 +2268,36 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "ROUTE_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "INVENTORY_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "BOM_TP_CD",
           "type": "string",
-          "default": "C"
+          "default": "C",
+          "nullable": false
         },
         {
           "name": "BOM_RATE",
           "type": "number",
-          "default": 1
+          "default": 1,
+          "nullable": false
         },
         {
           "name": "PRIORITY",
@@ -1929,7 +2319,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -1947,28 +2338,34 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "INVENTORY_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "ROUTE_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "MAT_INVENTORY_GRP_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "INPUT_INVENTORY_GRP_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "INPUT_RATE",
@@ -1986,7 +2383,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -2004,16 +2402,19 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "STORAGE_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "STORAGE_NM",
@@ -2021,7 +2422,8 @@
         },
         {
           "name": "MAX_CAPACITY",
-          "type": "number"
+          "type": "number",
+          "nullable": false
         },
         {
           "name": "DESC_TXT",
@@ -2033,7 +2435,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -2051,20 +2454,24 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "STORAGE_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "INVENTORY_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PRIORITY",
@@ -2076,7 +2483,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -2094,29 +2502,35 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "STORAGE_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "INVENTORY_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "MIXABLE_INVENTORY_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "MIXABLE_YN",
           "type": "boolean",
-          "default": false
+          "default": false,
+          "nullable": false
         },
         {
           "name": "CREATED_BY",
@@ -2124,7 +2538,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -2142,16 +2557,19 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "BUNDLE_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "BUNDLE_NM",
@@ -2167,7 +2585,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -2185,24 +2604,29 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "BUNDLE_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "ROUTE_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "RESOURCE_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "CUTOFF_YN",
@@ -2215,7 +2639,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -2233,20 +2658,24 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "BUNDLE_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "BOR_SET_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "CUTOFF_YN",
@@ -2259,7 +2688,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -2277,34 +2707,41 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "RESOURCE_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PREV_ROUTE_GRP_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "NEXT_ROUTE_GRP_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PREV_JC_TM",
           "type": "number",
-          "default": 0
+          "default": 0,
+          "nullable": false
         },
         {
           "name": "NEXT_JC_TM",
           "type": "number",
-          "default": 0
+          "default": 0,
+          "nullable": false
         },
         {
           "name": "TIME_UOM",
@@ -2313,7 +2750,8 @@
         {
           "name": "JC_DIVIDE_TP_CD",
           "type": "string",
-          "default": "Y"
+          "default": "Y",
+          "nullable": false
         },
         {
           "name": "CREATED_BY",
@@ -2321,7 +2759,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -2339,34 +2778,41 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "RESOURCE_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PREV_ROUTE_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "NEXT_ROUTE_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PREV_JC_TM",
           "type": "number",
-          "default": 0
+          "default": 0,
+          "nullable": false
         },
         {
           "name": "NEXT_JC_TM",
           "type": "number",
-          "default": 0
+          "default": 0,
+          "nullable": false
         },
         {
           "name": "TIME_UOM",
@@ -2375,7 +2821,8 @@
         {
           "name": "JC_DIVIDE_TP_CD",
           "type": "string",
-          "default": "Y"
+          "default": "Y",
+          "nullable": false
         },
         {
           "name": "CREATED_BY",
@@ -2383,7 +2830,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -2401,20 +2849,24 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "PREV_ROUTE_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "NEXT_ROUTE_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "REVERSE_YN",
@@ -2427,7 +2879,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -2445,16 +2898,19 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "CONTAINER_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "CONTAINER_NM",
@@ -2462,7 +2918,8 @@
         },
         {
           "name": "INIT_CNT",
-          "type": "integer"
+          "type": "integer",
+          "nullable": false
         },
         {
           "name": "DESC_TXT",
@@ -2474,7 +2931,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -2492,28 +2950,34 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "CONTAINER_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PREV_ROUTE_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "NEXT_ROUTE_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "USE_VAL",
-          "type": "number"
+          "type": "number",
+          "nullable": false
         },
         {
           "name": "USE_VAL_TP_CD",
@@ -2526,7 +2990,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -2544,28 +3009,34 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "PREV_INVENTORY_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PREV_ROUTE_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "NEXT_INVENTORY_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "NEXT_ROUTE_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "CREATED_BY",
@@ -2573,7 +3044,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -2591,30 +3063,36 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "ROUTE_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "CONSTS_TM",
-          "type": "time"
+          "type": "time",
+          "nullable": false
         },
         {
           "name": "CONSTS_TM_TP_CD",
           "type": "string",
-          "default": "P"
+          "default": "P",
+          "nullable": false
         },
         {
           "name": "CALENDAR_WORK_YN",
           "type": "boolean",
-          "default": false
+          "default": false,
+          "nullable": false
         },
         {
           "name": "CREATED_BY",
@@ -2622,7 +3100,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -2640,28 +3119,34 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "PREV_ROUTE_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "NEXT_ROUTE_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "NECK_ROUTE_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "CONSTRAINT_TM",
-          "type": "number"
+          "type": "number",
+          "nullable": false
         },
         {
           "name": "TIME_UOM",
@@ -2673,7 +3158,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -2691,28 +3177,34 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "BOD_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "FROM_ROUTE_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "TO_ROUTE_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "TRANSFER_TP_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "TRANSFER_TM",
@@ -2720,7 +3212,8 @@
         },
         {
           "name": "DELIVERY_TP_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "TRANSFER_LOT_SIZE",
@@ -2728,7 +3221,8 @@
         },
         {
           "name": "SUPPLY_TP_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PREV_BUFFER_TM",
@@ -2756,7 +3250,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -2774,20 +3269,24 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "BOD_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PERIOD_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "CREATED_BY",
@@ -2795,7 +3294,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -2813,20 +3313,24 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "BOD_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "DELIVERY_START_TM",
-          "type": "time"
+          "type": "time",
+          "nullable": false
         },
         {
           "name": "APPLY_START_TS",
@@ -2842,7 +3346,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -2860,16 +3365,19 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "ORDER_TP_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "ORDER_EFFICIENCY",
@@ -2901,7 +3409,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -2919,16 +3428,19 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "DMND_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "CUSTOMER_CD",
@@ -2936,12 +3448,14 @@
         },
         {
           "name": "INVENTORY_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "GRP_PRIORITY",
           "type": "integer",
-          "default": 1
+          "default": 1,
+          "nullable": false
         },
         {
           "name": "DMND_GRP_CD",
@@ -2950,11 +3464,13 @@
         {
           "name": "REQUEST_QTY",
           "type": "number",
-          "default": 0
+          "default": 0,
+          "nullable": false
         },
         {
           "name": "DUE_DT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "DUE_DT_FENCE",
@@ -2982,7 +3498,8 @@
         {
           "name": "ACTIVE_YN",
           "type": "boolean",
-          "default": true
+          "default": true,
+          "nullable": false
         },
         {
           "name": "DELIVERY_POLICY",
@@ -3029,7 +3546,8 @@
         {
           "name": "ALLOW_NEW_WO_YN",
           "type": "boolean",
-          "default": true
+          "default": true,
+          "nullable": false
         },
         {
           "name": "DESC_TXT",
@@ -3041,7 +3559,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -3059,38 +3578,46 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "DMND_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "ROUTE_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "ALT_RESOURCE_POLICY",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "FORWARD_YN",
           "type": "boolean",
-          "default": true
+          "default": true,
+          "nullable": false
         },
         {
           "name": "ASCENDING_YN",
           "type": "boolean",
-          "default": true
+          "default": true,
+          "nullable": false
         },
         {
           "name": "PRIORITY",
-          "type": "integer"
+          "type": "integer",
+          "nullable": false
         },
         {
           "name": "CREATED_BY",
@@ -3098,7 +3625,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -3116,24 +3644,29 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "DMND_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "ROUTE_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "BATCH_GRP_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "CREATED_BY",
@@ -3141,7 +3674,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -3159,38 +3693,46 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "DMND_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "OPERATION_TP_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "ROUTE_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "INVENTORY_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "BOM_TP_CD",
           "type": "string",
-          "default": "C"
+          "default": "C",
+          "nullable": false
         },
         {
           "name": "BOM_RATE",
           "type": "number",
-          "default": 1
+          "default": 1,
+          "nullable": false
         },
         {
           "name": "PRIORITY",
@@ -3208,7 +3750,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -3226,24 +3769,29 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "DMND_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "ROUTE_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "RESOURCE_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PRIORITY",
@@ -3328,7 +3876,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -3346,37 +3895,45 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "DMND_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "ROUTE_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "RESOURCE_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PERIOD_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "EFFICIENCY",
-          "type": "number"
+          "type": "number",
+          "nullable": false
         },
         {
           "name": "PROCESS_TM_TP_CD",
           "type": "string",
-          "default": "S"
+          "default": "S",
+          "nullable": false
         },
         {
           "name": "CREATED_BY",
@@ -3384,7 +3941,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -3402,32 +3960,39 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "DMND_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "ROUTE_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "RESOURCE_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PERIOD_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PRIORITY",
-          "type": "integer"
+          "type": "integer",
+          "nullable": false
         },
         {
           "name": "CREATED_BY",
@@ -3435,7 +4000,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -3453,32 +4019,39 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "DMND_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PREV_ROUTE_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PREV_RESOURCE_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "NEXT_ROUTE_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "NEXT_RESOURCE_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "QUEUE_TM",
@@ -3506,7 +4079,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -3524,39 +4098,47 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "DMND_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "INVENTORY_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "RULE_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "FORWARD_YN",
           "type": "boolean",
-          "default": true
+          "default": true,
+          "nullable": false
         },
         {
           "name": "ASCENDING_YN",
           "type": "boolean",
-          "default": true
+          "default": true,
+          "nullable": false
         },
         {
           "name": "PRIORITY",
           "type": "integer",
-          "default": 1
+          "default": 1,
+          "nullable": false
         },
         {
           "name": "CREATED_BY",
@@ -3564,7 +4146,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -3582,25 +4165,30 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "DMND_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "WO_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "ACTIVE_YN",
           "type": "boolean",
-          "default": true
+          "default": true,
+          "nullable": false
         },
         {
           "name": "CREATED_BY",
@@ -3608,7 +4196,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -3626,39 +4215,47 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "DMND_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "INVENTORY_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "RULE_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "FORWARD_YN",
           "type": "boolean",
-          "default": true
+          "default": true,
+          "nullable": false
         },
         {
           "name": "ASCENDING_YN",
           "type": "boolean",
-          "default": true
+          "default": true,
+          "nullable": false
         },
         {
           "name": "PRIORITY",
           "type": "integer",
-          "default": 1
+          "default": 1,
+          "nullable": false
         },
         {
           "name": "CREATED_BY",
@@ -3666,7 +4263,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -3684,29 +4282,35 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "DMND_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "ROUTE_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "RESOURCE_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "ASSIGN_YN",
           "type": "boolean",
-          "default": true
+          "default": true,
+          "nullable": false
         },
         {
           "name": "CREATED_BY",
@@ -3714,7 +4318,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -3732,25 +4337,30 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "DMND_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "ROUTE_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "ASSIGN_YN",
           "type": "boolean",
-          "default": true
+          "default": true,
+          "nullable": false
         },
         {
           "name": "CREATED_BY",
@@ -3758,7 +4368,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -3776,25 +4387,30 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "DMND_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "ROUTE_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "GRP_PRIORITY",
           "type": "integer",
-          "default": 1
+          "default": 1,
+          "nullable": false
         },
         {
           "name": "CREATED_BY",
@@ -3802,7 +4418,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -3820,20 +4437,24 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "DMND_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "ROUTE_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PST",
@@ -3849,7 +4470,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -3867,24 +4489,29 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "INVENTORY_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "DMND_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "POLICY_TP_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "POLICY",
@@ -3893,12 +4520,14 @@
         {
           "name": "PRIORITY",
           "type": "integer",
-          "default": 1
+          "default": 1,
+          "nullable": false
         },
         {
           "name": "ASCENDING_YN",
           "type": "boolean",
-          "default": true
+          "default": true,
+          "nullable": false
         },
         {
           "name": "CREATED_BY",
@@ -3906,7 +4535,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -3924,29 +4554,35 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "DMND_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PREV_ROUTE_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "NEXT_ROUTE_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "TAT",
           "type": "number",
-          "default": 0
+          "default": 0,
+          "nullable": false
         },
         {
           "name": "TIME_UOM",
@@ -3955,17 +4591,20 @@
         {
           "name": "TOLERANCE_POLICY",
           "type": "string",
-          "default": "MINUTES"
+          "default": "MINUTES",
+          "nullable": false
         },
         {
           "name": "TOLERANCE_LOWER",
           "type": "number",
-          "default": 0
+          "default": 0,
+          "nullable": false
         },
         {
           "name": "TOLERANCE_UPPER",
           "type": "number",
-          "default": 0
+          "default": 0,
+          "nullable": false
         },
         {
           "name": "CREATED_BY",
@@ -3973,7 +4612,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -3991,20 +4631,24 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "DMND_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "INVENTORY_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "CREATED_BY",
@@ -4012,7 +4656,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -4030,16 +4675,19 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "WO_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "DMND_CD",
@@ -4047,21 +4695,25 @@
         },
         {
           "name": "INVENTORY_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "GRP_PRIORITY",
           "type": "integer",
-          "default": 1
+          "default": 1,
+          "nullable": false
         },
         {
           "name": "REQUEST_QTY",
           "type": "number",
-          "default": 0
+          "default": 0,
+          "nullable": false
         },
         {
           "name": "DUE_DT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "DUE_DT_FENCE",
@@ -4089,7 +4741,8 @@
         {
           "name": "ACTIVE_YN",
           "type": "boolean",
-          "default": true
+          "default": true,
+          "nullable": false
         },
         {
           "name": "TO_STOCK_YN",
@@ -4147,7 +4800,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -4165,24 +4819,29 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "STOCK_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "INVENTORY_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "RECEIPT_TS",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "USABLE_TS",
@@ -4195,7 +4854,8 @@
         {
           "name": "QTY",
           "type": "number",
-          "default": 0
+          "default": 0,
+          "nullable": false
         },
         {
           "name": "PRIORITY",
@@ -4225,7 +4885,8 @@
         {
           "name": "ACTIVE_YN",
           "type": "boolean",
-          "default": true
+          "default": true,
+          "nullable": false
         },
         {
           "name": "DESC_TXT",
@@ -4237,7 +4898,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -4255,25 +4917,30 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "DMND_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "STOCK_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "ASSIGN_YN",
           "type": "boolean",
-          "default": true
+          "default": true,
+          "nullable": false
         },
         {
           "name": "CREATED_BY",
@@ -4281,7 +4948,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -4299,39 +4967,47 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "WO_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "ROUTE_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "ALT_RESOURCE_POLICY",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "FORWARD_YN",
           "type": "boolean",
-          "default": true
+          "default": true,
+          "nullable": false
         },
         {
           "name": "ASCENDING_YN",
           "type": "boolean",
-          "default": true
+          "default": true,
+          "nullable": false
         },
         {
           "name": "PRIORITY",
           "type": "integer",
-          "default": 1
+          "default": 1,
+          "nullable": false
         },
         {
           "name": "CREATED_BY",
@@ -4339,7 +5015,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -4357,24 +5034,29 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "WO_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "ROUTE_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "BATCH_GRP_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "CREATED_BY",
@@ -4382,7 +5064,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -4400,36 +5083,44 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "WO_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "OPERATION_TP_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "ROUTE_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "INVENTORY_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "BOM_TP_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "BOM_RATE",
-          "type": "number"
+          "type": "number",
+          "nullable": false
         },
         {
           "name": "PRIORITY",
@@ -4445,7 +5136,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -4463,24 +5155,29 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "WO_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "ROUTE_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "RESOURCE_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PRIORITY",
@@ -4565,7 +5262,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -4583,37 +5281,45 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "WO_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "ROUTE_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "RESOURCE_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PERIOD_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "EFFICIENCY",
-          "type": "number"
+          "type": "number",
+          "nullable": false
         },
         {
           "name": "PROCESS_TM_TP_CD",
           "type": "string",
-          "default": "S"
+          "default": "S",
+          "nullable": false
         },
         {
           "name": "CREATED_BY",
@@ -4621,7 +5327,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -4639,32 +5346,39 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "WO_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "ROUTE_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "RESOURCE_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PERIOD_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PRIORITY",
-          "type": "integer"
+          "type": "integer",
+          "nullable": false
         },
         {
           "name": "CREATED_BY",
@@ -4672,7 +5386,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -4690,32 +5405,39 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "WO_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PREV_ROUTE_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PREV_RESOURCE_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "NEXT_ROUTE_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "NEXT_RESOURCE_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "QUEUE_TM",
@@ -4743,7 +5465,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -4761,39 +5484,47 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "WO_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "INVENTORY_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "RULE_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "FORWARD_YN",
           "type": "boolean",
-          "default": true
+          "default": true,
+          "nullable": false
         },
         {
           "name": "ASCENDING_YN",
           "type": "boolean",
-          "default": true
+          "default": true,
+          "nullable": false
         },
         {
           "name": "PRIORITY",
           "type": "integer",
-          "default": 1
+          "default": 1,
+          "nullable": false
         },
         {
           "name": "CREATED_BY",
@@ -4801,7 +5532,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -4819,25 +5551,30 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "PREV_WO_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "NEXT_WO_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "ACTIVE_YN",
           "type": "boolean",
-          "default": true
+          "default": true,
+          "nullable": false
         },
         {
           "name": "CREATED_BY",
@@ -4845,7 +5582,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -4863,39 +5601,47 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "WO_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "INVENTORY_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "RULE_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "FORWARD_YN",
           "type": "boolean",
-          "default": true
+          "default": true,
+          "nullable": false
         },
         {
           "name": "ASCENDING_YN",
           "type": "boolean",
-          "default": true
+          "default": true,
+          "nullable": false
         },
         {
           "name": "PRIORITY",
           "type": "integer",
-          "default": 1
+          "default": 1,
+          "nullable": false
         },
         {
           "name": "CREATED_BY",
@@ -4903,7 +5649,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -4921,29 +5668,35 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "WO_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "ROUTE_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "RESOURCE_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "ASSIGN_YN",
           "type": "boolean",
-          "default": true
+          "default": true,
+          "nullable": false
         },
         {
           "name": "CREATED_BY",
@@ -4951,7 +5704,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -4969,25 +5723,30 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "WO_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "ROUTE_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "ASSIGN_YN",
           "type": "boolean",
-          "default": true
+          "default": true,
+          "nullable": false
         },
         {
           "name": "CREATED_BY",
@@ -4995,7 +5754,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -5013,25 +5773,30 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "WO_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "ROUTE_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "GRP_PRIORITY",
           "type": "integer",
-          "default": 1
+          "default": 1,
+          "nullable": false
         },
         {
           "name": "CREATED_BY",
@@ -5039,7 +5804,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -5057,20 +5823,24 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "WO_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "ROUTE_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PST",
@@ -5086,7 +5856,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -5104,25 +5875,30 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "WO_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "STOCK_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "ASSIGN_YN",
           "type": "boolean",
-          "default": true
+          "default": true,
+          "nullable": false
         },
         {
           "name": "CREATED_BY",
@@ -5130,7 +5906,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -5148,24 +5925,29 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "INVENTORY_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "WO_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "POLICY_TP_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "POLICY",
@@ -5174,12 +5956,14 @@
         {
           "name": "PRIORITY",
           "type": "integer",
-          "default": 1
+          "default": 1,
+          "nullable": false
         },
         {
           "name": "ASCENDING_YN",
           "type": "boolean",
-          "default": true
+          "default": true,
+          "nullable": false
         },
         {
           "name": "CREATED_BY",
@@ -5187,7 +5971,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -5205,29 +5990,35 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "WO_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PREV_ROUTE_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "NEXT_ROUTE_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "TAT",
           "type": "number",
-          "default": 0
+          "default": 0,
+          "nullable": false
         },
         {
           "name": "TIME_UOM",
@@ -5236,17 +6027,20 @@
         {
           "name": "TOLERANCE_POLICY",
           "type": "string",
-          "default": "MINUTES"
+          "default": "MINUTES",
+          "nullable": false
         },
         {
           "name": "TOLERANCE_LOWER",
           "type": "number",
-          "default": 0
+          "default": 0,
+          "nullable": false
         },
         {
           "name": "TOLERANCE_UPPER",
           "type": "number",
-          "default": 0
+          "default": 0,
+          "nullable": false
         },
         {
           "name": "CREATED_BY",
@@ -5254,7 +6048,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -5272,20 +6067,24 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "WO_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "INVENTORY_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "CREATED_BY",
@@ -5293,7 +6092,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -5311,16 +6111,19 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "WIP_ID",
-          "type": "string"
+          "type": "integer",
+          "nullable": false
         },
         {
           "name": "WO_CD",
@@ -5328,19 +6131,18 @@
         },
         {
           "name": "ROUTE_CD",
-          "type": "string"
-        },
-        {
-          "name": "WO_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "START_TS",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "END_TS",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "RELEASE_TS",
@@ -5359,7 +6161,8 @@
         {
           "name": "TO_STOCK_YN",
           "type": "boolean",
-          "default": false
+          "default": false,
+          "nullable": false
         },
         {
           "name": "PROJECTION_INVENTORY_CD",
@@ -5383,7 +6186,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -5401,20 +6205,24 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "WIP_ID",
-          "type": "string"
+          "type": "integer",
+          "nullable": false
         },
         {
           "name": "BATCH_GRP_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "CREATED_BY",
@@ -5422,7 +6230,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -5440,20 +6249,24 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "WIP_ID",
-          "type": "string"
+          "type": "integer",
+          "nullable": false
         },
         {
           "name": "CONTAINER_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "QTY",
@@ -5473,7 +6286,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -5491,24 +6305,29 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "WIP_ID",
-          "type": "integer"
+          "type": "integer",
+          "nullable": false
         },
         {
           "name": "INVENTORY_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "QTY",
-          "type": "number"
+          "type": "number",
+          "nullable": false
         },
         {
           "name": "CREATED_BY",
@@ -5516,7 +6335,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -5534,20 +6354,24 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "PREV_WIP_ID",
-          "type": "string"
+          "type": "integer",
+          "nullable": false
         },
         {
           "name": "NEXT_WIP_ID",
-          "type": "string"
+          "type": "integer",
+          "nullable": false
         },
         {
           "name": "CREATED_BY",
@@ -5555,7 +6379,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -5573,20 +6398,24 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "WIP_ID",
-          "type": "string"
+          "type": "integer",
+          "nullable": false
         },
         {
           "name": "RESOURCE_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "CREATED_BY",
@@ -5594,7 +6423,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -5612,36 +6442,44 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "ACTIVITY_ID",
-          "type": "integer"
+          "type": "integer",
+          "nullable": false
         },
         {
           "name": "WO_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "ROUTE_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "QTY",
-          "type": "number"
+          "type": "number",
+          "nullable": false
         },
         {
           "name": "START_TS",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "END_TS",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "STOCK_USING_TP_CD",
@@ -5654,7 +6492,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -5672,20 +6511,24 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "ACTIVITY_ID",
-          "type": "integer"
+          "type": "integer",
+          "nullable": false
         },
         {
           "name": "RESOURCE_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "CREATED_BY",
@@ -5693,7 +6536,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -5711,20 +6555,24 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "ACTIVITY_ID",
-          "type": "integer"
+          "type": "integer",
+          "nullable": false
         },
         {
           "name": "STOCK_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "CREATED_BY",
@@ -5732,7 +6580,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -5750,16 +6599,19 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "CODE_GRP_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "DESC_TXT",
@@ -5771,7 +6623,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -5789,25 +6642,30 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "CODE_GRP_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "CODE_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "CODE_SEQ",
           "type": "integer",
-          "default": 1
+          "default": 1,
+          "nullable": false
         },
         {
           "name": "DESC_TXT",
@@ -5819,7 +6677,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -5837,20 +6696,24 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "STEP_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "STEP_NM",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "CREATED_BY",
@@ -5858,7 +6721,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -5876,25 +6740,30 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "STEP_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "STEP_SEQ",
           "type": "integer",
-          "default": 1
+          "default": 1,
+          "nullable": false
         },
         {
           "name": "DESC_TXT",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "EXEC_TP_CD",
@@ -5910,7 +6779,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -5928,35 +6798,42 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "POLICY_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "POLICY_NM",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "REQUIRED_YN",
           "type": "boolean",
-          "default": false
+          "default": false,
+          "nullable": false
         },
         {
           "name": "DEFAULT_YN",
           "type": "boolean",
-          "default": false
+          "default": false,
+          "nullable": false
         },
         {
           "name": "SCRIPT_NM",
           "type": "string",
-          "default": "base_obp_plan"
+          "default": "base_obp_plan",
+          "nullable": false
         },
         {
           "name": "CREATED_BY",
@@ -5964,7 +6841,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -5982,29 +6860,35 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "POLICY_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "CATEGORY_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "ITEM_SEQ",
           "type": "integer",
-          "default": 1
+          "default": 1,
+          "nullable": false
         },
         {
           "name": "ITEM_VAL",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "CREATED_BY",
@@ -6012,7 +6896,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -6030,20 +6915,24 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "SETTING_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "SETTING_VAL",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "DESC_TXT",
@@ -6055,7 +6944,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -6073,24 +6963,29 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "VERSION_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "CATEGORY_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "OPTN_VAL",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "CREATED_BY",
@@ -6098,7 +6993,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -6116,16 +7012,19 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "MAIN_VERSION_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "DESC_TXT",
@@ -6134,27 +7033,33 @@
         {
           "name": "VERSION_SEQ",
           "type": "integer",
-          "default": 1
+          "default": 1,
+          "nullable": false
         },
         {
           "name": "PLAN_DT",
-          "type": "date"
+          "type": "date",
+          "nullable": false
         },
         {
           "name": "START_TS",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "FREEZE_TS",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "END_TS",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "STEP_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "CREATED_BY",
@@ -6162,7 +7067,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -6180,16 +7086,19 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "VERSION_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "DESC_TXT",
@@ -6198,41 +7107,50 @@
         {
           "name": "VERSION_SEQ",
           "type": "integer",
-          "default": 1
+          "default": 1,
+          "nullable": false
         },
         {
           "name": "PLAN_DT",
-          "type": "date"
+          "type": "date",
+          "nullable": false
         },
         {
           "name": "START_TS",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "FREEZE_TS",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "END_TS",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "POLICY_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "STEP_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "STEP_SEQ",
           "type": "integer",
-          "default": 1
+          "default": 1,
+          "nullable": false
         },
         {
           "name": "CONFIRM_YN",
           "type": "boolean",
-          "default": false
+          "default": false,
+          "nullable": false
         },
         {
           "name": "CONFIRMED_BY",
@@ -6252,7 +7170,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -6270,20 +7189,24 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "VERSION_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLANT_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "CREATED_BY",
@@ -6291,7 +7214,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -6309,16 +7233,19 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "VERSION_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "START_TS",
@@ -6330,7 +7257,8 @@
         },
         {
           "name": "STATUS_TP_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "STATUS_LOG",
@@ -6342,7 +7270,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -6360,29 +7289,35 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "MAIN_VERSION_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "VERSION_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "STEP_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "STEP_SEQ",
           "type": "integer",
-          "default": 1
+          "default": 1,
+          "nullable": false
         },
         {
           "name": "DESC_TXT",
@@ -6398,7 +7333,8 @@
         },
         {
           "name": "STATUS_TP_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "STATUS_LOG",
@@ -6410,7 +7346,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
@@ -6428,24 +7365,29 @@
       "columns": [
         {
           "name": "ID",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PLAN_SCOPE",
           "type": "string",
-          "default": "default"
+          "default": "default",
+          "nullable": false
         },
         {
           "name": "MODEL_TP_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "MODEL_CD",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PROPERTY_NM",
-          "type": "string"
+          "type": "string",
+          "nullable": false
         },
         {
           "name": "PROPERTY_VAL",
@@ -6457,7 +7399,8 @@
         },
         {
           "name": "CREATED_AT",
-          "type": "timestamp"
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "UPDATED_BY",
