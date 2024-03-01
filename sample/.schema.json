@@ -14,15 +14,15 @@
         },
         {
           "name": "discount",
-          "type": "float"
+          "type": "number"
         },
         {
           "name": "unit_price",
-          "type": "float"
+          "type": "number"
         },
         {
           "name": "shipping_cost",
-          "type": "float"
+          "type": "number"
         },
         {
           "name": "customer_id",
@@ -58,7 +58,7 @@
         },
         {
           "name": "product_base_margin",
-          "type": "float"
+          "type": "number"
         },
         {
           "name": "country",
@@ -90,7 +90,7 @@
         },
         {
           "name": "profit",
-          "type": "float"
+          "type": "number"
         },
         {
           "name": "quantity_ordered_new",
@@ -98,7 +98,7 @@
         },
         {
           "name": "sales",
-          "type": "float"
+          "type": "number"
         },
         {
           "name": "order_id",

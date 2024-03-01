@@ -177,8 +177,11 @@ class ExcelData(BaseData):
         timestamp_dict['num_format'] = 'yyyy-mm-dd hh-mm-ss'
         timestamp_dict['align'] = 'center'
 
-        float_dict = copy.deepcopy(default_dict)
-        float_dict['align'] = 'right'
+        boolean_dict = copy.deepcopy(default_dict)
+        boolean_dict['align'] = 'center'
+
+        number_dict = copy.deepcopy(default_dict)
+        number_dict['align'] = 'right'
 
         integer_dict = copy.deepcopy(default_dict)
         integer_dict['align'] = 'right'
@@ -187,7 +190,8 @@ class ExcelData(BaseData):
         format_date = workbook.add_format(date_dict)
         format_time = workbook.add_format(time_dict)
         format_timestamp = workbook.add_format(timestamp_dict)
-        format_float = workbook.add_format(float_dict)
+        format_boolean = workbook.add_format(boolean_dict)
+        format_number = workbook.add_format(number_dict)
         format_integer = workbook.add_format(integer_dict)
 
         table_names = self.get_schema().get_table_names()
@@ -232,8 +236,10 @@ class ExcelData(BaseData):
                             cell_format = format_time
                         elif column_type == 'timestamp':
                             cell_format = format_timestamp
-                        elif column_type == 'float':
-                            cell_format = format_float
+                        elif column_type == 'boolean':
+                            cell_format = format_boolean
+                        elif column_type == 'number':
+                            cell_format = format_number
                         elif column_type == 'integer':
                             cell_format = format_integer
 

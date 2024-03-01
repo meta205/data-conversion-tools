@@ -104,7 +104,7 @@ class BaseSchema(object):
             if default_value is not None and default_value == 'true':
                 return 'TRUE'
             return 'FALSE'
-        elif column_type == 'float':
+        elif column_type == 'number':
             if default_value is not None and len(str(default_value)) > 0:
                 return float(str(default_value))
             return '0.0'

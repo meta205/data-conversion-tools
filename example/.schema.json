@@ -12,12 +12,23 @@
     "TB_FP_SO_BOM_ROUTING.SO_CD": "TB_FP_DMND_BOM_ROUTING.DMND_CD",
     "TB_FP_SO_BOR": "TB_FP_DMND_BOR",
     "TB_FP_SO_BOR.SO_CD": "TB_FP_DMND_BOR.DMND_CD",
+    "TB_FP_SO_BOR.QUEUE_TM": "TB_FP_DMND_BOR.QUEUE_TIME",
+    "TB_FP_SO_BOR.SETUP_TM": "TB_FP_DMND_BOR.SETUP_TIME",
+    "TB_FP_SO_BOR.PROCESS_TM": "TB_FP_DMND_BOR.PROCESS_TIME",
+    "TB_FP_SO_BOR.WAIT_TM": "TB_FP_DMND_BOR.WAIT_TIME",
+    "TB_FP_SO_BOR.MOVE_TM": "TB_FP_DMND_BOR.MOVE_TIME",
+    "TB_FP_SO_BOR.TRANSFER_BATCH_TM": "TB_FP_DMND_BOR.TRANSFER_BATCH_TIME",
+    "TB_FP_SO_BOR.STD_PROCESS_TM": "TB_FP_DMND_BOR.STD_PROCESS_TIME",
     "TB_FP_SO_BOR_EFFICIENCY": "TB_FP_DMND_BOR_EFFICIENCY",
     "TB_FP_SO_BOR_EFFICIENCY.SO_CD": "TB_FP_DMND_BOR_EFFICIENCY.DMND_CD",
     "TB_FP_SO_BOR_PRIORITY": "TB_FP_DMND_BOR_PRIORITY",
     "TB_FP_SO_BOR_PRIORITY.SO_CD": "TB_FP_DMND_BOR_PRIORITY.DMND_CD",
     "TB_FP_SO_INTER_BOR_TIME": "TB_FP_DMND_INTER_BOR_TIME",
     "TB_FP_SO_INTER_BOR_TIME.SO_CD": "TB_FP_DMND_INTER_BOR_TIME.DMND_CD",
+    "TB_FP_SO_INTER_BOR_TIME.QUEUE_TM": "TB_FP_DMND_INTER_BOR_TIME.QUEUE_TIME",
+    "TB_FP_SO_INTER_BOR_TIME.SETUP_TM": "TB_FP_DMND_INTER_BOR_TIME.SETUP_TIME",
+    "TB_FP_SO_INTER_BOR_TIME.WAIT_TM": "TB_FP_DMND_INTER_BOR_TIME.WAIT_TIME",
+    "TB_FP_SO_INTER_BOR_TIME.MOVE_TM": "TB_FP_DMND_INTER_BOR_TIME.MOVE_TIME",
     "TB_FP_SO_INV_USAGE_RULE": "TB_FP_DMND_INV_USAGE_RULE",
     "TB_FP_SO_INV_USAGE_RULE.SO_CD": "TB_FP_DMND_INV_USAGE_RULE.DMND_CD",
     "TB_FP_SO_ORDER_CONNECTION": "TB_FP_DMND_ORDER_CONNECTION",
@@ -39,7 +50,125 @@
     "TB_FP_SO_TAT": "TB_FP_DMND_TAT",
     "TB_FP_SO_TAT.SO_CD": "TB_FP_DMND_TAT.DMND_CD",
     "TB_FP_SO_TERMINAL_INV": "TB_FP_DMND_TERMINAL_INV",
-    "TB_FP_SO_TERMINAL_INV.SO_CD": "TB_FP_DMND_TERMINAL_INV.DMND_CD"
+    "TB_FP_SO_TERMINAL_INV.SO_CD": "TB_FP_DMND_TERMINAL_INV.DMND_CD",
+    "TB_FP_RESOURCE.JC_TM": "TB_FP_RESOURCE.JC_TIME",
+    "TB_FP_RESOURCE.ROUTE_JC_TM": "TB_FP_RESOURCE.ROUTE_JC_TIME",
+    "TB_FP_RESOURCE.ROUTE_GRP_JC_TM": "TB_FP_RESOURCE.ROUTE_GRP_JC_TIME",
+    "TB_FP_INVENTORY.INV_KEEPING_TM": "TB_FP_INVENTORY.INV_KEEPING_TIME",
+    "TB_FP_INVENTORY.INV_FENCE_TM": "TB_FP_INVENTORY.INV_FENCE_TIME",
+    "TB_FP_BATCH_RESRC.DELAY_TM": "TB_FP_BATCH_RESRC.DELAY_TIME",
+    "TB_FP_BOR.QUEUE_TM": "TB_FP_BOR.QUEUE_TIME",
+    "TB_FP_BOR.SETUP_TM": "TB_FP_BOR.SETUP_TIME",
+    "TB_FP_BOR.PROCESS_TM": "TB_FP_BOR.PROCESS_TIME",
+    "TB_FP_BOR.WAIT_TM": "TB_FP_BOR.WAIT_TIME",
+    "TB_FP_BOR.MOVE_TM": "TB_FP_BOR.MOVE_TIME",
+    "TB_FP_BOR.TRANSFER_BATCH_TM": "TB_FP_BOR.TRANSFER_BATCH_TIME",
+    "TB_FP_BOR.STD_PROCESS_TM": "TB_FP_BOR.STD_PROCESS_TIME",
+    "TB_FP_JC_TIME_GRP.PREV_JC_TM": "TB_FP_JC_TIME_GRP.PREV_JC_TIME",
+    "TB_FP_JC_TIME_GRP.NEXT_JC_TM": "TB_FP_JC_TIME_GRP.NEXT_JC_TIME",
+    "TB_FP_JC_TIME.PREV_JC_TM": "TB_FP_JC_TIME.PREV_JC_TIME",
+    "TB_FP_JC_TIME.NEXT_JC_TM": "TB_FP_JC_TIME.NEXT_JC_TIME",
+    "TB_FP_TIME_WINDOW.CONSTRAINT_TM": "TB_FP_TIME_WINDOW.CONSTRAINT_TIME",
+    "TB_FP_BOD.TRANSFER_TM": "TB_FP_BOD.TRANSFER_TIME",
+    "TB_FP_BOD.PREV_BUFFER_TM": "TB_FP_BOD.PREV_BUFFER_TIME",
+    "TB_FP_BOD.NEXT_BUFFER_TM": "TB_FP_BOD.NEXT_BUFFER_TIME",
+    "TB_FP_DMND_BOR.QUEUE_TM": "TB_FP_DMND_BOR.QUEUE_TIME",
+    "TB_FP_DMND_BOR.SETUP_TM": "TB_FP_DMND_BOR.SETUP_TIME",
+    "TB_FP_DMND_BOR.PROCESS_TM": "TB_FP_DMND_BOR.PROCESS_TIME",
+    "TB_FP_DMND_BOR.WAIT_TM": "TB_FP_DMND_BOR.WAIT_TIME",
+    "TB_FP_DMND_BOR.MOVE_TM": "TB_FP_DMND_BOR.MOVE_TIME",
+    "TB_FP_DMND_BOR.TRANSFER_BATCH_TM": "TB_FP_DMND_BOR.TRANSFER_BATCH_TIME",
+    "TB_FP_DMND_BOR.STD_PROCESS_TM": "TB_FP_DMND_BOR.STD_PROCESS_TIME",
+    "TB_FP_DMND_INTER_BOR_TIME.QUEUE_TM": "TB_FP_DMND_INTER_BOR_TIME.QUEUE_TIME",
+    "TB_FP_DMND_INTER_BOR_TIME.SETUP_TM": "TB_FP_DMND_INTER_BOR_TIME.SETUP_TIME",
+    "TB_FP_DMND_INTER_BOR_TIME.WAIT_TM": "TB_FP_DMND_INTER_BOR_TIME.WAIT_TIME",
+    "TB_FP_DMND_INTER_BOR_TIME.MOVE_TM": "TB_FP_DMND_INTER_BOR_TIME.MOVE_TIME",
+    "TB_FP_WO_BOR.QUEUE_TM": "TB_FP_WO_BOR.QUEUE_TIME",
+    "TB_FP_WO_BOR.SETUP_TM": "TB_FP_WO_BOR.SETUP_TIME",
+    "TB_FP_WO_BOR.PROCESS_TM": "TB_FP_WO_BOR.PROCESS_TIME",
+    "TB_FP_WO_BOR.WAIT_TM": "TB_FP_WO_BOR.WAIT_TIME",
+    "TB_FP_WO_BOR.MOVE_TM": "TB_FP_WO_BOR.MOVE_TIME",
+    "TB_FP_WO_BOR.TRANSFER_BATCH_TM": "TB_FP_WO_BOR.TRANSFER_BATCH_TIME",
+    "TB_FP_WO_BOR.STD_PROCESS_TM": "TB_FP_WO_BOR.STD_PROCESS_TIME",
+    "TB_FP_WO_INTER_BOR_TIME.QUEUE_TM": "TB_FP_WO_INTER_BOR_TIME.QUEUE_TIME",
+    "TB_FP_WO_INTER_BOR_TIME.SETUP_TM": "TB_FP_WO_INTER_BOR_TIME.SETUP_TIME",
+    "TB_FP_WO_INTER_BOR_TIME.WAIT_TM": "TB_FP_WO_INTER_BOR_TIME.WAIT_TIME",
+    "TB_FP_WO_INTER_BOR_TIME.MOVE_TM": "TB_FP_WO_INTER_BOR_TIME.MOVE_TIME",
+    "TB_FP_ACTIVITY.QUEUE_TM": "TB_FP_ACTIVITY.QUEUE_TIME",
+    "TB_FP_ACTIVITY.SETUP_TM": "TB_FP_ACTIVITY.SETUP_TIME",
+    "TB_FP_ACTIVITY.PROCESS_TM": "TB_FP_ACTIVITY.PROCESS_TIME",
+    "TB_FP_ACTIVITY.WAIT_TM": "TB_FP_ACTIVITY.WAIT_TIME",
+    "TB_FP_ACTIVITY.MOVE_TM": "TB_FP_ACTIVITY.MOVE_TIME",
+    "TB_FP_ACTIVITY.PREV_JC_TM": "TB_FP_ACTIVITY.PREV_JC_TIME",
+    "TB_FP_ACTIVITY.NEXT_JC_TM": "TB_FP_ACTIVITY.NEXT_JC_TIME",
+    "TB_FP_RESRC_UTILIZATION.USED_TM": "TB_FP_RESRC_UTILIZATION.USED_TIME",
+    "TB_FP_RESRC_UTILIZATION.AVAIL_TM": "TB_FP_RESRC_UTILIZATION.AVAIL_TIME",
+    "TB_FP_RESRC_UTILIZATION.JC_TM": "TB_FP_RESRC_UTILIZATION.JC_TIME"
+  },
+  "columns": {
+    "ID": {
+      "type": "string",
+      "length": 32
+    },
+    "PLAN_SCOPE": {
+      "type": "string",
+      "length": 100
+    },
+    "DESC_TXT": {
+      "type": "string",
+      "length": 500
+    },
+    "QTY": {
+      "type": "number",
+      "precision": 20,
+      "scale": 5
+    },
+    "PRIORITY": {
+      "type": "integer",
+      "precision": 20,
+      "scale": 0
+    },
+    "CATEGORY": {
+      "type": "string",
+      "length": 100
+    },
+    "_CD": {
+      "matcher": "suffix",
+      "type": "string",
+      "length": 100
+    },
+    "_NM": {
+      "matcher": "suffix",
+      "type": "string",
+      "length": 250
+    },
+    "_QTY": {
+      "matcher": "suffix",
+      "type": "number",
+      "precision": 20,
+      "scale": 5
+    },
+    "_BY": {
+      "matcher": "suffix",
+      "type": "string",
+      "length": 100
+    },
+    "_AT": {
+      "matcher": "suffix",
+      "type": "timestamp"
+    },
+    "_TS": {
+      "matcher": "suffix",
+      "type": "timestamp"
+    },
+    "_DT": {
+      "matcher": "suffix",
+      "type": "date"
+    },
+    "_TM": {
+      "matcher": "suffix",
+      "type": "time"
+    }
   },
   "tables": {
     "TB_FP_CORPORATION": {
@@ -530,15 +659,15 @@
         },
         {
           "name": "LOT_SIZE_MIN",
-          "type": "float"
+          "type": "number"
         },
         {
           "name": "LOT_SIZE_MAX",
-          "type": "float"
+          "type": "number"
         },
         {
           "name": "LOT_SIZE_MULTIPLR",
-          "type": "float"
+          "type": "number"
         },
         {
           "name": "DESC_TXT",
@@ -622,17 +751,17 @@
         },
         {
           "name": "JC_TM",
-          "type": "float",
+          "type": "number",
           "default": 0
         },
         {
           "name": "ROUTE_JC_TM",
-          "type": "float",
+          "type": "number",
           "default": 0
         },
         {
           "name": "ROUTE_GRP_JC_TM",
-          "type": "float",
+          "type": "number",
           "default": 0
         },
         {
@@ -709,7 +838,7 @@
         },
         {
           "name": "LIMIT_VAL",
-          "type": "float"
+          "type": "number"
         },
         {
           "name": "RESOURCE_CD",
@@ -872,17 +1001,17 @@
         },
         {
           "name": "WO_SIZE_MIN",
-          "type": "float",
+          "type": "number",
           "default": 1
         },
         {
           "name": "WO_SIZE_MAX",
-          "type": "float",
+          "type": "number",
           "default": 1
         },
         {
           "name": "WO_SIZE_MULTIPLR",
-          "type": "float",
+          "type": "number",
           "default": 0
         },
         {
@@ -974,11 +1103,11 @@
         },
         {
           "name": "INV_KEEPING_TM",
-          "type": "float"
+          "type": "number"
         },
         {
           "name": "INV_FENCE_TM",
-          "type": "float"
+          "type": "number"
         },
         {
           "name": "TIME_UOM",
@@ -1121,7 +1250,7 @@
         },
         {
           "name": "DELAY_TM",
-          "type": "float"
+          "type": "number"
         },
         {
           "name": "TIME_UOM",
@@ -1273,42 +1402,42 @@
         },
         {
           "name": "EFFICIENCY",
-          "type": "float",
+          "type": "number",
           "default": 1
         },
         {
           "name": "QUEUE_TM",
-          "type": "float",
+          "type": "number",
           "default": 0
         },
         {
           "name": "SETUP_TM",
-          "type": "float",
+          "type": "number",
           "default": 0
         },
         {
           "name": "PROCESS_TM",
-          "type": "float",
+          "type": "number",
           "default": 0
         },
         {
           "name": "WAIT_TM",
-          "type": "float",
+          "type": "number",
           "default": 0
         },
         {
           "name": "MOVE_TM",
-          "type": "float",
+          "type": "number",
           "default": 0
         },
         {
           "name": "TRANSFER_BATCH_TM",
-          "type": "float",
+          "type": "number",
           "default": 0
         },
         {
           "name": "STD_PROCESS_TM",
-          "type": "float",
+          "type": "number",
           "default": 0
         },
         {
@@ -1322,17 +1451,17 @@
         },
         {
           "name": "LOT_SIZE_MIN",
-          "type": "float",
+          "type": "number",
           "default": 0
         },
         {
           "name": "LOT_SIZE_MAX",
-          "type": "float",
+          "type": "number",
           "default": 0
         },
         {
           "name": "LOT_SIZE_MULTIPLR",
-          "type": "float",
+          "type": "number",
           "default": 0
         },
         {
@@ -1724,7 +1853,7 @@
         },
         {
           "name": "OUTPUT_VAL",
-          "type": "float"
+          "type": "number"
         },
         {
           "name": "OUTPUT_VAL_TP_CD",
@@ -1777,7 +1906,7 @@
         },
         {
           "name": "BOM_RATE",
-          "type": "float",
+          "type": "number",
           "default": 1
         },
         {
@@ -1791,7 +1920,7 @@
         },
         {
           "name": "ALT_VAL",
-          "type": "float",
+          "type": "number",
           "default": 0
         },
         {
@@ -1843,7 +1972,7 @@
         },
         {
           "name": "INPUT_RATE",
-          "type": "float",
+          "type": "number",
           "default": 1
         },
         {
@@ -1892,7 +2021,7 @@
         },
         {
           "name": "MAX_CAPACITY",
-          "type": "float"
+          "type": "number"
         },
         {
           "name": "DESC_TXT",
@@ -2169,12 +2298,12 @@
         },
         {
           "name": "PREV_JC_TM",
-          "type": "float",
+          "type": "number",
           "default": 0
         },
         {
           "name": "NEXT_JC_TM",
-          "type": "float",
+          "type": "number",
           "default": 0
         },
         {
@@ -2231,12 +2360,12 @@
         },
         {
           "name": "PREV_JC_TM",
-          "type": "float",
+          "type": "number",
           "default": 0
         },
         {
           "name": "NEXT_JC_TM",
-          "type": "float",
+          "type": "number",
           "default": 0
         },
         {
@@ -2384,7 +2513,7 @@
         },
         {
           "name": "USE_VAL",
-          "type": "float"
+          "type": "number"
         },
         {
           "name": "USE_VAL_TP_CD",
@@ -2532,7 +2661,7 @@
         },
         {
           "name": "CONSTRAINT_TM",
-          "type": "float"
+          "type": "number"
         },
         {
           "name": "TIME_UOM",
@@ -2587,7 +2716,7 @@
         },
         {
           "name": "TRANSFER_TM",
-          "type": "float"
+          "type": "number"
         },
         {
           "name": "DELIVERY_TP_CD",
@@ -2595,7 +2724,7 @@
         },
         {
           "name": "TRANSFER_LOT_SIZE",
-          "type": "float"
+          "type": "number"
         },
         {
           "name": "SUPPLY_TP_CD",
@@ -2603,11 +2732,11 @@
         },
         {
           "name": "PREV_BUFFER_TM",
-          "type": "float"
+          "type": "number"
         },
         {
           "name": "NEXT_BUFFER_TM",
-          "type": "float"
+          "type": "number"
         },
         {
           "name": "TIME_UOM",
@@ -2744,7 +2873,7 @@
         },
         {
           "name": "ORDER_EFFICIENCY",
-          "type": "float"
+          "type": "number"
         },
         {
           "name": "ORDER_PST",
@@ -2820,7 +2949,7 @@
         },
         {
           "name": "REQUEST_QTY",
-          "type": "float",
+          "type": "number",
           "default": 0
         },
         {
@@ -2842,7 +2971,7 @@
         },
         {
           "name": "EFFICIENCY",
-          "type": "float",
+          "type": "number",
           "default": 1
         },
         {
@@ -3060,7 +3189,7 @@
         },
         {
           "name": "BOM_RATE",
-          "type": "float",
+          "type": "number",
           "default": 1
         },
         {
@@ -3123,42 +3252,42 @@
         },
         {
           "name": "EFFICIENCY",
-          "type": "float",
+          "type": "number",
           "default": 1
         },
         {
           "name": "QUEUE_TM",
-          "type": "float",
+          "type": "number",
           "default": 0
         },
         {
           "name": "SETUP_TM",
-          "type": "float",
+          "type": "number",
           "default": 0
         },
         {
           "name": "PROCESS_TM",
-          "type": "float",
+          "type": "number",
           "default": 0
         },
         {
           "name": "WAIT_TM",
-          "type": "float",
+          "type": "number",
           "default": 0
         },
         {
           "name": "MOVE_TM",
-          "type": "float",
+          "type": "number",
           "default": 0
         },
         {
           "name": "TRANSFER_BATCH_TM",
-          "type": "float",
+          "type": "number",
           "default": 0
         },
         {
           "name": "STD_PROCESS_TM",
-          "type": "float",
+          "type": "number",
           "default": 0
         },
         {
@@ -3172,17 +3301,17 @@
         },
         {
           "name": "LOT_SIZE_MIN",
-          "type": "float",
+          "type": "number",
           "default": 0
         },
         {
           "name": "LOT_SIZE_MAX",
-          "type": "float",
+          "type": "number",
           "default": 0
         },
         {
           "name": "LOT_SIZE_MULTIPLR",
-          "type": "float",
+          "type": "number",
           "default": 0
         },
         {
@@ -3242,7 +3371,7 @@
         },
         {
           "name": "EFFICIENCY",
-          "type": "float"
+          "type": "number"
         },
         {
           "name": "PROCESS_TM_TP_CD",
@@ -3353,19 +3482,19 @@
         },
         {
           "name": "QUEUE_TM",
-          "type": "float"
+          "type": "number"
         },
         {
           "name": "SETUP_TM",
-          "type": "float"
+          "type": "number"
         },
         {
           "name": "WAIT_TM",
-          "type": "float"
+          "type": "number"
         },
         {
           "name": "MOVE_TM",
-          "type": "float"
+          "type": "number"
         },
         {
           "name": "TIME_UOM",
@@ -3816,7 +3945,7 @@
         },
         {
           "name": "TAT",
-          "type": "float",
+          "type": "number",
           "default": 0
         },
         {
@@ -3830,12 +3959,12 @@
         },
         {
           "name": "TOLERANCE_LOWER",
-          "type": "float",
+          "type": "number",
           "default": 0
         },
         {
           "name": "TOLERANCE_UPPER",
-          "type": "float",
+          "type": "number",
           "default": 0
         },
         {
@@ -3927,7 +4056,7 @@
         },
         {
           "name": "REQUEST_QTY",
-          "type": "float",
+          "type": "number",
           "default": 0
         },
         {
@@ -3949,7 +4078,7 @@
         },
         {
           "name": "EFFICIENCY",
-          "type": "float",
+          "type": "number",
           "default": 1
         },
         {
@@ -4065,7 +4194,7 @@
         },
         {
           "name": "QTY",
-          "type": "float",
+          "type": "number",
           "default": 0
         },
         {
@@ -4300,7 +4429,7 @@
         },
         {
           "name": "BOM_RATE",
-          "type": "float"
+          "type": "number"
         },
         {
           "name": "PRIORITY",
@@ -4360,42 +4489,42 @@
         },
         {
           "name": "EFFICIENCY",
-          "type": "float",
+          "type": "number",
           "default": 1
         },
         {
           "name": "QUEUE_TM",
-          "type": "float",
+          "type": "number",
           "default": 0
         },
         {
           "name": "SETUP_TM",
-          "type": "float",
+          "type": "number",
           "default": 0
         },
         {
           "name": "PROCESS_TM",
-          "type": "float",
+          "type": "number",
           "default": 0
         },
         {
           "name": "WAIT_TM",
-          "type": "float",
+          "type": "number",
           "default": 0
         },
         {
           "name": "MOVE_TM",
-          "type": "float",
+          "type": "number",
           "default": 0
         },
         {
           "name": "TRANSFER_BATCH_TM",
-          "type": "float",
+          "type": "number",
           "default": 0
         },
         {
           "name": "STD_PROCESS_TM",
-          "type": "float",
+          "type": "number",
           "default": 0
         },
         {
@@ -4409,17 +4538,17 @@
         },
         {
           "name": "LOT_SIZE_MIN",
-          "type": "float",
+          "type": "number",
           "default": 0
         },
         {
           "name": "LOT_SIZE_MAX",
-          "type": "float",
+          "type": "number",
           "default": 0
         },
         {
           "name": "LOT_SIZE_MULTIPLR",
-          "type": "float",
+          "type": "number",
           "default": 0
         },
         {
@@ -4479,7 +4608,7 @@
         },
         {
           "name": "EFFICIENCY",
-          "type": "float"
+          "type": "number"
         },
         {
           "name": "PROCESS_TM_TP_CD",
@@ -4590,19 +4719,19 @@
         },
         {
           "name": "QUEUE_TM",
-          "type": "float"
+          "type": "number"
         },
         {
           "name": "SETUP_TM",
-          "type": "float"
+          "type": "number"
         },
         {
           "name": "WAIT_TM",
-          "type": "float"
+          "type": "number"
         },
         {
           "name": "MOVE_TM",
-          "type": "float"
+          "type": "number"
         },
         {
           "name": "TIME_UOM",
@@ -5097,7 +5226,7 @@
         },
         {
           "name": "TAT",
-          "type": "float",
+          "type": "number",
           "default": 0
         },
         {
@@ -5111,12 +5240,12 @@
         },
         {
           "name": "TOLERANCE_LOWER",
-          "type": "float",
+          "type": "number",
           "default": 0
         },
         {
           "name": "TOLERANCE_UPPER",
-          "type": "float",
+          "type": "number",
           "default": 0
         },
         {
@@ -5328,7 +5457,7 @@
         },
         {
           "name": "QTY",
-          "type": "float"
+          "type": "number"
         },
         {
           "name": "PREV_ROUTE_CD",
@@ -5379,7 +5508,7 @@
         },
         {
           "name": "QTY",
-          "type": "float"
+          "type": "number"
         },
         {
           "name": "CREATED_BY",
@@ -5504,7 +5633,7 @@
         },
         {
           "name": "QTY",
-          "type": "float"
+          "type": "number"
         },
         {
           "name": "START_TS",
@@ -6362,7 +6491,7 @@
         },
         {
           "name": "QTY",
-          "type": "float"
+          "type": "number"
         },
         {
           "name": "START_TS",
@@ -6400,7 +6529,7 @@
         },
         {
           "name": "USED_QTY",
-          "type": "float"
+          "type": "number"
         },
         {
           "name": "USED_TS",
