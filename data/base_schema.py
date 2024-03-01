@@ -16,33 +16,33 @@ class BaseSchema(object):
         self.schema_data = json.load(json_file)
         json_file.close()
 
-        self.object_names = []
-        if 'objects' in self.schema_data:
-            for key in self.schema_data['objects'].keys():
-                self.object_names += [key]
+        self.table_names = []
+        if 'tables' in self.schema_data:
+            for key in self.schema_data['tables'].keys():
+                self.table_names += [key]
 
         self.valid = True
 
-    def get_object_names(self):
-        return self.object_names
+    def get_table_names(self):
+        return self.table_names
 
-    def get_replace_object_name(self, object_name):
+    def get_replace_table_name(self, table_name):
         if 'replace-names' not in self.schema_data:
-            return object_name
+            return table_name
 
         replace_name_dict = self.schema_data['replace-names']
-        if object_name not in replace_name_dict:
-            return object_name
+        if table_name not in replace_name_dict:
+            return table_name
 
-        return replace_name_dict[object_name]
+        return replace_name_dict[table_name]
 
-    def get_replace_column_name(self, object_name, column_name):
+    def get_replace_column_name(self, table_name, column_name):
         if 'replace-names' not in self.schema_data:
             return column_name
 
         replace_name_dict = self.schema_data['replace-names']
 
-        key = '%s.%s' % (object_name, column_name)
+        key = '%s.%s' % (table_name, column_name)
         if key not in replace_name_dict:
             return column_name
 
@@ -55,42 +55,42 @@ class BaseSchema(object):
     def is_valid(self):
         return self.valid
 
-    def has_object(self, object_name):
-        if 'objects' in self.schema_data:
-            object_info_dict = self.schema_data['objects']
-            if object_name in object_info_dict:
+    def has_table(self, table_name):
+        if 'tables' in self.schema_data:
+            object_info_dict = self.schema_data['tables']
+            if table_name in object_info_dict:
                 return True
 
         return False
 
-    def get_columns(self, object_name):
+    def get_columns(self, table_name):
         columns = []
-        if 'objects' not in self.schema_data:
+        if 'tables' not in self.schema_data:
             return columns
 
-        object_info_dict = self.schema_data['objects']
-        if object_name in object_info_dict:
-            column_infos = object_info_dict[object_name]['columns']
+        object_info_dict = self.schema_data['tables']
+        if table_name in object_info_dict:
+            column_infos = object_info_dict[table_name]['columns']
             for column_info in column_infos:
                 columns += [column_info['name']]
 
         return columns
 
-    def get_column_info(self, object_name, column_name):
-        if 'objects' not in self.schema_data:
+    def get_column_info(self, table_name, column_name):
+        if 'tables' not in self.schema_data:
             return None
 
-        object_info_dict = self.schema_data['objects']
-        if object_name in object_info_dict:
-            column_infos = object_info_dict[object_name]['columns']
+        object_info_dict = self.schema_data['tables']
+        if table_name in object_info_dict:
+            column_infos = object_info_dict[table_name]['columns']
             for column_info in column_infos:
                 if column_name == column_info['name']:
                     return column_info
 
         return None
 
-    def get_default_value(self, object_name, column_name):
-        column_info = self.get_column_info(object_name, column_name)
+    def get_default_value(self, table_name, column_name):
+        column_info = self.get_column_info(table_name, column_name)
         if column_info is None:
             return ''
 

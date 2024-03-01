@@ -30,28 +30,28 @@ class ExcelData(BaseData):
 
         sheet_dict = {}
         for sheet in workbook.sheets():
-            object_name = schema.get_replace_object_name(sheet.name)
-            if schema.is_valid() and not schema.has_object(object_name):
+            table_name = schema.get_replace_table_name(sheet.name)
+            if schema.is_valid() and not schema.has_table(table_name):
                 continue
 
-            sheet_dict[object_name] = sheet
+            sheet_dict[table_name] = sheet
 
-        object_names = schema.get_object_names()
+        table_names = schema.get_table_names()
 
-        for object_name in object_names:
-            if object_name not in sheet_dict:
-                columns = schema.get_columns(object_name)
-                self.set_columns(object_name, columns)
+        for table_name in table_names:
+            if table_name not in sheet_dict:
+                columns = schema.get_columns(table_name)
+                self.set_columns(table_name, columns)
                 continue
 
             columns = None
 
-            sheet = sheet_dict[object_name]
+            sheet = sheet_dict[table_name]
             for row_idx in range(sheet.nrows):
                 if row_idx == 0:
                     columns = sheet.row_values(row_idx)
                     columns = [schema.get_replace_column_name(sheet.name, c) for c in columns]
-                    self.set_columns(object_name, columns)
+                    self.set_columns(table_name, columns)
                 else:
                     old_values = sheet.row_values(row_idx)
                     new_values = []
@@ -61,7 +61,7 @@ class ExcelData(BaseData):
                             cell_type = excel_utils.XL_CELL_TIMESTAMP
 
                         if columns is not None:
-                            column_info = self.get_column_info(object_name, columns[col_idx])
+                            column_info = self.get_column_info(table_name, columns[col_idx])
                             if column_info is None:
                                 data_type = data_utils.get_data_type(columns[col_idx], old_values[col_idx])
                                 cell_type = excel_utils.to_cell_type(data_type)
@@ -70,7 +70,7 @@ class ExcelData(BaseData):
 
                         new_values += [excel_utils.to_value(sheet, cell_type, old_values[col_idx])]
 
-                    self.add_data(object_name, new_values)
+                    self.add_data(table_name, new_values)
 
     def read_xlsx(self):
         schema = self.get_schema()
@@ -82,28 +82,28 @@ class ExcelData(BaseData):
         sheet_names = workbook.get_sheet_names()
         for sheet_name in sheet_names:
             sheet = workbook.get_sheet_by_name(sheet_name)
-            object_name = schema.get_replace_object_name(sheet_name)
-            if schema.is_valid() and not schema.has_object(object_name):
+            table_name = schema.get_replace_table_name(sheet_name)
+            if schema.is_valid() and not schema.has_table(table_name):
                 continue
 
-            sheet_dict[object_name] = (sheet_name, sheet)
+            sheet_dict[table_name] = (sheet_name, sheet)
 
-        object_names = schema.get_object_names()
+        table_names = schema.get_table_names()
 
-        for object_name in object_names:
-            if object_name not in sheet_dict:
-                columns = schema.get_columns(object_name)
-                self.set_columns(object_name, columns)
+        for table_name in table_names:
+            if table_name not in sheet_dict:
+                columns = schema.get_columns(table_name)
+                self.set_columns(table_name, columns)
                 continue
 
             columns = None
 
-            sheet_name, sheet = sheet_dict[object_name]
+            sheet_name, sheet = sheet_dict[table_name]
             for i, row in enumerate(sheet):
                 if i == 0:
                     columns = [col.value for col in row]
                     columns = [schema.get_replace_column_name(sheet_name, c) for c in columns]
-                    self.set_columns(object_name, columns)
+                    self.set_columns(table_name, columns)
                 else:
                     old_values = [col.value for col in row]
                     new_values = []
@@ -111,7 +111,7 @@ class ExcelData(BaseData):
                         cell_type = None
 
                         if columns is not None:
-                            column_info = self.get_column_info(object_name, columns[col_idx])
+                            column_info = self.get_column_info(table_name, columns[col_idx])
                             if column_info is None:
                                 data_type = data_utils.get_data_type(columns[col_idx], old_values[col_idx])
                                 cell_type = excel_utils.to_cell_type(data_type)
@@ -120,7 +120,7 @@ class ExcelData(BaseData):
 
                         new_values += [excel_utils.to_value(sheet, cell_type, old_values[col_idx])]
 
-                    self.add_data(object_name, new_values)
+                    self.add_data(table_name, new_values)
 
     def write(self):
         new_filename = self.filename
@@ -190,11 +190,11 @@ class ExcelData(BaseData):
         format_float = workbook.add_format(float_dict)
         format_integer = workbook.add_format(integer_dict)
 
-        object_names = self.get_schema().get_object_names()
-        for object_name in object_names:
-            data = self.get_data(object_name)
+        table_names = self.get_schema().get_table_names()
+        for table_name in table_names:
+            data = self.get_data(table_name)
 
-            worksheet = workbook.add_worksheet(object_name)
+            worksheet = workbook.add_worksheet(table_name)
             worksheet.freeze_panes(1, 0)
             worksheet.hide_gridlines(2)
 
@@ -203,7 +203,7 @@ class ExcelData(BaseData):
 
             column_names = []
 
-            columns = self.get_columns(object_name)
+            columns = self.get_columns(table_name)
             if columns is None:
                 continue
 
@@ -218,7 +218,7 @@ class ExcelData(BaseData):
                     cell_format = format_default
                     if col_idx < len(column_names):
                         column_name = column_names[col_idx]
-                        column_info = self.get_column_info(object_name, column_name)
+                        column_info = self.get_column_info(table_name, column_name)
 
                         column_type = 'string'
                         if column_info is None:

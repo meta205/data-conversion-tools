@@ -1,5 +1,5 @@
 {
-  "objects": {
+  "tables": {
     "orders": {
       "category": "master",
       "description": "order list",

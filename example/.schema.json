@@ -41,7 +41,7 @@
     "TB_FP_SO_TERMINAL_INV": "TB_FP_DMND_TERMINAL_INV",
     "TB_FP_SO_TERMINAL_INV.SO_CD": "TB_FP_DMND_TERMINAL_INV.DMND_CD"
   },
-  "objects": {
+  "tables": {
     "TB_FP_CORPORATION": {
       "category": "Organization",
       "description": "Define the first step information to construct the company structure",

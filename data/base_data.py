@@ -33,8 +33,8 @@ class BaseData(object):
             return self.columns_dict[data_key]
         return None
 
-    def get_column_info(self, object_name, column_name):
-        return self.base_schema.get_column_info(object_name, column_name)
+    def get_column_info(self, table_name, column_name):
+        return self.base_schema.get_column_info(table_name, column_name)
 
     def set_columns(self, data_key, columns):
         schema_columns = self.base_schema.get_columns(data_key)
