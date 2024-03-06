@@ -46,12 +46,15 @@
     "TB_FP_SO_BOR.MOVE_TM": "TB_FP_DMND_BOR.MOVE_TIME",
     "TB_FP_SO_BOR.TRANSFER_BATCH_TM": "TB_FP_DMND_BOR.TRANSFER_BATCH_TIME",
     "TB_FP_SO_BOR.STD_PROCESS_TM": "TB_FP_DMND_BOR.STD_PROCESS_TIME",
-    "TB_FP_SO_INTER_BOR_TIME": "TB_FP_DMND_INTER_BOR_TIME",
-    "TB_FP_SO_INTER_BOR_TIME.SO_CD": "TB_FP_DMND_INTER_BOR_TIME.DMND_CD",
+    "TB_FP_SO_BOR.PROCESS_TM_TP_CD": "TB_FP_DMND_BOR.PROCESS_TIME_TP_CD",
+    "TB_FP_SO_BOR_EFFICIENCY.PROCESS_TM_TP_CD": "TB_FP_DMND_BOR_EFFICIENCY.PROCESS_TIME_TP_CD",
     "TB_FP_SO_INTER_BOR_TIME.QUEUE_TM": "TB_FP_DMND_INTER_BOR_TIME.QUEUE_TIME",
     "TB_FP_SO_INTER_BOR_TIME.SETUP_TM": "TB_FP_DMND_INTER_BOR_TIME.SETUP_TIME",
     "TB_FP_SO_INTER_BOR_TIME.WAIT_TM": "TB_FP_DMND_INTER_BOR_TIME.WAIT_TIME",
     "TB_FP_SO_INTER_BOR_TIME.MOVE_TM": "TB_FP_DMND_INTER_BOR_TIME.MOVE_TIME",
+    "TB_FP_SALES_ORDER.DUE_DT": "TB_FP_DEMAND.DUE_DATE",
+    "TB_FP_SALES_ORDER.DUE_DT_FENCE": "TB_FP_DEMAND.DUE_DATE_FENCE",
+    "TB_FP_ROUTE.LAZY_JC_TM_YN": "TB_FP_ROUTE.LAZY_JC_TIME_YN",
     "TB_FP_RESOURCE.JC_TM": "TB_FP_RESOURCE.JC_TIME",
     "TB_FP_RESOURCE.ROUTE_JC_TM": "TB_FP_RESOURCE.ROUTE_JC_TIME",
     "TB_FP_RESOURCE.ROUTE_GRP_JC_TM": "TB_FP_RESOURCE.ROUTE_GRP_JC_TIME",
@@ -65,6 +68,7 @@
     "TB_FP_BOR.MOVE_TM": "TB_FP_BOR.MOVE_TIME",
     "TB_FP_BOR.TRANSFER_BATCH_TM": "TB_FP_BOR.TRANSFER_BATCH_TIME",
     "TB_FP_BOR.STD_PROCESS_TM": "TB_FP_BOR.STD_PROCESS_TIME",
+    "TB_FP_BOR.PROCESS_TM_TP_CD": "TB_FP_BOR.PROCESS_TIME_TP_CD",
     "TB_FP_JC_TIME_GRP.PREV_JC_TM": "TB_FP_JC_TIME_GRP.PREV_JC_TIME",
     "TB_FP_JC_TIME_GRP.NEXT_JC_TM": "TB_FP_JC_TIME_GRP.NEXT_JC_TIME",
     "TB_FP_JC_TIME.PREV_JC_TM": "TB_FP_JC_TIME.PREV_JC_TIME",
@@ -80,6 +84,8 @@
     "TB_FP_DMND_BOR.MOVE_TM": "TB_FP_DMND_BOR.MOVE_TIME",
     "TB_FP_DMND_BOR.TRANSFER_BATCH_TM": "TB_FP_DMND_BOR.TRANSFER_BATCH_TIME",
     "TB_FP_DMND_BOR.STD_PROCESS_TM": "TB_FP_DMND_BOR.STD_PROCESS_TIME",
+    "TB_FP_DMND_BOR.PROCESS_TM_TP_CD": "TB_FP_DMND_BOR.PROCESS_TIME_TP_CD",
+    "TB_FP_DMND_BOR_EFFICIENCY.PROCESS_TM_TP_CD": "TB_FP_DMND_BOR_EFFICIENCY.PROCESS_TIME_TP_CD",
     "TB_FP_DMND_INTER_BOR_TIME.QUEUE_TM": "TB_FP_DMND_INTER_BOR_TIME.QUEUE_TIME",
     "TB_FP_DMND_INTER_BOR_TIME.SETUP_TM": "TB_FP_DMND_INTER_BOR_TIME.SETUP_TIME",
     "TB_FP_DMND_INTER_BOR_TIME.WAIT_TM": "TB_FP_DMND_INTER_BOR_TIME.WAIT_TIME",
@@ -91,6 +97,8 @@
     "TB_FP_WO_BOR.MOVE_TM": "TB_FP_WO_BOR.MOVE_TIME",
     "TB_FP_WO_BOR.TRANSFER_BATCH_TM": "TB_FP_WO_BOR.TRANSFER_BATCH_TIME",
     "TB_FP_WO_BOR.STD_PROCESS_TM": "TB_FP_WO_BOR.STD_PROCESS_TIME",
+    "TB_FP_WO_BOR.PROCESS_TM_TP_CD": "TB_FP_WO_BOR.PROCESS_TIME_TP_CD",
+    "TB_FP_WO_BOR_EFFICIENCY.PROCESS_TM_TP_CD": "TB_FP_WO_BOR_EFFICIENCY.PROCESS_TIME_TP_CD",
     "TB_FP_WO_INTER_BOR_TIME.QUEUE_TM": "TB_FP_WO_INTER_BOR_TIME.QUEUE_TIME",
     "TB_FP_WO_INTER_BOR_TIME.SETUP_TM": "TB_FP_WO_INTER_BOR_TIME.SETUP_TIME",
     "TB_FP_WO_INTER_BOR_TIME.WAIT_TM": "TB_FP_WO_INTER_BOR_TIME.WAIT_TIME",
@@ -104,7 +112,15 @@
     "TB_FP_ACTIVITY.NEXT_JC_TM": "TB_FP_ACTIVITY.NEXT_JC_TIME",
     "TB_FP_RESRC_UTILIZATION.USED_TM": "TB_FP_RESRC_UTILIZATION.USED_TIME",
     "TB_FP_RESRC_UTILIZATION.AVAIL_TM": "TB_FP_RESRC_UTILIZATION.AVAIL_TIME",
-    "TB_FP_RESRC_UTILIZATION.JC_TM": "TB_FP_RESRC_UTILIZATION.JC_TIME"
+    "TB_FP_RESRC_UTILIZATION.JC_TM": "TB_FP_RESRC_UTILIZATION.JC_TIME",
+    "TB_FP_DEMAND.DUE_DT": "TB_FP_DEMAND.DUE_DATE",
+    "TB_FP_DEMAND.DUE_DT_FENCE": "TB_FP_DEMAND.DUE_DATE_FENCE",
+    "TB_FP_WORK_ORDER.DUE_DT": "TB_FP_WORK_ORDER.DUE_DATE",
+    "TB_FP_WORK_ORDER.DUE_DT_FENCE": "TB_FP_WORK_ORDER.DUE_DATE_FENCE",
+    "TB_FP_STOCK.PROJECTION_WO_DUE_DT": "TB_FP_STOCK.PROJECTION_WO_DUE_DATE",
+    "TB_FP_WIP.PROJECTION_WO_DUE_DT": "TB_FP_WIP.PROJECTION_WO_DUE_DATE",
+    "TB_FP_WO_PLAN.DUE_DT": "TB_FP_WO_PLAN.DUE_DATE",
+    "TB_FP_PLAN_PROBLEM.DUE_DT": "TB_FP_PLAN_PROBLEM.DUE_DATE"
   },
   "columns": {
     "ID": {
@@ -171,10 +187,10 @@
     "PET": {
       "type": "datetime"
     },
-    "DUE_DT": {
+    "DUE_DATE": {
       "type": "datetime"
     },
-    "DUE_DT_FENCE": {
+    "DUE_DATE_FENCE": {
       "type": "datetime"
     },
     "MAX_CAPACITY": {
@@ -351,7 +367,7 @@
       "matcher": "suffix",
       "type": "datetime"
     },
-    "_DUE_DT": {
+    "_DUE_DATE": {
       "matcher": "suffix",
       "type": "datetime"
     },
@@ -908,7 +924,7 @@
           "nullable": false
         },
         {
-          "name": "LAZY_JC_TM_YN",
+          "name": "LAZY_JC_TIME_YN",
           "type": "boolean",
           "default": false,
           "nullable": false
@@ -1013,17 +1029,17 @@
           "type": "string"
         },
         {
-          "name": "JC_TM",
+          "name": "JC_TIME",
           "type": "number",
           "default": 0
         },
         {
-          "name": "ROUTE_JC_TM",
+          "name": "ROUTE_JC_TIME",
           "type": "number",
           "default": 0
         },
         {
-          "name": "ROUTE_GRP_JC_TM",
+          "name": "ROUTE_GRP_JC_TIME",
           "type": "number",
           "default": 0
         },
@@ -1400,11 +1416,11 @@
           "nullable": false
         },
         {
-          "name": "INV_KEEPING_TM",
+          "name": "INV_KEEPING_TIME",
           "type": "number"
         },
         {
-          "name": "INV_FENCE_TM",
+          "name": "INV_FENCE_TIME",
           "type": "number"
         },
         {
@@ -1562,7 +1578,7 @@
           "nullable": false
         },
         {
-          "name": "DELAY_TM",
+          "name": "DELAY_TIME",
           "type": "number",
           "nullable": false
         },
@@ -1739,37 +1755,37 @@
           "default": 1
         },
         {
-          "name": "QUEUE_TM",
+          "name": "QUEUE_TIME",
           "type": "number",
           "default": 0
         },
         {
-          "name": "SETUP_TM",
+          "name": "SETUP_TIME",
           "type": "number",
           "default": 0
         },
         {
-          "name": "PROCESS_TM",
+          "name": "PROCESS_TIME",
           "type": "number",
           "default": 0
         },
         {
-          "name": "WAIT_TM",
+          "name": "WAIT_TIME",
           "type": "number",
           "default": 0
         },
         {
-          "name": "MOVE_TM",
+          "name": "MOVE_TIME",
           "type": "number",
           "default": 0
         },
         {
-          "name": "TRANSFER_BATCH_TM",
+          "name": "TRANSFER_BATCH_TIME",
           "type": "number",
           "default": 0
         },
         {
-          "name": "STD_PROCESS_TM",
+          "name": "STD_PROCESS_TIME",
           "type": "number",
           "default": 0
         },
@@ -1778,7 +1794,7 @@
           "type": "string"
         },
         {
-          "name": "PROCESS_TM_TP_CD",
+          "name": "PROCESS_TIME_TP_CD",
           "type": "string",
           "default": "N"
         },
@@ -2733,13 +2749,13 @@
           "nullable": false
         },
         {
-          "name": "PREV_JC_TM",
+          "name": "PREV_JC_TIME",
           "type": "number",
           "default": 0,
           "nullable": false
         },
         {
-          "name": "NEXT_JC_TM",
+          "name": "NEXT_JC_TIME",
           "type": "number",
           "default": 0,
           "nullable": false
@@ -2804,13 +2820,13 @@
           "nullable": false
         },
         {
-          "name": "PREV_JC_TM",
+          "name": "PREV_JC_TIME",
           "type": "number",
           "default": 0,
           "nullable": false
         },
         {
-          "name": "NEXT_JC_TM",
+          "name": "NEXT_JC_TIME",
           "type": "number",
           "default": 0,
           "nullable": false
@@ -3145,7 +3161,7 @@
           "nullable": false
         },
         {
-          "name": "CONSTRAINT_TM",
+          "name": "CONSTRAINT_TIME",
           "type": "number",
           "nullable": false
         },
@@ -3208,7 +3224,7 @@
           "nullable": false
         },
         {
-          "name": "TRANSFER_TM",
+          "name": "TRANSFER_TIME",
           "type": "number"
         },
         {
@@ -3226,11 +3242,11 @@
           "nullable": false
         },
         {
-          "name": "PREV_BUFFER_TM",
+          "name": "PREV_BUFFER_TIME",
           "type": "number"
         },
         {
-          "name": "NEXT_BUFFER_TM",
+          "name": "NEXT_BUFFER_TIME",
           "type": "number"
         },
         {
@@ -3469,12 +3485,12 @@
           "nullable": false
         },
         {
-          "name": "DUE_DT",
+          "name": "DUE_DATE",
           "type": "timestamp",
           "nullable": false
         },
         {
-          "name": "DUE_DT_FENCE",
+          "name": "DUE_DATE_FENCE",
           "type": "timestamp"
         },
         {
@@ -3805,37 +3821,37 @@
           "default": 1
         },
         {
-          "name": "QUEUE_TM",
+          "name": "QUEUE_TIME",
           "type": "number",
           "default": 0
         },
         {
-          "name": "SETUP_TM",
+          "name": "SETUP_TIME",
           "type": "number",
           "default": 0
         },
         {
-          "name": "PROCESS_TM",
+          "name": "PROCESS_TIME",
           "type": "number",
           "default": 0
         },
         {
-          "name": "WAIT_TM",
+          "name": "WAIT_TIME",
           "type": "number",
           "default": 0
         },
         {
-          "name": "MOVE_TM",
+          "name": "MOVE_TIME",
           "type": "number",
           "default": 0
         },
         {
-          "name": "TRANSFER_BATCH_TM",
+          "name": "TRANSFER_BATCH_TIME",
           "type": "number",
           "default": 0
         },
         {
-          "name": "STD_PROCESS_TM",
+          "name": "STD_PROCESS_TIME",
           "type": "number",
           "default": 0
         },
@@ -3844,7 +3860,7 @@
           "type": "string"
         },
         {
-          "name": "PROCESS_TM_TP_CD",
+          "name": "PROCESS_TIME_TP_CD",
           "type": "string",
           "default": "N"
         },
@@ -3931,7 +3947,7 @@
           "nullable": false
         },
         {
-          "name": "PROCESS_TM_TP_CD",
+          "name": "PROCESS_TIME_TP_CD",
           "type": "string",
           "default": "S",
           "nullable": false
@@ -4055,19 +4071,19 @@
           "nullable": false
         },
         {
-          "name": "QUEUE_TM",
+          "name": "QUEUE_TIME",
           "type": "number"
         },
         {
-          "name": "SETUP_TM",
+          "name": "SETUP_TIME",
           "type": "number"
         },
         {
-          "name": "WAIT_TM",
+          "name": "WAIT_TIME",
           "type": "number"
         },
         {
-          "name": "MOVE_TM",
+          "name": "MOVE_TIME",
           "type": "number"
         },
         {
@@ -4712,12 +4728,12 @@
           "nullable": false
         },
         {
-          "name": "DUE_DT",
+          "name": "DUE_DATE",
           "type": "timestamp",
           "nullable": false
         },
         {
-          "name": "DUE_DT_FENCE",
+          "name": "DUE_DATE_FENCE",
           "type": "timestamp"
         },
         {
@@ -4872,7 +4888,7 @@
           "type": "string"
         },
         {
-          "name": "PROJECTION_WO_DUE_DT",
+          "name": "PROJECTION_WO_DUE_DATE",
           "type": "timestamp"
         },
         {
@@ -5191,37 +5207,37 @@
           "default": 1
         },
         {
-          "name": "QUEUE_TM",
+          "name": "QUEUE_TIME",
           "type": "number",
           "default": 0
         },
         {
-          "name": "SETUP_TM",
+          "name": "SETUP_TIME",
           "type": "number",
           "default": 0
         },
         {
-          "name": "PROCESS_TM",
+          "name": "PROCESS_TIME",
           "type": "number",
           "default": 0
         },
         {
-          "name": "WAIT_TM",
+          "name": "WAIT_TIME",
           "type": "number",
           "default": 0
         },
         {
-          "name": "MOVE_TM",
+          "name": "MOVE_TIME",
           "type": "number",
           "default": 0
         },
         {
-          "name": "TRANSFER_BATCH_TM",
+          "name": "TRANSFER_BATCH_TIME",
           "type": "number",
           "default": 0
         },
         {
-          "name": "STD_PROCESS_TM",
+          "name": "STD_PROCESS_TIME",
           "type": "number",
           "default": 0
         },
@@ -5230,7 +5246,7 @@
           "type": "string"
         },
         {
-          "name": "PROCESS_TM_TP_CD",
+          "name": "PROCESS_TIME_TP_CD",
           "type": "string",
           "default": "N"
         },
@@ -5317,7 +5333,7 @@
           "nullable": false
         },
         {
-          "name": "PROCESS_TM_TP_CD",
+          "name": "PROCESS_TIME_TP_CD",
           "type": "string",
           "default": "S",
           "nullable": false
@@ -5441,19 +5457,19 @@
           "nullable": false
         },
         {
-          "name": "QUEUE_TM",
+          "name": "QUEUE_TIME",
           "type": "number"
         },
         {
-          "name": "SETUP_TM",
+          "name": "SETUP_TIME",
           "type": "number"
         },
         {
-          "name": "WAIT_TM",
+          "name": "WAIT_TIME",
           "type": "number"
         },
         {
-          "name": "MOVE_TM",
+          "name": "MOVE_TIME",
           "type": "number"
         },
         {
@@ -6174,7 +6190,7 @@
           "type": "string"
         },
         {
-          "name": "PROJECTION_WO_DUE_DT",
+          "name": "PROJECTION_WO_DUE_DATE",
           "type": "timestamp"
         },
         {
