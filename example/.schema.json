@@ -2190,12 +2190,12 @@
           "nullable": false
         },
         {
-          "name": "PREV_ITEM_CD",
+          "name": "PREV_INVENTORY_CD",
           "type": "string",
           "nullable": false
         },
         {
-          "name": "NEXT_ITEM_CD",
+          "name": "NEXT_INVENTORY_CD",
           "type": "string",
           "nullable": false
         },
