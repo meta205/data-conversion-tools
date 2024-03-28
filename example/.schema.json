@@ -396,6 +396,204 @@
     }
   },
   "tables": {
+    "TB_AD_COMN_CODE": {
+      "category": "Common",
+      "description": "",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string",
+          "nullable": false
+        },
+        {
+          "name": "SRC_ID",
+          "type": "string",
+          "default": "default",
+          "nullable": false
+        },
+        {
+          "name": "COMN_CD",
+          "type": "string",
+          "nullable": false
+        },
+        {
+          "name": "COMN_CD_NM",
+          "type": "string",
+        },
+        {
+          "name": "SEQ",
+          "type": "integer"
+        },
+        {
+          "name": "DESCRIP",
+          "type": "string"
+        },
+        {
+          "name": "DEFAT_VAL_YN",
+          "type": "boolean"
+        },
+        {
+          "name": "IF_VAL",
+          "type": "string"
+        },
+        {
+          "name": "USE_YN",
+          "type": "boolean"
+        },
+        {
+          "name": "DEL_YN",
+          "type": "boolean"
+        },
+        {
+          "name": "ATTR_01_VAL",
+          "type": "string"
+        },
+        {
+          "name": "ATTR_02_VAL",
+          "type": "string"
+        },
+        {
+          "name": "ATTR_03_VAL",
+          "type": "string"
+        },
+        {
+          "name": "ATTR_04_VAL",
+          "type": "string"
+        },
+        {
+          "name": "ATTR_05_VAL",
+          "type": "string"
+        },
+        {
+          "name": "ATTR_06_VAL",
+          "type": "string"
+        },
+        {
+          "name": "ATTR_07_VAL",
+          "type": "string"
+        },
+        {
+          "name": "ATTR_08_VAL",
+          "type": "string"
+        },
+        {
+          "name": "ATTR_09_VAL",
+          "type": "string"
+        },
+        {
+          "name": "ATTR_10_VAL",
+          "type": "string"
+        },
+        {
+          "name": "CREATE_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATE_DTTM",
+          "type": "timestamp",
+          "nullable": false
+        },
+        {
+          "name": "MODIFY_BY",
+          "type": "string"
+        },
+        {
+          "name": "MODIFY_DTTM",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_AD_COMN_GRP": {
+      "category": "Common",
+      "description": "",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string",
+          "nullable": false
+        },
+        {
+          "name": "GRP_CD",
+          "type": "string",
+          "default": "default",
+          "nullable": false
+        },
+        {
+          "name": "GRP_NM",
+          "type": "string",
+          "nullable": false
+        },
+        {
+          "name": "DESCRIP",
+          "type": "string"
+        },
+        {
+          "name": "USE_YN",
+          "type": "boolean"
+        },
+        {
+          "name": "DEL_YN",
+          "type": "boolean"
+        },
+        {
+          "name": "ATTR_01_VAL",
+          "type": "string"
+        },
+        {
+          "name": "ATTR_02_VAL",
+          "type": "string"
+        },
+        {
+          "name": "ATTR_03_VAL",
+          "type": "string"
+        },
+        {
+          "name": "ATTR_04_VAL",
+          "type": "string"
+        },
+        {
+          "name": "ATTR_05_VAL",
+          "type": "string"
+        },
+        {
+          "name": "ATTR_06_VAL",
+          "type": "string"
+        },
+        {
+          "name": "ATTR_07_VAL",
+          "type": "string"
+        },
+        {
+          "name": "ATTR_08_VAL",
+          "type": "string"
+        },
+        {
+          "name": "ATTR_09_VAL",
+          "type": "string"
+        },
+        {
+          "name": "ATTR_10_VAL",
+          "type": "string"
+        },
+        {
+          "name": "CREATE_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATE_DTTM",
+          "type": "timestamp",
+          "nullable": false
+        },
+        {
+          "name": "MODIFY_BY",
+          "type": "string"
+        },
+        {
+          "name": "MODIFY_DTTM",
+          "type": "timestamp"
+        }
+      ]
+    },
     "TB_FP_CORPORATION": {
       "category": "Organization",
       "description": "Define the first step information to construct the company structure",
@@ -6592,103 +6790,6 @@
           "name": "STOCK_CD",
           "type": "string",
           "nullable": false
-        },
-        {
-          "name": "CREATED_BY",
-          "type": "string"
-        },
-        {
-          "name": "CREATED_AT",
-          "type": "timestamp",
-          "nullable": false
-        },
-        {
-          "name": "UPDATED_BY",
-          "type": "string"
-        },
-        {
-          "name": "UPDATED_AT",
-          "type": "timestamp"
-        }
-      ]
-    },
-    "TB_FP_CODE_GRP": {
-      "category": "MASTER",
-      "description": "Define a dedicated common code group",
-      "columns": [
-        {
-          "name": "ID",
-          "type": "string",
-          "nullable": false
-        },
-        {
-          "name": "PLAN_SCOPE",
-          "type": "string",
-          "default": "default",
-          "nullable": false
-        },
-        {
-          "name": "CODE_GRP_CD",
-          "type": "string",
-          "nullable": false
-        },
-        {
-          "name": "DESC_TXT",
-          "type": "string"
-        },
-        {
-          "name": "CREATED_BY",
-          "type": "string"
-        },
-        {
-          "name": "CREATED_AT",
-          "type": "timestamp",
-          "nullable": false
-        },
-        {
-          "name": "UPDATED_BY",
-          "type": "string"
-        },
-        {
-          "name": "UPDATED_AT",
-          "type": "timestamp"
-        }
-      ]
-    },
-    "TB_FP_CODE": {
-      "category": "MASTER",
-      "description": "Define a dedicated common code",
-      "columns": [
-        {
-          "name": "ID",
-          "type": "string",
-          "nullable": false
-        },
-        {
-          "name": "PLAN_SCOPE",
-          "type": "string",
-          "default": "default",
-          "nullable": false
-        },
-        {
-          "name": "CODE_GRP_CD",
-          "type": "string",
-          "nullable": false
-        },
-        {
-          "name": "CODE_CD",
-          "type": "string",
-          "nullable": false
-        },
-        {
-          "name": "CODE_SEQ",
-          "type": "integer",
-          "default": 1,
-          "nullable": false
-        },
-        {
-          "name": "DESC_TXT",
-          "type": "string"
         },
         {
           "name": "CREATED_BY",
