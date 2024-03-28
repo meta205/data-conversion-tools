@@ -408,7 +408,6 @@
         {
           "name": "SRC_ID",
           "type": "string",
-          "default": "default",
           "nullable": false
         },
         {
@@ -418,7 +417,7 @@
         },
         {
           "name": "COMN_CD_NM",
-          "type": "string",
+          "type": "string"
         },
         {
           "name": "SEQ",
@@ -515,7 +514,6 @@
         {
           "name": "GRP_CD",
           "type": "string",
-          "default": "default",
           "nullable": false
         },
         {
@@ -591,6 +589,162 @@
         {
           "name": "MODIFY_DTTM",
           "type": "timestamp"
+        }
+      ]
+    },
+    "TB_CM_ATTRIBUTE": {
+      "category": "Common",
+      "description": "",
+      "columns": [
+        {
+          "name": "ATTR_GRP_CD",
+          "type": "string",
+          "nullable": false
+        },
+        {
+          "name": "MODEL_TP_CD",
+          "type": "string",
+          "nullable": false
+        },
+        {
+          "name": "MODEL_CD",
+          "type": "string",
+          "nullable": false
+        },
+        {
+          "name": "ATTR_01",
+          "type": "string"
+        },
+        {
+          "name": "ATTR_02",
+          "type": "string"
+        },
+        {
+          "name": "ATTR_03",
+          "type": "string"
+        },
+        {
+          "name": "ATTR_04",
+          "type": "string"
+        },
+        {
+          "name": "ATTR_05",
+          "type": "string"
+        },
+        {
+          "name": "ATTR_06",
+          "type": "string"
+        },
+        {
+          "name": "ATTR_07",
+          "type": "string"
+        },
+        {
+          "name": "ATTR_08",
+          "type": "string"
+        },
+        {
+          "name": "ATTR_09",
+          "type": "string"
+        },
+        {
+          "name": "ATTR_10",
+          "type": "string"
+        },
+        {
+          "name": "ATTR_11",
+          "type": "string"
+        },
+        {
+          "name": "ATTR_12",
+          "type": "string"
+        },
+        {
+          "name": "ATTR_13",
+          "type": "string"
+        },
+        {
+          "name": "ATTR_14",
+          "type": "string"
+        },
+        {
+          "name": "ATTR_15",
+          "type": "string"
+        },
+        {
+          "name": "ATTR_16",
+          "type": "string"
+        },
+        {
+          "name": "ATTR_17",
+          "type": "string"
+        },
+        {
+          "name": "ATTR_18",
+          "type": "string"
+        },
+        {
+          "name": "ATTR_19",
+          "type": "string"
+        },
+        {
+          "name": "ATTR_20",
+          "type": "string"
+        },
+        {
+          "name": "CREATE_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATE_DTTM",
+          "type": "timestamp",
+          "nullable": false
+        },
+        {
+          "name": "MODIFY_BY",
+          "type": "string"
+        },
+        {
+          "name": "MODIFY_DTTM",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_CM_ATTRIBUTE_DESC": {
+      "category": "Common",
+      "description": "",
+      "columns": [
+        {
+          "name": "ATTR_GRP_CD",
+          "type": "string",
+          "nullable": false
+        },
+        {
+          "name": "MODEL_TP_CD",
+          "type": "string",
+          "nullable": false
+        },
+        {
+          "name": "ATTR_COL_NM",
+          "type": "string",
+          "nullable": false
+        },
+        {
+          "name": "ATTR_CD",
+          "type": "string",
+          "nullable": false
+        },
+        {
+          "name": "ATTR_NM",
+          "type": "string"
+        },
+        {
+          "name": "ATTR_DATA_TP_CD",
+          "type": "string"
+        },
+        {
+          "name": "DESC_TXT",
+          "type": "string"
         }
       ]
     },
