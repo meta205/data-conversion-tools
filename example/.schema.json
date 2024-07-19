@@ -748,6 +748,89 @@
         }
       ]
     },
+    "TB_CM_SETTING": {
+      "category": "Common",
+      "description": "Defines global settings information",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string",
+          "nullable": false
+        },
+        {
+          "name": "MODULE_CD",
+          "type": "string",
+          "nullable": false
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "default",
+          "nullable": false
+        },
+        {
+          "name": "SETTING_GRP_CD",
+          "type": "string",
+          "nullable": false
+        },
+        {
+          "name": "SETTING_CD",
+          "type": "string",
+          "nullable": false
+        },
+        {
+          "name": "SETTING_VAL",
+          "type": "string",
+          "nullable": false
+        },
+        {
+          "name": "DESC_TXT",
+          "type": "string"
+        },
+        {
+          "name": "DISPLAY_SEQ",
+          "type": "integer",
+          "default": 1
+        },
+        {
+          "name": "ATTR_01",
+          "type": "string"
+        },
+        {
+          "name": "ATTR_02",
+          "type": "string"
+        },
+        {
+          "name": "ATTR_03",
+          "type": "string"
+        },
+        {
+          "name": "ATTR_04",
+          "type": "string"
+        },
+        {
+          "name": "ATTR_05",
+          "type": "string"
+        },
+        {
+          "name": "CREATE_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATE_DTTM",
+          "type": "timestamp",
+          "nullable": false
+        },
+        {
+          "name": "MODIFY_BY",
+          "type": "string"
+        },
+        {
+          "name": "MODIFY_DTTM",
+          "type": "timestamp"
+        }
+      ]
+    },
     "TB_FP_CORPORATION": {
       "category": "Organization",
       "description": "Define the first step information to construct the company structure",
@@ -1156,6 +1239,59 @@
         {
           "name": "DISPLAY_COLOR",
           "type": "string"
+        },
+        {
+          "name": "DESC_TXT",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "CREATED_AT",
+          "type": "timestamp",
+          "nullable": false
+        },
+        {
+          "name": "UPDATED_BY",
+          "type": "string"
+        },
+        {
+          "name": "UPDATED_AT",
+          "type": "timestamp"
+        }
+      ]
+    },
+    "TB_FP_RESOURCE_CALENDAR": {
+      "category": "Calendar",
+      "description": "Defines the downtime calendar to be applied to the resource",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "string",
+          "nullable": false
+        },
+        {
+          "name": "PLAN_SCOPE",
+          "type": "string",
+          "default": "default",
+          "nullable": false
+        },
+        {
+          "name": "RESOURCE_CD",
+          "type": "string",
+          "nullable": false
+        },
+        {
+          "name": "START_TS",
+          "type": "timestamp",
+          "nullable": false
+        },
+        {
+          "name": "END_TS",
+          "type": "timestamp",
+          "nullable": false
         },
         {
           "name": "DESC_TXT",
@@ -7163,54 +7299,6 @@
           "name": "ITEM_VAL",
           "type": "string",
           "nullable": false
-        },
-        {
-          "name": "CREATED_BY",
-          "type": "string"
-        },
-        {
-          "name": "CREATED_AT",
-          "type": "timestamp",
-          "nullable": false
-        },
-        {
-          "name": "UPDATED_BY",
-          "type": "string"
-        },
-        {
-          "name": "UPDATED_AT",
-          "type": "timestamp"
-        }
-      ]
-    },
-    "TB_FP_SETTING": {
-      "category": "MASTER",
-      "description": "Defines global settings information",
-      "columns": [
-        {
-          "name": "ID",
-          "type": "string",
-          "nullable": false
-        },
-        {
-          "name": "PLAN_SCOPE",
-          "type": "string",
-          "default": "default",
-          "nullable": false
-        },
-        {
-          "name": "SETTING_CD",
-          "type": "string",
-          "nullable": false
-        },
-        {
-          "name": "SETTING_VAL",
-          "type": "string",
-          "nullable": false
-        },
-        {
-          "name": "DESC_TXT",
-          "type": "string"
         },
         {
           "name": "CREATED_BY",
